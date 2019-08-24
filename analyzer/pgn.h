@@ -28,6 +28,12 @@ along with CANboat.  If not, see <http://www.gnu.org/licenses/>.
 #define RES_LAT_LONG_64 (1.0e-16)
 #define RES_PERCENTAGE (100.0 / 25000.0)
 
+#ifndef J1939
+#define FIELD_LIST_SIZE 30
+#else
+#define FIELD_LIST_SIZE 110
+#endif
+
 typedef struct
 {
   char *   name;
@@ -644,7 +650,7 @@ typedef struct
   bool     known;            /* Are we pretty sure we've got all fields with correct definitions? */
   uint32_t size;             /* (Minimal) size of this PGN. Helps to determine fast/single frame and initial malloc */
   uint32_t repeatingFields;  /* How many fields at the end repeat until the PGN is exhausted? */
-  Field    fieldList[30];    /* Note fixed # of fields; increase if needed. RepeatingFields support means this is enough for now. */
+  Field    fieldList[FIELD_LIST_SIZE];    /* Note fixed # of fields; increase if needed. RepeatingFields support means this is enough for now. */
   uint32_t fieldCount;       /* Filled by C, no need to set in initializers. */
   char *   camelDescription; /* Filled by C, no need to set in initializers. */
   bool     unknownPgn;       /* true = this is a catch-all for unknown PGNs */
@@ -673,7 +679,7 @@ int parseRawFormatYDWG02(char *msg, RawMessage *m, bool showJson);
 
 #ifdef GLOBALS
 Pgn pgnList[] = {
-
+#ifndef J1939
     /* PDU1 (addressed) single-frame PGN range 0E800 to 0xEEFF (59392 - 61183) */
 
     {"Unknown single-frame addressed", 0, false, 8, 0, {{"Data", BYTES(8), RES_BINARY, false, 0, ""}, {0}}, 0, 0, true}
@@ -6050,7 +6056,9 @@ Pgn pgnList[] = {
       {"Gateway address", BYTES(1), RES_INTEGER, false, 0, ""},
       {"Rejected TX requests", BYTES(4), RES_INTEGER, false, 0, ""},
       {0}}}
-
+#else /* J1939 */
+#include "j1939.h"
+#endif
 };
 
 size_t pgnListSize = ARRAY_SIZE(pgnList);
