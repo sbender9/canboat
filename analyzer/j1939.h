@@ -8,7 +8,7 @@
     {"Engine Requested Speed Control Conditions",2,RES_BITFIELD,false,0,"",0},
     {"Override Control Mode Priority",2,RES_BITFIELD,false,0,"",0},
     {"Engine Requested Speed/Speed Limit",16,0.125,false,"rpm","",0},
-    {"Engine Requested Torque/Torque Limit",8,1,false,"%","",-125},
+    {"Engine Requested Torque/Torque Limit",8,1,true,"%","",-125},
     {"TSC1 Transmission Rate",3,RES_BITFIELD,false,0,"",0},
     {"TSC1 Control Purpose",5,RES_BITFIELD,false,0,"",0},
     {"Engine Requested Torque (Fractional)",4,0.125,false,"%","",0},
@@ -27,7 +27,7 @@
     {"Disengage Driveline Request",2,RES_BITFIELD,false,0,"",0},
     {"Transmission Reverse Gear Shift Inhibit Request",2,RES_BITFIELD,false,0,"",0},
     {"Requested Percent Clutch Slip",8,0.4,false,"%","",0},
-    {"Transmission Requested Gear",8,1,false,"gear value","",-125},
+    {"Transmission Requested Gear",8,1,true,"gear value","",-125},
     {"Disengage Differential Lock Request - Front Axle 1",2,RES_BITFIELD,false,0,"",0},
     {"Disengage Differential Lock Request - Front Axle 2",2,RES_BITFIELD,false,0,"",0},
     {"Disengage Differential Lock Request - Rear Axle 1",2,RES_BITFIELD,false,0,"",0},
@@ -55,7 +55,7 @@
     8,
     0,
     {
-    {"External Acceleration Demand",16,0.00048828125,false,"m/s²","",-15.687},
+    {"External Acceleration Demand",16,0.00048828125,true,"m/s²","",-32126.976},
     {"XBR EBI Mode",2,RES_BITFIELD,false,0,"",0},
     {"XBR Priority",2,RES_BITFIELD,false,0,"",0},
     {"XBR Control Mode",2,RES_BITFIELD,false,0,"",0},
@@ -94,7 +94,7 @@
     8,
     0,
     {
-    {"Static Roll Angle",8,1,false,"deg","",-125},
+    {"Static Roll Angle",8,1,true,"deg","",-125},
     {"Static Roll Angle Status",3,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -176,8 +176,8 @@
     {"Transmission Override Control Mode",2,RES_BITFIELD,false,0,"",0},
     {"Transmission Override Control Mode Priority",2,RES_BITFIELD,false,0,"",0},
     {"Message Counter",4,1,false,"count","",0},
-    {"Transmission Requested Output Shaft Speed",16,0.25,false,"rpm","",-8031.75},
-    {"Transmission Requested Torque / Torque Limit",8,1,false,"%","",-125},
+    {"Transmission Requested Output Shaft Speed",16,0.25,true,"rpm","",-32127},
+    {"Transmission Requested Torque / Torque Limit",8,1,true,"%","",-125},
     {"Message Checksum",8,1,false,"count","",0},
     {0}}},
     
@@ -187,7 +187,7 @@
     8,
     0,
     {
-    {"Engine Timing Advance",16,0.0078125,false,"deg","",-200},
+    {"Engine Timing Advance",16,0.0078125,true,"deg","",-25600},
     {0}}},
     
     {"Alternator Control",
@@ -211,10 +211,10 @@
     {"Motor/Generator 1 Inverter Control CRC",8,1,false,"count","",0},
     {"Motor/Generator 1 Inverter Control Counter",4,RES_BITFIELD,false,0,"",0},
     {"Motor/Generator 1 Inverter Control Limits Request Override Mode",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 1 Inverter Control Limits Request Override Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 1 Inverter Control Limits Request Override Minimum ",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 1 Inverter Control Limits Request Override Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 1 Inverter Control Limits Request Override Minimum ",12,0.0625,true,"%","",-2000},
     {"Motor/Generator 1 Inverter Control Setpoint Mode Request",5,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 1 Inverter Control Setpoint Request",16,0.00390625,false,"%","",-125},
+    {"Motor/Generator 1 Inverter Control Setpoint Request",16,0.00390625,true,"%","",-32000},
     {0}}},
     
     {"Motor/Generator 2 Inverter Control",
@@ -226,10 +226,10 @@
     {"Motor/Generator 2 Inverter Control CRC",8,1,false,"count","",0},
     {"Motor/Generator 2 Inverter Control Counter",4,RES_BITFIELD,false,0,"",0},
     {"Motor/Generator 2 Inverter Control Limits Request Override Mode",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 2 Inverter Control Limits Request Override Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 2 Inverter Control Limits Request Override Minimum ",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 2 Inverter Control Limits Request Override Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 2 Inverter Control Limits Request Override Minimum ",12,0.0625,true,"%","",-2000},
     {"Motor/Generator 2 Inverter Control Setpoint Mode Request",5,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 2 Inverter Control Setpoint Request",16,0.00390625,false,"%","",-125},
+    {"Motor/Generator 2 Inverter Control Setpoint Request",16,0.00390625,true,"%","",-32000},
     {0}}},
     
     {"Motor/Generator 1 Inverter Rate Limits Request 1",
@@ -397,7 +397,7 @@
     {"Motor/Generator 2 Inverter PID Control Normalized Differential Gain",8,0.03125,false,"%/(%/s)","",0},
     {"Motor/Generator 2 Inverter PID Control Normalized Integral Gain",16,0.015625,false,"%/(%*s)","",0},
     {"Motor/Generator 2 Inverter PID Control Normalized Proportional Gain",12,0.0625,false,"%/%","",0},
-    {"Motor/Generator 2 Inverter PID Control Feed-Forward Torque",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 2 Inverter PID Control Feed-Forward Torque",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 1 Inverter Control 2",
@@ -412,7 +412,7 @@
     {"Motor/Generator 1 Inverter PID Control Normalized Differential Gain",8,0.03125,false,"%/(%/s)","",0},
     {"Motor/Generator 1 Inverter PID Control Normalized Integral Gain",16,0.015625,false,"%/(%*s)","",0},
     {"Motor/Generator 1 Inverter PID Control Normalized Proportional Gain",12,0.0625,false,"%/%","",0},
-    {"Motor/Generator 1 Inverter PID Control Feed-Forward Torque",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 1 Inverter PID Control Feed-Forward Torque",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Hoist Command Information",
@@ -421,7 +421,7 @@
     8,
     0,
     {
-    {"Hoist Command",16,0.005,false,"%","",-150},
+    {"Hoist Command",16,0.005,true,"%","",-30000},
     {"Hoist Detent Status",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -457,10 +457,10 @@
     {
     {"Motor/Generator 2 Inverter Limits Request Power CRC",8,1,false,"count","",0},
     {"Motor/Generator 2 Inverter Limits Request Power Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 2 Inverter Limits Request Mechanical Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 2 Inverter Limits Request Mechanical Power Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 2 Inverter Limits Request DC Side Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 2 Inverter Limits Request DC Side Power Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 2 Inverter Limits Request Mechanical Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 2 Inverter Limits Request Mechanical Power Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 2 Inverter Limits Request DC Side Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 2 Inverter Limits Request DC Side Power Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 2 Inverter Limits Request Mechanical",
@@ -471,10 +471,10 @@
     {
     {"Motor/Generator 2 Inverter Limits Request Mechanical CRC",8,1,false,"count","",0},
     {"Motor/Generator 2 Inverter Limits Request Mechanical Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 2 Inverter Limits Request Torque Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 2 Inverter Limits Request Torque Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 2 Inverter Limits Request Speed Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 2 Inverter Limits Request Speed Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 2 Inverter Limits Request Torque Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 2 Inverter Limits Request Torque Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 2 Inverter Limits Request Speed Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 2 Inverter Limits Request Speed Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 2 Inverter Limits Request DC Side",
@@ -485,10 +485,10 @@
     {
     {"Motor/Generator 2 Inverter Limits Request DC Side CRC",8,1,false,"count","",0},
     {"Motor/Generator 2 Inverter Limits Request DC Side Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 2 Inverter Limits Request DC Side Voltage Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 2 Inverter Limits Request DC Side Voltage Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 2 Inverter Limits Request DC Side Current Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 2 Inverter Limits Request DC Side Current Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 2 Inverter Limits Request DC Side Voltage Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 2 Inverter Limits Request DC Side Voltage Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 2 Inverter Limits Request DC Side Current Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 2 Inverter Limits Request DC Side Current Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 1 Inverter Limits Request DC Side",
@@ -499,10 +499,10 @@
     {
     {"Motor/Generator 1 Inverter Limits Request DC Side CRC",8,1,false,"count","",0},
     {"Motor/Generator 1 Inverter Limits Request DC Side Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 1 Inverter Limits Request DC Side Voltage Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 1 Inverter Limits Request DC Side Voltage Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 1 Inverter Limits Request DC Side Current Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 1 Inverter Limits Request DC Side Current Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 1 Inverter Limits Request DC Side Voltage Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 1 Inverter Limits Request DC Side Voltage Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 1 Inverter Limits Request DC Side Current Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 1 Inverter Limits Request DC Side Current Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 1 Inverter Limits Request Mechanical",
@@ -513,10 +513,10 @@
     {
     {"Motor/Generator 1 Inverter Limits Request Mechanical CRC",8,1,false,"count","",0},
     {"Motor/Generator 1 Inverter Limits Request Mechanical Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 1 Inverter Limits Request Torque Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 1 Inverter Limits Request Torque Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 1 Inverter Limits Request Speed Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 1 Inverter Limits Request Speed Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 1 Inverter Limits Request Torque Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 1 Inverter Limits Request Torque Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 1 Inverter Limits Request Speed Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 1 Inverter Limits Request Speed Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 1 Inverter Limits Request Power",
@@ -527,10 +527,10 @@
     {
     {"Motor/Generator 1 Inverter Limits Request Power CRC",8,1,false,"count","",0},
     {"Motor/Generator 1 Inverter Limits Request Power Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 1 Inverter Limits Request Mechanical Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 1 Inverter Limits Request Mechanical Power Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 1 Inverter Limits Request DC Side Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 1 Inverter Limits Request DC Side Power Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 1 Inverter Limits Request Mechanical Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 1 Inverter Limits Request Mechanical Power Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 1 Inverter Limits Request DC Side Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 1 Inverter Limits Request DC Side Power Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Personnel Detect Interlock",
@@ -569,10 +569,10 @@
     8,
     0,
     {
-    {"Configured Engine Cylinder Pressure Timing 1",16,0.0125,false,"deg","",-360},
-    {"Configured Engine Cylinder Pressure Timing 2",16,0.0125,false,"deg","",-360},
-    {"Configured Engine Cylinder Pressure Timing 3",16,0.0125,false,"deg","",-360},
-    {"Configured Engine Cylinder Pressure Timing 4",16,0.0125,false,"deg","",-360},
+    {"Configured Engine Cylinder Pressure Timing 1",16,0.0125,true,"deg","",-28800},
+    {"Configured Engine Cylinder Pressure Timing 2",16,0.0125,true,"deg","",-28800},
+    {"Configured Engine Cylinder Pressure Timing 3",16,0.0125,true,"deg","",-28800},
+    {"Configured Engine Cylinder Pressure Timing 4",16,0.0125,true,"deg","",-28800},
     {0}}},
     
     {"Engine Cylinder Pressure Timing Configuration",
@@ -581,10 +581,10 @@
     8,
     0,
     {
-    {"Engine Cylinder Pressure Timing 1",16,0.0125,false,"deg","",-360},
-    {"Engine Cylinder Pressure Timing 2",16,0.0125,false,"deg","",-360},
-    {"Engine Cylinder Pressure Timing 3",16,0.0125,false,"deg","",-360},
-    {"Engine Cylinder Pressure Timing 4",16,0.0125,false,"deg","",-360},
+    {"Engine Cylinder Pressure Timing 1",16,0.0125,true,"deg","",-28800},
+    {"Engine Cylinder Pressure Timing 2",16,0.0125,true,"deg","",-28800},
+    {"Engine Cylinder Pressure Timing 3",16,0.0125,true,"deg","",-28800},
+    {"Engine Cylinder Pressure Timing 4",16,0.0125,true,"deg","",-28800},
     {0}}},
     
     {"Electrified Accessory Generator Coolant Pump Command ",
@@ -674,10 +674,10 @@
     {
     {"Well Stimulation Pump Gear Box Oil Pressure Low Threshold",16,0.1,false,"kPa","",0},
     {"Well Stimulation Pump Gear Box Oil Pressure High Threshold",16,0.1,false,"kPa","",0},
-    {"Well Stimulation Pump Gear Box Oil Temperature Low Threshold",8,1,false,"°C","",-40},
-    {"Well Stimulation Pump Gear Box Oil Temperature High Threshold",8,1,false,"°C","",-40},
-    {"Well Stimulation Pump Suction Pressure Low Threshold",16,0.1,false,"kPa","",-3212.7},
-    {"Well Stimulation Pump Suction Pressure High Threshold",16,0.1,false,"kPa","",-3212.7},
+    {"Well Stimulation Pump Gear Box Oil Temperature Low Threshold",8,1,true,"°C","",-40},
+    {"Well Stimulation Pump Gear Box Oil Temperature High Threshold",8,1,true,"°C","",-40},
+    {"Well Stimulation Pump Suction Pressure Low Threshold",16,0.1,true,"kPa","",-32126.999999999996},
+    {"Well Stimulation Pump Suction Pressure High Threshold",16,0.1,true,"kPa","",-32126.999999999996},
     {"Well Stimulation Pump Discharge Pressure High Threshold",16,5,false,"kPa","",0},
     {"Well Stimulation Pump Crankshaft Speed Low Threshold",16,0.125,false,"rpm","",0},
     {"Well Stimulation Pump Crankshaft Speed High Threshold",16,0.125,false,"rpm","",0},
@@ -932,7 +932,7 @@
     {"Under Pressure Percentage Threshold Setting",8,0.5,false,"%","",0},
     {"Extreme Under Pressure Percentage Threshold Setting",8,0.5,false,"%","",0},
     {"Over Pressure Percentage Threshold Setting",8,0.5,false,"%","",0},
-    {"Over Temperature Setting",8,1,false,"°C","",-40},
+    {"Over Temperature Setting",8,1,true,"°C","",-40},
     {"Tire Sensor Enable Setting",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -944,7 +944,7 @@
     {
     {"Payload Calibration Set Point Command",4,RES_BITFIELD,false,0,"",0},
     {"Payload Calibration Commanded Weight",16,2,false,"kg","",0},
-    {"Payload Correction Factor Command",8,1,false,"%","",-125},
+    {"Payload Correction Factor Command",8,1,true,"%","",-125},
     {0}}},
     
     {"Aftertreatment 1 Particulate Sensor Control",
@@ -956,7 +956,7 @@
     {"Aftertreatment 1 Particulate Sensor Shutdown Request",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 1 Particulate Sensor Regeneration Request",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 1 Particulate Sensor Dewpoint",2,RES_BITFIELD,false,0,"",0},
-    {"Aftertreatment 1 Particulate Sensor Exhaust Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 1 Particulate Sensor Exhaust Temperature",16,0.03125,true,"°C","",-8736},
     {"Aftertreatment 1 Particulate Sensor Exhaust Velocity",16,0.00390625,false,"km/h","",0},
     {0}}},
     
@@ -977,7 +977,7 @@
     {"Elevated Engine Speed Allowed Switch",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment Regeneration Engine Speed Allowed Switch",2,RES_BITFIELD,false,0,"",0},
     {"Predictive Cruise Control Maximum Positive Offset",8,0.125,false,"km/h","",0},
-    {"Predictive Cruise Control Maximum Negative Offset",8,0.125,false,"km/h","",-31.25},
+    {"Predictive Cruise Control Maximum Negative Offset",8,0.125,true,"km/h","",-250},
     {"Transmission Auto-Neutral (Manual Return) Enable Switch",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment System Enable Command",2,RES_BITFIELD,false,0,"",0},
     {"Active Shift Console Request",2,RES_BITFIELD,false,0,"",0},
@@ -1051,7 +1051,7 @@
     {"Unique Beacon Message Identifier Number",16,1,false,"count","",0},
     {"Radio Beacon Direction",2,RES_BITFIELD,false,0,"",0},
     {"Transmitter ID 2",24,1,false,"ID","",0},
-    {"Wireless Signal Strength 2",8,0.5,false,"dBm","",-125},
+    {"Wireless Signal Strength 2",8,0.5,true,"dBm","",-250},
     {0}}},
     
     {"Engine Configuration Commands",
@@ -1394,12 +1394,12 @@
     {
     {"Engine Speed Limit Request - Minimum Continuous",8,32,false,"rpm","",0},
     {"Engine Speed Limit Request - Maximum Continuous",8,32,false,"rpm","",0},
-    {"Engine Torque Limit Request - Minimum Continuous",8,1,false,"%","",-125},
-    {"Engine Torque Limit Request - Maximum Continuous",8,1,false,"%","",-125},
+    {"Engine Torque Limit Request - Minimum Continuous",8,1,true,"%","",-125},
+    {"Engine Torque Limit Request - Maximum Continuous",8,1,true,"%","",-125},
     {"Minimum Continuous Retarder Speed Limit Request",8,32,false,"rpm","",0},
     {"Maximum Continuous Retarder Speed Limit Request",8,32,false,"rpm","",0},
-    {"Minimum Continuous Retarder Torque Limit Request",8,1,false,"%","",-125},
-    {"Maximum Continuous Retarder Torque Limit Request",8,1,false,"%","",-125},
+    {"Minimum Continuous Retarder Torque Limit Request",8,1,true,"%","",-125},
+    {"Maximum Continuous Retarder Torque Limit Request",8,1,true,"%","",-125},
     {0}}},
     
     {"Cab Illumination Message",
@@ -1419,10 +1419,10 @@
     8,
     0,
     {
-    {"Level Preset Front Axle Left",16,0.1,false,"mm","",-3200},
-    {"Level Preset Front Axle Right",16,0.1,false,"mm","",-3200},
-    {"Level Preset Rear Axle Left",16,0.1,false,"mm","",-3200},
-    {"Level Preset Rear Axle Right",16,0.1,false,"mm","",-3200},
+    {"Level Preset Front Axle Left",16,0.1,true,"mm","",-32000},
+    {"Level Preset Front Axle Right",16,0.1,true,"mm","",-32000},
+    {"Level Preset Rear Axle Left",16,0.1,true,"mm","",-32000},
+    {"Level Preset Rear Axle Right",16,0.1,true,"mm","",-32000},
     {0}}},
     
     {"Air Suspension Control 2",
@@ -1463,9 +1463,9 @@
     {"Adjust hours",8,1,false,"h","",0},
     {"Adjust month",8,1,false,"months","",0},
     {"Adjust day",8,0.25,false,"days","",0},
-    {"Adjust year",8,1,false,"years","",1985},
-    {"Adjust local minute offset",8,1,false,"min","",-125},
-    {"Adjust local hour offset",8,1,false,"h","",-125},
+    {"Adjust year",8,1,true,"years","",1985},
+    {"Adjust local minute offset",8,1,true,"min","",-125},
+    {"Adjust local hour offset",8,1,true,"h","",-125},
     {0}}},
     
     {"Anti-theft Status",
@@ -1518,7 +1518,7 @@
     0,
     {
     {"Engine Fan 1 Requested Percent Speed",8,0.4,false,"%","",0},
-    {"Cab Interior Temperature Command",16,0.03125,false,"°C","",-273},
+    {"Cab Interior Temperature Command",16,0.03125,true,"°C","",-8736},
     {"Auxiliary Heater Coolant Pump Request",2,RES_BITFIELD,false,0,"",0},
     {"Battery Main Switch Hold Request",2,RES_BITFIELD,false,0,"",0},
     {"Operator Seat Direction Switch",2,RES_BITFIELD,false,0,"",0},
@@ -1546,16 +1546,16 @@
     {"Retarder Torque Mode",4,RES_BITFIELD,false,0,"",0},
     {"Retarder Enable - Brake Assist Switch",2,RES_BITFIELD,false,0,"",0},
     {"Retarder Enable - Shift Assist Switch",2,RES_BITFIELD,false,0,"",0},
-    {"Actual Retarder - Percent Torque",8,1,false,"%","",-125},
-    {"Intended Retarder Percent Torque",8,1,false,"%","",-125},
+    {"Actual Retarder - Percent Torque",8,1,true,"%","",-125},
+    {"Intended Retarder Percent Torque",8,1,true,"%","",-125},
     {"Engine Coolant Load Increase",2,RES_BITFIELD,false,0,"",0},
     {"Retarder Requesting Brake Light",2,RES_BITFIELD,false,0,"",0},
     {"Retarder Road Speed Limit Switch",2,RES_BITFIELD,false,0,"",0},
     {"Retarder Road Speed Exceeded Status",2,RES_BITFIELD,false,0,"",0},
     {"Source Address of Controlling Device for Retarder Control",8,1,false,"SA","",0},
-    {"Drivers Demand Retarder -  Percent Torque",8,1,false,"%","",-125},
+    {"Drivers Demand Retarder -  Percent Torque",8,1,true,"%","",-125},
     {"Retarder Selection, non-engine",8,0.4,false,"%","",0},
-    {"Actual Maximum Available Retarder - Percent Torque",8,1,false,"%","",-125},
+    {"Actual Maximum Available Retarder - Percent Torque",8,1,true,"%","",-125},
     {0}}},
     
     {"Electronic Brake Controller 1",
@@ -1627,7 +1627,7 @@
     {"DPF Thermal Management Active",2,RES_BITFIELD,false,0,"",0},
     {"SCR Thermal Management Active",2,RES_BITFIELD,false,0,"",0},
     {"Actual Maximum Available Engine - Percent Torque",8,0.4,false,"%","",0},
-    {"Estimated Pumping - Percent Torque",8,1,false,"%","",-125},
+    {"Estimated Pumping - Percent Torque",8,1,true,"%","",-125},
     {0}}},
     
     {"Electronic Engine Controller 1",
@@ -1638,12 +1638,12 @@
     {
     {"Engine Torque Mode",4,RES_BITFIELD,false,0,"",0},
     {"Actual Engine - Percent Torque (Fractional)",4,0.125,false,"%","",0},
-    {"Driver's Demand Engine - Percent Torque",8,1,false,"%","",-125},
-    {"Actual Engine - Percent Torque",8,1,false,"%","",-125},
+    {"Driver's Demand Engine - Percent Torque",8,1,true,"%","",-125},
+    {"Actual Engine - Percent Torque",8,1,true,"%","",-125},
     {"Engine Speed",16,0.125,false,"rpm","",0},
     {"Source Address of Controlling Device for Engine Control",8,1,false,"SA","",0},
     {"Engine Starter Mode",4,RES_BITFIELD,false,0,"",0},
-    {"Engine Demand – Percent Torque",8,1,false,"%","",-125},
+    {"Engine Demand – Percent Torque",8,1,true,"%","",-125},
     {0}}},
     
     {"Electronic Transmission Controller 2",
@@ -1652,9 +1652,9 @@
     8,
     0,
     {
-    {"Transmission Selected Gear",8,1,false,"gear value","",-125},
+    {"Transmission Selected Gear",8,1,true,"gear value","",-125},
     {"Transmission Actual Gear Ratio",16,0.001,false,"Ratio","",0},
-    {"Transmission Current Gear",8,1,false,"gear value","",-125},
+    {"Transmission Current Gear",8,1,true,"gear value","",-125},
     {"Transmission Requested Range",16,RES_ASCII,false,0,"",0},
     {"Transmission Current Range",16,RES_ASCII,false,0,"",0},
     {0}}},
@@ -1709,7 +1709,7 @@
     {"Engine Hydraulic Pressure Governor Switch",2,RES_BITFIELD,false,0,"",0},
     {"Fire Apparatus Pump Engagement",2,RES_BITFIELD,false,0,"",0},
     {"Fire Apparatus Okay To Pump Interlock",2,RES_BITFIELD,false,0,"",0},
-    {"Hydraulic Intake Pressure",16,0.0001220703125,false,"MPa","",-1},
+    {"Hydraulic Intake Pressure",16,0.0001220703125,true,"MPa","",-8192},
     {"Hydraulic Discharge Pressure Set Point",16,2,false,"kPa","",0},
     {"Hydraulic Pressure Governor Idle Switch",2,RES_BITFIELD,false,0,"",0},
     {"Hydraulic Pressure Governor Decrease Switch",2,RES_BITFIELD,false,0,"",0},
@@ -1723,12 +1723,12 @@
     8,
     0,
     {
-    {"Steering Wheel Angle",16,0.0009765625,false,"rad","",-31.374},
-    {"Steering Wheel Turn Counter",6,1,false,"turns","",-32},
+    {"Steering Wheel Angle",16,0.0009765625,true,"rad","",-32126.976},
+    {"Steering Wheel Turn Counter",6,1,true,"turns","",-32},
     {"Steering Wheel Angle Sensor Type",2,RES_BITFIELD,false,0,"",0},
-    {"Yaw Rate",16,0.0001220703125,false,"rad/s","",-3.92},
-    {"Lateral Acceleration",16,0.00048828125,false,"m/s²","",-15.687},
-    {"Longitudinal Acceleration",8,0.1,false,"m/s²","",-12.5},
+    {"Yaw Rate",16,0.0001220703125,true,"rad/s","",-32112.64},
+    {"Lateral Acceleration",16,0.00048828125,true,"m/s²","",-32126.976},
+    {"Longitudinal Acceleration",8,0.1,true,"m/s²","",-125},
     {0}}},
     
     {"Engine Gas Flow Rate",
@@ -1749,7 +1749,7 @@
     8,
     0,
     {
-    {"Actual Inner wheel steering angle",16,0.00390625,false,"deg","",-125},
+    {"Actual Inner wheel steering angle",16,0.00390625,true,"deg","",-32000},
     {"Axle Location",8,RES_BITFIELD,false,0,"",0},
     {"Status of Steering Axle",4,RES_BITFIELD,false,0,"",0},
     {"Steerable Lift Axle Lowering Inhibit",2,RES_BITFIELD,false,0,"",0},
@@ -1796,8 +1796,8 @@
     8,
     0,
     {
-    {"Engine Exhaust 1 NOx 1",16,0.05,false,"ppm","",-200},
-    {"Engine Exhaust 1 Percent Oxygen 1",16,0.000514,false,"%","",-12},
+    {"Engine Exhaust 1 NOx 1",16,0.05,true,"ppm","",-4000},
+    {"Engine Exhaust 1 Percent Oxygen 1",16,0.000514,true,"%","",-23346.303501945524},
     {"Engine Exhaust 1 Gas Sensor 1 Power In Range",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 1 Intake Gas Sensor 1 at Temperature",2,RES_BITFIELD,false,0,"",0},
     {"Engine Exhaust 1 NOx 1 Reading Stable",2,RES_BITFIELD,false,0,"",0},
@@ -1815,8 +1815,8 @@
     8,
     0,
     {
-    {"Aftertreatment 1 Outlet NOx 1",16,0.05,false,"ppm","",-200},
-    {"Aftertreatment 1 Outlet Percent Oxygen 1",16,0.000514,false,"%","",-12},
+    {"Aftertreatment 1 Outlet NOx 1",16,0.05,true,"ppm","",-4000},
+    {"Aftertreatment 1 Outlet Percent Oxygen 1",16,0.000514,true,"%","",-23346.303501945524},
     {"Aftertreatment 1 Outlet Gas Sensor 1 Power In Range",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 1 Outlet Gas Sensor 1 at Temperature",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 1 Outlet NOx 1 Reading Stable",2,RES_BITFIELD,false,0,"",0},
@@ -1834,8 +1834,8 @@
     8,
     0,
     {
-    {"Engine Exhaust 2 NOx 1",16,0.05,false,"ppm","",-200},
-    {"Engine Exhaust 2 Percent Oxygen 1",16,0.000514,false,"%","",-12},
+    {"Engine Exhaust 2 NOx 1",16,0.05,true,"ppm","",-4000},
+    {"Engine Exhaust 2 Percent Oxygen 1",16,0.000514,true,"%","",-23346.303501945524},
     {"Engine Exhaust 2 Gas Sensor 1 Power In Range",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 2 Intake Gas Sensor 1 at Temperature",2,RES_BITFIELD,false,0,"",0},
     {"Engine Exhaust 2 NOx 1 Reading Stable",2,RES_BITFIELD,false,0,"",0},
@@ -1854,8 +1854,8 @@
     8,
     0,
     {
-    {"Aftertreatment 2 Outlet NOx 1",16,0.05,false,"ppm","",-200},
-    {"Aftertreatment 2 Outlet Percent Oxygen 1",16,0.000514,false,"%","",-12},
+    {"Aftertreatment 2 Outlet NOx 1",16,0.05,true,"ppm","",-4000},
+    {"Aftertreatment 2 Outlet Percent Oxygen 1",16,0.000514,true,"%","",-23346.303501945524},
     {"Aftertreatment 2 Outlet Gas Sensor 1 Power In Range",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 2 Outlet Gas Sensor 1 at Temperature",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 2 Outlet NOx 1 Reading Stable",2,RES_BITFIELD,false,0,"",0},
@@ -1875,8 +1875,8 @@
     0,
     {
     {"Fifth Wheel Vertical Force",16,5,false,"N","",0},
-    {"Fifth Wheel Drawbar Force",16,10,false,"N","",-320000},
-    {"Fifth Wheel Roll Moment ",16,10,false,"N","",-320000},
+    {"Fifth Wheel Drawbar Force",16,10,true,"N","",-32000},
+    {"Fifth Wheel Roll Moment ",16,10,true,"N","",-32000},
     {"Fifth Wheel Roll Warning Indicator",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -1886,9 +1886,9 @@
     8,
     0,
     {
-    {"Pitch Angle",16,0.002,false,"deg","",-64},
-    {"Roll Angle",16,0.002,false,"deg","",-64},
-    {"Pitch Rate",16,0.002,false,"deg/s","",-64},
+    {"Pitch Angle",16,0.002,true,"deg","",-32000},
+    {"Roll Angle",16,0.002,true,"deg","",-32000},
+    {"Pitch Rate",16,0.002,true,"deg/s","",-32000},
     {"Pitch Angle Figure of Merit",2,RES_BITFIELD,false,0,"",0},
     {"Roll Angle Figure of Merit",2,RES_BITFIELD,false,0,"",0},
     {"Pitch Rate Figure of Merit",2,RES_BITFIELD,false,0,"",0},
@@ -1902,8 +1902,8 @@
     8,
     0,
     {
-    {"Relative Blade Height",16,0.1,false,"mm","",-3200},
-    {"Blade Rotation Angle",16,0.0078125,false,"deg","",-200},
+    {"Relative Blade Height",16,0.1,true,"mm","",-32000},
+    {"Blade Rotation Angle",16,0.0078125,true,"deg","",-25600},
     {"Relative Blade Height and Blade Rotation Angle Measurement Latency",8,0.5,false,"ms","",0},
     {"Relative Blade Height Figure of Merit",2,RES_BITFIELD,false,0,"",0},
     {"Blade Rotation Angle Figure of Merit",2,RES_BITFIELD,false,0,"",0},
@@ -1915,8 +1915,8 @@
     8,
     0,
     {
-    {"Requested Generator Total AC Reactive Power",32,1,false,"VA","",-2000000000},
-    {"Requested Generator Overall Power Factor",16,0.00006103515625,false,"","",-1},
+    {"Requested Generator Total AC Reactive Power",32,1,true,"VA","",-2000000000},
+    {"Requested Generator Overall Power Factor",16,0.00006103515625,true,"","",-16384},
     {"Requested Generator Overall Power Factor Lagging",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -2027,10 +2027,10 @@
     8,
     0,
     {
-    {"Steering Wheel Angle",16,0.0009765625,false,"rad","",-31.374},
-    {"Steering Wheel Angle Range Counter",6,1,false,"range","",-32},
+    {"Steering Wheel Angle",16,0.0009765625,true,"rad","",-32126.976},
+    {"Steering Wheel Angle Range Counter",6,1,true,"range","",-32},
     {"Steering Wheel Angle Range Counter Type",2,RES_BITFIELD,false,0,"",0},
-    {"Steering Wheel Angle Range",16,0.0009765625,false,"rad","",-31.374},
+    {"Steering Wheel Angle Range",16,0.0009765625,true,"rad","",-32126.976},
     {"Steering Angle Sensor Active Mode",2,RES_BITFIELD,false,0,"",0},
     {"Steering Angle Sensor Calibrated",2,RES_BITFIELD,false,0,"",0},
     {"Message Counter",4,1,false,"count","",0},
@@ -2043,7 +2043,7 @@
     8,
     0,
     {
-    {"Generator Governing Bias",16,0.004,false,"%","",-125},
+    {"Generator Governing Bias",16,0.004,true,"%","",-31250},
     {"Engine Self-Induced Derate Inhibit",2,RES_BITFIELD,false,0,"",0},
     {"Engine Load Setpoint Request",16,0.5,false,"kW","",0},
     {0}}},
@@ -2096,7 +2096,7 @@
     8,
     0,
     {
-    {"Aftertreatment 1 Outlet NH3",16,0.05,false,"ppm","",-200},
+    {"Aftertreatment 1 Outlet NH3",16,0.05,true,"ppm","",-4000},
     {"Aftertreatment 1 Outlet NH3 Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Aftertreatment 1 Outlet NH3 Reading Stable",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 1 Outlet NH3 Gas Sensor Power In Range",2,RES_BITFIELD,false,0,"",0},
@@ -2140,7 +2140,7 @@
     8,
     0,
     {
-    {"Aftertreatment 2 Outlet NH3",16,0.05,false,"ppm","",-200},
+    {"Aftertreatment 2 Outlet NH3",16,0.05,true,"ppm","",-4000},
     {"Aftertreatment 2 Outlet NH3 Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Aftertreatment 2 Outlet NH3 Reading Stable",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 2 Outlet NH3 Gas Sensor Power In Range",2,RES_BITFIELD,false,0,"",0},
@@ -2155,8 +2155,8 @@
     8,
     0,
     {
-    {"Pitch Angle (Extended Range)",24,0.000030517578125,false,"deg","",-250},
-    {"Roll Angle (Extended Range)",24,0.000030517578125,false,"deg","",-250},
+    {"Pitch Angle (Extended Range)",24,0.000030517578125,true,"deg","",-8192000},
+    {"Roll Angle (Extended Range)",24,0.000030517578125,true,"deg","",-8192000},
     {"Pitch Angle Compensation (Extended Range)",2,RES_BITFIELD,false,0,"",0},
     {"Pitch Angle Figure of Merit (Extended Range)",2,RES_BITFIELD,false,0,"",0},
     {"Roll Angle Compensation (Extended Range)",2,RES_BITFIELD,false,0,"",0},
@@ -2170,9 +2170,9 @@
     8,
     0,
     {
-    {"Pitch Rate (Extended Range)",16,0.0078125,false,"deg/s","",-250},
-    {"Roll Rate (Extended Range)",16,0.0078125,false,"deg/s","",-250},
-    {"Yaw Rate (Extended Range)",16,0.0078125,false,"deg/s","",-250},
+    {"Pitch Rate (Extended Range)",16,0.0078125,true,"deg/s","",-32000},
+    {"Roll Rate (Extended Range)",16,0.0078125,true,"deg/s","",-32000},
+    {"Yaw Rate (Extended Range)",16,0.0078125,true,"deg/s","",-32000},
     {"Pitch Rate Figure of Merit (Extended Range)",2,RES_BITFIELD,false,0,"",0},
     {"Roll Rate Figure of Merit (Extended Range)",2,RES_BITFIELD,false,0,"",0},
     {"Yaw Rate Figure of Merit (Extended Range)",2,RES_BITFIELD,false,0,"",0},
@@ -2214,9 +2214,9 @@
     8,
     0,
     {
-    {"Lateral Acceleration (Extended Range)",16,0.01,false,"m/s²","",-320},
-    {"Longitudinal Acceleration (Extended Range)",16,0.01,false,"m/s²","",-320},
-    {"Vertical Acceleration (Extended Range)",16,0.01,false,"m/s²","",-320},
+    {"Lateral Acceleration (Extended Range)",16,0.01,true,"m/s²","",-32000},
+    {"Longitudinal Acceleration (Extended Range)",16,0.01,true,"m/s²","",-32000},
+    {"Vertical Acceleration (Extended Range)",16,0.01,true,"m/s²","",-32000},
     {"Lateral Acceleration Figure of Merit (Extended Range)",2,RES_BITFIELD,false,0,"",0},
     {"Longitudinal Acceleration Figure of Merit (Extended Range)",2,RES_BITFIELD,false,0,"",0},
     {"Vertical Acceleration Figure of Merit (Extended Range)",2,RES_BITFIELD,false,0,"",0},
@@ -2258,7 +2258,7 @@
     {"Wireless Rolling Message Counter",16,1,false,"count","",0},
     {"Transmitter Command State",4,RES_BITFIELD,false,0,"",0},
     {"Transmitter ID 1",24,1,false,"ID","",0},
-    {"Wireless Signal Strength 1",8,0.5,false,"dBm","",-125},
+    {"Wireless Signal Strength 1",8,0.5,true,"dBm","",-250},
     {0}}},
     
     {"Wand Sensor",
@@ -2267,7 +2267,7 @@
     8,
     0,
     {
-    {"Wand Angle",16,0.002,false,"deg","",-64},
+    {"Wand Angle",16,0.002,true,"deg","",-32000},
     {"Wand Sensor Figure of Merit",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -2287,7 +2287,7 @@
     8,
     0,
     {
-    {"Aftertreatment 1 SCR Intermediate NH3",16,0.1,false,"ppm","",-200},
+    {"Aftertreatment 1 SCR Intermediate NH3",16,0.1,true,"ppm","",-2000},
     {"Aftertreatment 1 SCR Intermediate NH3 Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Aftertreatment 1 SCR Intermediate NH3 Reading Stable",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 1 SCR Intermediate NH3 Sensor Power In Range",2,RES_BITFIELD,false,0,"",0},
@@ -2302,7 +2302,7 @@
     8,
     0,
     {
-    {"Aftertreatment 2 SCR Intermediate NH3",16,0.1,false,"ppm","",-200},
+    {"Aftertreatment 2 SCR Intermediate NH3",16,0.1,true,"ppm","",-2000},
     {"Aftertreatment 2 SCR Intermediate NH3 Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Aftertreatment 2 SCR Intermediate NH3 Reading Stable",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 2 SCR Intermediate NH3 Sensor Power In Range",2,RES_BITFIELD,false,0,"",0},
@@ -2339,7 +2339,7 @@
     {
     {"Engine Turbocharger Compressor Blowoff Actuator 1 Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Engine Turbocharger Compressor Blowoff Actuator 1 Temperature Status",3,RES_BITFIELD,false,0,"",0},
-    {"Engine Turbocharger Compressor Blowoff Actuator 1 Temperature",8,1,false,"°C","",-40},
+    {"Engine Turbocharger Compressor Blowoff Actuator 1 Temperature",8,1,true,"°C","",-40},
     {"Engine Turbocharger Compressor Blowoff Actuator 1 Desired Position",8,0.4,false,"%","",0},
     {"Engine Turbocharger Compressor Blowoff Actuator 1 Position",8,0.4,false,"%","",0},
     {"Engine Turbocharger Compressor Blowoff Actuator 1 Operation Status",4,RES_BITFIELD,false,0,"",0},
@@ -2375,7 +2375,7 @@
     8,
     0,
     {
-    {"Engine Cylinder 1 Heat Release",16,0.0001220703125,false,"kJ/l","",-1},
+    {"Engine Cylinder 1 Heat Release",16,0.0001220703125,true,"kJ/l","",-8192},
     {"Engine Cylinder 1 Peak Pressure",16,0.0009765625,false,"MPa","",0},
     {"Engine Cylinder 1 Synchronous Knock Level",8,1,false,"%","",0},
     {"Engine Cylinder 1 Pressure Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -2389,7 +2389,7 @@
     8,
     0,
     {
-    {"Engine Cylinder 2 Heat Release",16,0.0001220703125,false,"kJ/l","",-1},
+    {"Engine Cylinder 2 Heat Release",16,0.0001220703125,true,"kJ/l","",-8192},
     {"Engine Cylinder 2 Peak Pressure",16,0.0009765625,false,"MPa","",0},
     {"Engine Cylinder 2 Synchronous Knock Level",8,1,false,"%","",0},
     {"Engine Cylinder 2 Pressure Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -2403,7 +2403,7 @@
     8,
     0,
     {
-    {"Engine Cylinder 3 Heat Release",16,0.0001220703125,false,"kJ/l","",-1},
+    {"Engine Cylinder 3 Heat Release",16,0.0001220703125,true,"kJ/l","",-8192},
     {"Engine Cylinder 3 Peak Pressure",16,0.0009765625,false,"MPa","",0},
     {"Engine Cylinder 3 Synchronous Knock Level",8,1,false,"%","",0},
     {"Engine Cylinder 3 Pressure Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -2417,7 +2417,7 @@
     8,
     0,
     {
-    {"Engine Cylinder 4 Heat Release",16,0.0001220703125,false,"kJ/l","",-1},
+    {"Engine Cylinder 4 Heat Release",16,0.0001220703125,true,"kJ/l","",-8192},
     {"Engine Cylinder 4 Peak Pressure",16,0.0009765625,false,"MPa","",0},
     {"Engine Cylinder 4 Synchronous Knock Level",8,1,false,"%","",0},
     {"Engine Cylinder 4 Pressure Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -2431,7 +2431,7 @@
     8,
     0,
     {
-    {"Engine Cylinder 5 Heat Release",16,0.0001220703125,false,"kJ/l","",-1},
+    {"Engine Cylinder 5 Heat Release",16,0.0001220703125,true,"kJ/l","",-8192},
     {"Engine Cylinder 5 Peak Pressure",16,0.0009765625,false,"MPa","",0},
     {"Engine Cylinder 5 Synchronous Knock Level",8,1,false,"%","",0},
     {"Engine Cylinder 5 Pressure Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -2445,7 +2445,7 @@
     8,
     0,
     {
-    {"Engine Cylinder 6 Heat Release",16,0.0001220703125,false,"kJ/l","",-1},
+    {"Engine Cylinder 6 Heat Release",16,0.0001220703125,true,"kJ/l","",-8192},
     {"Engine Cylinder 6 Peak Pressure",16,0.0009765625,false,"MPa","",0},
     {"Engine Cylinder 6 Synchronous Knock Level",8,1,false,"%","",0},
     {"Engine Cylinder 6 Pressure Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -2459,7 +2459,7 @@
     8,
     0,
     {
-    {"Engine Cylinder 7 Heat Release",16,0.0001220703125,false,"kJ/l","",-1},
+    {"Engine Cylinder 7 Heat Release",16,0.0001220703125,true,"kJ/l","",-8192},
     {"Engine Cylinder 7 Peak Pressure",16,0.0009765625,false,"MPa","",0},
     {"Engine Cylinder 7 Synchronous Knock Level",8,1,false,"%","",0},
     {"Engine Cylinder 7 Pressure Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -2473,7 +2473,7 @@
     8,
     0,
     {
-    {"Engine Cylinder 8 Heat Release",16,0.0001220703125,false,"kJ/l","",-1},
+    {"Engine Cylinder 8 Heat Release",16,0.0001220703125,true,"kJ/l","",-8192},
     {"Engine Cylinder 8 Peak Pressure",16,0.0009765625,false,"MPa","",0},
     {"Engine Cylinder 8 Synchronous Knock Level",8,1,false,"%","",0},
     {"Engine Cylinder 8 Pressure Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -2487,7 +2487,7 @@
     8,
     0,
     {
-    {"Engine Cylinder 9 Heat Release",16,0.0001220703125,false,"kJ/l","",-1},
+    {"Engine Cylinder 9 Heat Release",16,0.0001220703125,true,"kJ/l","",-8192},
     {"Engine Cylinder 9 Peak Pressure",16,0.0009765625,false,"MPa","",0},
     {"Engine Cylinder 9 Synchronous Knock Level",8,1,false,"%","",0},
     {"Engine Cylinder 9 Pressure Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -2501,7 +2501,7 @@
     8,
     0,
     {
-    {"Engine Cylinder 10 Heat Release",16,0.0001220703125,false,"kJ/l","",-1},
+    {"Engine Cylinder 10 Heat Release",16,0.0001220703125,true,"kJ/l","",-8192},
     {"Engine Cylinder 10 Peak Pressure",16,0.0009765625,false,"MPa","",0},
     {"Engine Cylinder 10 Synchronous Knock Level",8,1,false,"%","",0},
     {"Engine Cylinder 10 Pressure Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -2515,7 +2515,7 @@
     8,
     0,
     {
-    {"Engine Cylinder 11 Heat Release",16,0.0001220703125,false,"kJ/l","",-1},
+    {"Engine Cylinder 11 Heat Release",16,0.0001220703125,true,"kJ/l","",-8192},
     {"Engine Cylinder 11 Peak Pressure",16,0.0009765625,false,"MPa","",0},
     {"Engine Cylinder 11 Synchronous Knock Level",8,1,false,"%","",0},
     {"Engine Cylinder 11 Pressure Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -2529,7 +2529,7 @@
     8,
     0,
     {
-    {"Engine Cylinder 12 Heat Release",16,0.0001220703125,false,"kJ/l","",-1},
+    {"Engine Cylinder 12 Heat Release",16,0.0001220703125,true,"kJ/l","",-8192},
     {"Engine Cylinder 12 Peak Pressure",16,0.0009765625,false,"MPa","",0},
     {"Engine Cylinder 12 Synchronous Knock Level",8,1,false,"%","",0},
     {"Engine Cylinder 12 Pressure Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -2543,7 +2543,7 @@
     8,
     0,
     {
-    {"Engine Cylinder 13 Heat Release",16,0.0001220703125,false,"kJ/l","",-1},
+    {"Engine Cylinder 13 Heat Release",16,0.0001220703125,true,"kJ/l","",-8192},
     {"Engine Cylinder 13 Peak Pressure",16,0.0009765625,false,"MPa","",0},
     {"Engine Cylinder 13 Synchronous Knock Level",8,1,false,"%","",0},
     {"Engine Cylinder 13 Pressure Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -2557,7 +2557,7 @@
     8,
     0,
     {
-    {"Engine Cylinder 14 Heat Release",16,0.0001220703125,false,"kJ/l","",-1},
+    {"Engine Cylinder 14 Heat Release",16,0.0001220703125,true,"kJ/l","",-8192},
     {"Engine Cylinder 14 Peak Pressure",16,0.0009765625,false,"MPa","",0},
     {"Engine Cylinder 14 Synchronous Knock Level",8,1,false,"%","",0},
     {"Engine Cylinder 14 Pressure Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -2571,7 +2571,7 @@
     8,
     0,
     {
-    {"Engine Cylinder 15 Heat Release",16,0.0001220703125,false,"kJ/l","",-1},
+    {"Engine Cylinder 15 Heat Release",16,0.0001220703125,true,"kJ/l","",-8192},
     {"Engine Cylinder 15 Peak Pressure",16,0.0009765625,false,"MPa","",0},
     {"Engine Cylinder 15 Synchronous Knock Level",8,1,false,"%","",0},
     {"Engine Cylinder 15 Pressure Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -2585,7 +2585,7 @@
     8,
     0,
     {
-    {"Engine Cylinder 16 Heat Release",16,0.0001220703125,false,"kJ/l","",-1},
+    {"Engine Cylinder 16 Heat Release",16,0.0001220703125,true,"kJ/l","",-8192},
     {"Engine Cylinder 16 Peak Pressure",16,0.0009765625,false,"MPa","",0},
     {"Engine Cylinder 16 Synchronous Knock Level",8,1,false,"%","",0},
     {"Engine Cylinder 16 Pressure Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -2599,7 +2599,7 @@
     8,
     0,
     {
-    {"Engine Cylinder 17 Heat Release",16,0.0001220703125,false,"kJ/l","",-1},
+    {"Engine Cylinder 17 Heat Release",16,0.0001220703125,true,"kJ/l","",-8192},
     {"Engine Cylinder 17 Peak Pressure",16,0.0009765625,false,"MPa","",0},
     {"Engine Cylinder 17 Synchronous Knock Level",8,1,false,"%","",0},
     {"Engine Cylinder 17 Pressure Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -2613,7 +2613,7 @@
     8,
     0,
     {
-    {"Engine Cylinder 18 Heat Release",16,0.0001220703125,false,"kJ/l","",-1},
+    {"Engine Cylinder 18 Heat Release",16,0.0001220703125,true,"kJ/l","",-8192},
     {"Engine Cylinder 18 Peak Pressure",16,0.0009765625,false,"MPa","",0},
     {"Engine Cylinder 18 Synchronous Knock Level",8,1,false,"%","",0},
     {"Engine Cylinder 18 Pressure Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -2627,7 +2627,7 @@
     8,
     0,
     {
-    {"Engine Cylinder 19 Heat Release",16,0.0001220703125,false,"kJ/l","",-1},
+    {"Engine Cylinder 19 Heat Release",16,0.0001220703125,true,"kJ/l","",-8192},
     {"Engine Cylinder 19 Peak Pressure",16,0.0009765625,false,"MPa","",0},
     {"Engine Cylinder 19 Synchronous Knock Level",8,1,false,"%","",0},
     {"Engine Cylinder 19 Pressure Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -2641,7 +2641,7 @@
     8,
     0,
     {
-    {"Engine Cylinder 20 Heat Release",16,0.0001220703125,false,"kJ/l","",-1},
+    {"Engine Cylinder 20 Heat Release",16,0.0001220703125,true,"kJ/l","",-8192},
     {"Engine Cylinder 20 Peak Pressure",16,0.0009765625,false,"MPa","",0},
     {"Engine Cylinder 20 Synchronous Knock Level",8,1,false,"%","",0},
     {"Engine Cylinder 20 Pressure Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -2655,9 +2655,9 @@
     8,
     0,
     {
-    {"Engine Cylinder 1 Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
-    {"Engine Cylinder 1 Average Start of Combustion Timing",16,0.0078125,false,"deg","",-250},
-    {"Engine Cylinder 1 Average Center of Combustion Timing",16,0.0078125,false,"deg","",-250},
+    {"Engine Cylinder 1 Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
+    {"Engine Cylinder 1 Average Start of Combustion Timing",16,0.0078125,true,"deg","",-32000},
+    {"Engine Cylinder 1 Average Center of Combustion Timing",16,0.0078125,true,"deg","",-32000},
     {"Engine Cylinder 1 Average Combustion Duration",16,0.0078125,false,"deg","",0},
     {0}}},
     
@@ -2667,9 +2667,9 @@
     8,
     0,
     {
-    {"Engine Cylinder 2 Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
-    {"Engine Cylinder 2 Average Start of Combustion Timing",16,0.0078125,false,"deg","",-250},
-    {"Engine Cylinder 2 Average Center of Combustion Timing",16,0.0078125,false,"deg","",-250},
+    {"Engine Cylinder 2 Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
+    {"Engine Cylinder 2 Average Start of Combustion Timing",16,0.0078125,true,"deg","",-32000},
+    {"Engine Cylinder 2 Average Center of Combustion Timing",16,0.0078125,true,"deg","",-32000},
     {"Engine Cylinder 2 Average Combustion Duration",16,0.0078125,false,"deg","",0},
     {0}}},
     
@@ -2679,9 +2679,9 @@
     8,
     0,
     {
-    {"Engine Cylinder 3 Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
-    {"Engine Cylinder 3 Average Start of Combustion Timing",16,0.0078125,false,"deg","",-250},
-    {"Engine Cylinder 3 Average Center of Combustion Timing",16,0.0078125,false,"deg","",-250},
+    {"Engine Cylinder 3 Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
+    {"Engine Cylinder 3 Average Start of Combustion Timing",16,0.0078125,true,"deg","",-32000},
+    {"Engine Cylinder 3 Average Center of Combustion Timing",16,0.0078125,true,"deg","",-32000},
     {"Engine Cylinder 3 Average Combustion Duration",16,0.0078125,false,"deg","",0},
     {0}}},
     
@@ -2691,9 +2691,9 @@
     8,
     0,
     {
-    {"Engine Cylinder 4 Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
-    {"Engine Cylinder 4 Average Start of Combustion Timing",16,0.0078125,false,"deg","",-250},
-    {"Engine Cylinder 4 Average Center of Combustion Timing",16,0.0078125,false,"deg","",-250},
+    {"Engine Cylinder 4 Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
+    {"Engine Cylinder 4 Average Start of Combustion Timing",16,0.0078125,true,"deg","",-32000},
+    {"Engine Cylinder 4 Average Center of Combustion Timing",16,0.0078125,true,"deg","",-32000},
     {"Engine Cylinder 4 Average Combustion Duration",16,0.0078125,false,"deg","",0},
     {0}}},
     
@@ -2703,9 +2703,9 @@
     8,
     0,
     {
-    {"Engine Cylinder 5 Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
-    {"Engine Cylinder 5 Average Start of Combustion Timing",16,0.0078125,false,"deg","",-250},
-    {"Engine Cylinder 5 Average Center of Combustion Timing",16,0.0078125,false,"deg","",-250},
+    {"Engine Cylinder 5 Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
+    {"Engine Cylinder 5 Average Start of Combustion Timing",16,0.0078125,true,"deg","",-32000},
+    {"Engine Cylinder 5 Average Center of Combustion Timing",16,0.0078125,true,"deg","",-32000},
     {"Engine Cylinder 5 Average Combustion Duration",16,0.0078125,false,"deg","",0},
     {0}}},
     
@@ -2715,9 +2715,9 @@
     8,
     0,
     {
-    {"Engine Cylinder 6 Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
-    {"Engine Cylinder 6 Average Start of Combustion Timing",16,0.0078125,false,"deg","",-250},
-    {"Engine Cylinder 6 Average Center of Combustion Timing",16,0.0078125,false,"deg","",-250},
+    {"Engine Cylinder 6 Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
+    {"Engine Cylinder 6 Average Start of Combustion Timing",16,0.0078125,true,"deg","",-32000},
+    {"Engine Cylinder 6 Average Center of Combustion Timing",16,0.0078125,true,"deg","",-32000},
     {"Engine Cylinder 6 Average Combustion Duration",16,0.0078125,false,"deg","",0},
     {0}}},
     
@@ -2727,9 +2727,9 @@
     8,
     0,
     {
-    {"Engine Cylinder 7 Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
-    {"Engine Cylinder 7 Average Start of Combustion Timing",16,0.0078125,false,"deg","",-250},
-    {"Engine Cylinder 7 Average Center of Combustion Timing",16,0.0078125,false,"deg","",-250},
+    {"Engine Cylinder 7 Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
+    {"Engine Cylinder 7 Average Start of Combustion Timing",16,0.0078125,true,"deg","",-32000},
+    {"Engine Cylinder 7 Average Center of Combustion Timing",16,0.0078125,true,"deg","",-32000},
     {"Engine Cylinder 7 Average Combustion Duration",16,0.0078125,false,"deg","",0},
     {0}}},
     
@@ -2739,9 +2739,9 @@
     8,
     0,
     {
-    {"Engine Cylinder 8 Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
-    {"Engine Cylinder 8 Average Start of Combustion Timing",16,0.0078125,false,"deg","",-250},
-    {"Engine Cylinder 8 Average Center of Combustion Timing",16,0.0078125,false,"deg","",-250},
+    {"Engine Cylinder 8 Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
+    {"Engine Cylinder 8 Average Start of Combustion Timing",16,0.0078125,true,"deg","",-32000},
+    {"Engine Cylinder 8 Average Center of Combustion Timing",16,0.0078125,true,"deg","",-32000},
     {"Engine Cylinder 8 Average Combustion Duration",16,0.0078125,false,"deg","",0},
     {0}}},
     
@@ -2751,9 +2751,9 @@
     8,
     0,
     {
-    {"Engine Cylinder 9 Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
-    {"Engine Cylinder 9 Average Start of Combustion Timing",16,0.0078125,false,"deg","",-250},
-    {"Engine Cylinder 9 Average Center of Combustion Timing",16,0.0078125,false,"deg","",-250},
+    {"Engine Cylinder 9 Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
+    {"Engine Cylinder 9 Average Start of Combustion Timing",16,0.0078125,true,"deg","",-32000},
+    {"Engine Cylinder 9 Average Center of Combustion Timing",16,0.0078125,true,"deg","",-32000},
     {"Engine Cylinder 9 Average Combustion Duration",16,0.0078125,false,"deg","",0},
     {0}}},
     
@@ -2763,9 +2763,9 @@
     8,
     0,
     {
-    {"Engine Cylinder 10 Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
-    {"Engine Cylinder 10 Average Start of Combustion Timing",16,0.0078125,false,"deg","",-250},
-    {"Engine Cylinder 10 Average Center of Combustion Timing",16,0.0078125,false,"deg","",-250},
+    {"Engine Cylinder 10 Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
+    {"Engine Cylinder 10 Average Start of Combustion Timing",16,0.0078125,true,"deg","",-32000},
+    {"Engine Cylinder 10 Average Center of Combustion Timing",16,0.0078125,true,"deg","",-32000},
     {"Engine Cylinder 10 Average Combustion Duration",16,0.0078125,false,"deg","",0},
     {0}}},
     
@@ -2775,9 +2775,9 @@
     8,
     0,
     {
-    {"Engine Cylinder 11 Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
-    {"Engine Cylinder 11 Average Start of Combustion Timing",16,0.0078125,false,"deg","",-250},
-    {"Engine Cylinder 11 Average Center of Combustion Timing",16,0.0078125,false,"deg","",-250},
+    {"Engine Cylinder 11 Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
+    {"Engine Cylinder 11 Average Start of Combustion Timing",16,0.0078125,true,"deg","",-32000},
+    {"Engine Cylinder 11 Average Center of Combustion Timing",16,0.0078125,true,"deg","",-32000},
     {"Engine Cylinder 11 Average Combustion Duration",16,0.0078125,false,"deg","",0},
     {0}}},
     
@@ -2787,9 +2787,9 @@
     8,
     0,
     {
-    {"Engine Cylinder 12 Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
-    {"Engine Cylinder 12 Average Start of Combustion Timing",16,0.0078125,false,"deg","",-250},
-    {"Engine Cylinder 12 Average Center of Combustion Timing",16,0.0078125,false,"deg","",-250},
+    {"Engine Cylinder 12 Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
+    {"Engine Cylinder 12 Average Start of Combustion Timing",16,0.0078125,true,"deg","",-32000},
+    {"Engine Cylinder 12 Average Center of Combustion Timing",16,0.0078125,true,"deg","",-32000},
     {"Engine Cylinder 12 Average Combustion Duration",16,0.0078125,false,"deg","",0},
     {0}}},
     
@@ -2799,9 +2799,9 @@
     8,
     0,
     {
-    {"Engine Cylinder 13 Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
-    {"Engine Cylinder 13 Average Start of Combustion Timing",16,0.0078125,false,"deg","",-250},
-    {"Engine Cylinder 13 Average Center of Combustion Timing",16,0.0078125,false,"deg","",-250},
+    {"Engine Cylinder 13 Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
+    {"Engine Cylinder 13 Average Start of Combustion Timing",16,0.0078125,true,"deg","",-32000},
+    {"Engine Cylinder 13 Average Center of Combustion Timing",16,0.0078125,true,"deg","",-32000},
     {"Engine Cylinder 13 Average Combustion Duration",16,0.0078125,false,"deg","",0},
     {0}}},
     
@@ -2811,9 +2811,9 @@
     8,
     0,
     {
-    {"Engine Cylinder 14 Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
-    {"Engine Cylinder 14 Average Start of Combustion Timing",16,0.0078125,false,"deg","",-250},
-    {"Engine Cylinder 14 Average Center of Combustion Timing",16,0.0078125,false,"deg","",-250},
+    {"Engine Cylinder 14 Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
+    {"Engine Cylinder 14 Average Start of Combustion Timing",16,0.0078125,true,"deg","",-32000},
+    {"Engine Cylinder 14 Average Center of Combustion Timing",16,0.0078125,true,"deg","",-32000},
     {"Engine Cylinder 14 Average Combustion Duration",16,0.0078125,false,"deg","",0},
     {0}}},
     
@@ -2823,9 +2823,9 @@
     8,
     0,
     {
-    {"Engine Cylinder 15 Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
-    {"Engine Cylinder 15 Average Start of Combustion Timing",16,0.0078125,false,"deg","",-250},
-    {"Engine Cylinder 15 Average Center of Combustion Timing",16,0.0078125,false,"deg","",-250},
+    {"Engine Cylinder 15 Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
+    {"Engine Cylinder 15 Average Start of Combustion Timing",16,0.0078125,true,"deg","",-32000},
+    {"Engine Cylinder 15 Average Center of Combustion Timing",16,0.0078125,true,"deg","",-32000},
     {"Engine Cylinder 15 Average Combustion Duration",16,0.0078125,false,"deg","",0},
     {0}}},
     
@@ -2835,9 +2835,9 @@
     8,
     0,
     {
-    {"Engine Cylinder 16 Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
-    {"Engine Cylinder 16 Average Start of Combustion Timing",16,0.0078125,false,"deg","",-250},
-    {"Engine Cylinder 16 Average Center of Combustion Timing",16,0.0078125,false,"deg","",-250},
+    {"Engine Cylinder 16 Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
+    {"Engine Cylinder 16 Average Start of Combustion Timing",16,0.0078125,true,"deg","",-32000},
+    {"Engine Cylinder 16 Average Center of Combustion Timing",16,0.0078125,true,"deg","",-32000},
     {"Engine Cylinder 16 Average Combustion Duration",16,0.0078125,false,"deg","",0},
     {0}}},
     
@@ -2847,9 +2847,9 @@
     8,
     0,
     {
-    {"Engine Cylinder 17 Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
-    {"Engine Cylinder 17 Average Start of Combustion Timing",16,0.0078125,false,"deg","",-250},
-    {"Engine Cylinder 17 Average Center of Combustion Timing",16,0.0078125,false,"deg","",-250},
+    {"Engine Cylinder 17 Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
+    {"Engine Cylinder 17 Average Start of Combustion Timing",16,0.0078125,true,"deg","",-32000},
+    {"Engine Cylinder 17 Average Center of Combustion Timing",16,0.0078125,true,"deg","",-32000},
     {"Engine Cylinder 17 Average Combustion Duration",16,0.0078125,false,"deg","",0},
     {0}}},
     
@@ -2859,9 +2859,9 @@
     8,
     0,
     {
-    {"Engine Cylinder 18 Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
-    {"Engine Cylinder 18 Average Start of Combustion Timing",16,0.0078125,false,"deg","",-250},
-    {"Engine Cylinder 18 Average Center of Combustion Timing",16,0.0078125,false,"deg","",-250},
+    {"Engine Cylinder 18 Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
+    {"Engine Cylinder 18 Average Start of Combustion Timing",16,0.0078125,true,"deg","",-32000},
+    {"Engine Cylinder 18 Average Center of Combustion Timing",16,0.0078125,true,"deg","",-32000},
     {"Engine Cylinder 18 Average Combustion Duration",16,0.0078125,false,"deg","",0},
     {0}}},
     
@@ -2871,9 +2871,9 @@
     8,
     0,
     {
-    {"Engine Cylinder 19 Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
-    {"Engine Cylinder 19 Average Start of Combustion Timing",16,0.0078125,false,"deg","",-250},
-    {"Engine Cylinder 19 Average Center of Combustion Timing",16,0.0078125,false,"deg","",-250},
+    {"Engine Cylinder 19 Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
+    {"Engine Cylinder 19 Average Start of Combustion Timing",16,0.0078125,true,"deg","",-32000},
+    {"Engine Cylinder 19 Average Center of Combustion Timing",16,0.0078125,true,"deg","",-32000},
     {"Engine Cylinder 19 Average Combustion Duration",16,0.0078125,false,"deg","",0},
     {0}}},
     
@@ -2883,9 +2883,9 @@
     8,
     0,
     {
-    {"Engine Cylinder 20 Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
-    {"Engine Cylinder 20 Average Start of Combustion Timing",16,0.0078125,false,"deg","",-250},
-    {"Engine Cylinder 20 Average Center of Combustion Timing",16,0.0078125,false,"deg","",-250},
+    {"Engine Cylinder 20 Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
+    {"Engine Cylinder 20 Average Start of Combustion Timing",16,0.0078125,true,"deg","",-32000},
+    {"Engine Cylinder 20 Average Center of Combustion Timing",16,0.0078125,true,"deg","",-32000},
     {"Engine Cylinder 20 Average Combustion Duration",16,0.0078125,false,"deg","",0},
     {0}}},
     
@@ -2897,7 +2897,7 @@
     {
     {"Transmission Hydrostatic Loop 1 Pressure",16,1,false,"kPa","",0},
     {"Transmission Hydrostatic Loop 2 Pressure",16,1,false,"kPa","",0},
-    {"Transmission Directional Output Shaft Speed",16,1,false,"rpm","",-32127},
+    {"Transmission Directional Output Shaft Speed",16,1,true,"rpm","",-32127},
     {"Transmission Intermediate Shaft Speed",16,0.125,false,"rpm","",0},
     {0}}},
     
@@ -2908,9 +2908,9 @@
     0,
     {
     {"Engine Gaseous Fuel Valve Nominal Duration Command",16,2,false,"µs","",0},
-    {"Engine Gaseous Fuel Valve Nominal Start of Actuation Command",16,0.0078125,false,"deg","",-400},
+    {"Engine Gaseous Fuel Valve Nominal Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
     {"Engine Pre-Chamber Fuel Valve Nominal Duration Command",16,2,false,"µs","",0},
-    {"Engine Pre-Chamber Fuel Valve Nominal Start of Actuation Command",16,0.0078125,false,"deg","",-400},
+    {"Engine Pre-Chamber Fuel Valve Nominal Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
     {0}}},
     
     {"Engine Gaseous Fuel Valve Duration Command 1",
@@ -2979,10 +2979,10 @@
     8,
     0,
     {
-    {"Engine Gaseous Fuel Valve 1 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Gaseous Fuel Valve 2 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Gaseous Fuel Valve 3 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Gaseous Fuel Valve 4 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
+    {"Engine Gaseous Fuel Valve 1 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Gaseous Fuel Valve 2 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Gaseous Fuel Valve 3 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Gaseous Fuel Valve 4 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
     {0}}},
     
     {"Engine Gaseous Fuel Valve Start of Actuation Command 2",
@@ -2991,10 +2991,10 @@
     8,
     0,
     {
-    {"Engine Gaseous Fuel Valve 5 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Gaseous Fuel Valve 6 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Gaseous Fuel Valve 7 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Gaseous Fuel Valve 8 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
+    {"Engine Gaseous Fuel Valve 5 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Gaseous Fuel Valve 6 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Gaseous Fuel Valve 7 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Gaseous Fuel Valve 8 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
     {0}}},
     
     {"Engine Gaseous Fuel Valve Start of Actuation Command 3",
@@ -3003,10 +3003,10 @@
     8,
     0,
     {
-    {"Engine Gaseous Fuel Valve 9 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Gaseous Fuel Valve 10 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Gaseous Fuel Valve 11 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Gaseous Fuel Valve 12 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
+    {"Engine Gaseous Fuel Valve 9 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Gaseous Fuel Valve 10 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Gaseous Fuel Valve 11 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Gaseous Fuel Valve 12 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
     {0}}},
     
     {"Engine Gaseous Fuel Valve Start of Actuation Command 4",
@@ -3015,10 +3015,10 @@
     8,
     0,
     {
-    {"Engine Gaseous Fuel Valve 13 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Gaseous Fuel Valve 14 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Gaseous Fuel Valve 15 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Gaseous Fuel Valve 16 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
+    {"Engine Gaseous Fuel Valve 13 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Gaseous Fuel Valve 14 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Gaseous Fuel Valve 15 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Gaseous Fuel Valve 16 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
     {0}}},
     
     {"Engine Gaseous Fuel Valve Start of Actuation Command 5",
@@ -3027,10 +3027,10 @@
     8,
     0,
     {
-    {"Engine Gaseous Fuel Valve 17 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Gaseous Fuel Valve 18 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Gaseous Fuel Valve 19 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Gaseous Fuel Valve 20 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
+    {"Engine Gaseous Fuel Valve 17 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Gaseous Fuel Valve 18 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Gaseous Fuel Valve 19 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Gaseous Fuel Valve 20 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
     {0}}},
     
     {"Fuel Pump Actuator Control Command",
@@ -3052,7 +3052,7 @@
     {"HVESS Available Discharge Power",16,0.05,false,"kW","",0},
     {"HVESS Available Charge Power",16,0.05,false,"kW","",0},
     {"HVESS Voltage Level",16,0.05,false,"V","",0},
-    {"HVESS Current",16,0.05,false,"A","",-1600},
+    {"HVESS Current",16,0.05,true,"A","",-32000},
     {0}}},
     
     {"High Voltage Energy Storage System Data 2",
@@ -3073,9 +3073,9 @@
     8,
     0,
     {
-    {"HVESS Highest Cell Temperature",16,0.03125,false,"°C","",-273},
-    {"HVESS Lowest Cell Temperature",16,0.03125,false,"°C","",-273},
-    {"HVESS Average Cell Temperature",16,0.03125,false,"°C","",-273},
+    {"HVESS Highest Cell Temperature",16,0.03125,true,"°C","",-8736},
+    {"HVESS Lowest Cell Temperature",16,0.03125,true,"°C","",-8736},
+    {"HVESS Average Cell Temperature",16,0.03125,true,"°C","",-8736},
     {"HVESS Cell Temperature Differential Status",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -3096,8 +3096,8 @@
     8,
     0,
     {
-    {"HVESS Discharge Current Limit",16,0.05,false,"A","",-1600},
-    {"HVESS Charge Current Limit",16,0.05,false,"A","",-1600},
+    {"HVESS Discharge Current Limit",16,0.05,true,"A","",-32000},
+    {"HVESS Charge Current Limit",16,0.05,true,"A","",-32000},
     {"HVESS Minimum Cell State of Charge",16,0.0015625,false,"%","",0},
     {"HVESS Maximum Cell State of Charge",16,0.0015625,false,"%","",0},
     {0}}},
@@ -3110,10 +3110,10 @@
     {
     {"HVESS Bus Voltage",16,0.05,false,"V","",0},
     {"HVESS Ignition Voltage",16,0.01,false,"V","",0},
-    {"HVESS Intake Coolant Temperature",8,1,false,"°C","",-40},
-    {"HVESS Outlet Coolant Temperature",8,1,false,"°C","",-40},
-    {"HVESS Electronics Temperature",8,1,false,"°C","",-40},
-    {"HVESS Temperature",8,1,false,"°C","",-40},
+    {"HVESS Intake Coolant Temperature",8,1,true,"°C","",-40},
+    {"HVESS Outlet Coolant Temperature",8,1,true,"°C","",-40},
+    {"HVESS Electronics Temperature",8,1,true,"°C","",-40},
+    {"HVESS Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"High Voltage Energy Storage System Status 1",
@@ -3272,7 +3272,7 @@
     {
     {"Engine Cylinder Head Bypass Actuator 1 Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Engine Cylinder Head Bypass Actuator 1 Temperature Status",3,RES_BITFIELD,false,0,"",0},
-    {"Engine Cylinder Head Bypass Actuator 1 Temperature",8,1,false,"°C","",-40},
+    {"Engine Cylinder Head Bypass Actuator 1 Temperature",8,1,true,"°C","",-40},
     {"Engine Cylinder Head Bypass Actuator 1 Desired Position",8,0.4,false,"%","",0},
     {"Engine Cylinder Head Bypass Actuator 1 Position",8,0.4,false,"%","",0},
     {"Engine Cylinder Head Bypass Actuator 1 Operation Status",4,RES_BITFIELD,false,0,"",0},
@@ -3295,12 +3295,12 @@
     8,
     0,
     {
-    {"Predictive Cruise Control Set Speed Offset",16,0.00390625,false,"km/h","",-125},
+    {"Predictive Cruise Control Set Speed Offset",16,0.00390625,true,"km/h","",-32000},
     {"Predictive Cruise Control State",4,RES_BITFIELD,false,0,"",0},
     {"Vehicle Speed Control Override Request",2,RES_BITFIELD,false,0,"",0},
     {"Predictive Cruise Control Event in Range",2,RES_BITFIELD,false,0,"",0},
-    {"Roadway Present Grade",8,0.125,false,"%","",-16},
-    {"Roadway Next Grade",8,0.125,false,"%","",-16},
+    {"Roadway Present Grade",8,0.125,true,"%","",-128},
+    {"Roadway Next Grade",8,0.125,true,"%","",-128},
     {"Predictive Cruise Control Speed Event Indicator",2,RES_BITFIELD,false,0,"",0},
     {"Vehicle Speed Control Override Event Indicator",2,RES_BITFIELD,false,0,"",0},
     {"Predictive Cruise Control Driveline Disengage Inhibit Request",2,RES_BITFIELD,false,0,"",0},
@@ -3445,14 +3445,14 @@
     8,
     0,
     {
-    {"Engine Cylinder 1 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
-    {"Engine Cylinder 2 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
-    {"Engine Cylinder 3 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
-    {"Engine Cylinder 4 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
-    {"Engine Cylinder 5 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
-    {"Engine Cylinder 6 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
-    {"Engine Cylinder 7 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
-    {"Engine Cylinder 8 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
+    {"Engine Cylinder 1 Ignition Timing Offset",8,0.1,true,"deg","",-125},
+    {"Engine Cylinder 2 Ignition Timing Offset",8,0.1,true,"deg","",-125},
+    {"Engine Cylinder 3 Ignition Timing Offset",8,0.1,true,"deg","",-125},
+    {"Engine Cylinder 4 Ignition Timing Offset",8,0.1,true,"deg","",-125},
+    {"Engine Cylinder 5 Ignition Timing Offset",8,0.1,true,"deg","",-125},
+    {"Engine Cylinder 6 Ignition Timing Offset",8,0.1,true,"deg","",-125},
+    {"Engine Cylinder 7 Ignition Timing Offset",8,0.1,true,"deg","",-125},
+    {"Engine Cylinder 8 Ignition Timing Offset",8,0.1,true,"deg","",-125},
     {0}}},
     
     {"Engine Ignition Timing Offset 2",
@@ -3461,14 +3461,14 @@
     8,
     0,
     {
-    {"Engine Cylinder 9 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
-    {"Engine Cylinder 10 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
-    {"Engine Cylinder 11 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
-    {"Engine Cylinder 12 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
-    {"Engine Cylinder 13 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
-    {"Engine Cylinder 14 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
-    {"Engine Cylinder 15 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
-    {"Engine Cylinder 16 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
+    {"Engine Cylinder 9 Ignition Timing Offset",8,0.1,true,"deg","",-125},
+    {"Engine Cylinder 10 Ignition Timing Offset",8,0.1,true,"deg","",-125},
+    {"Engine Cylinder 11 Ignition Timing Offset",8,0.1,true,"deg","",-125},
+    {"Engine Cylinder 12 Ignition Timing Offset",8,0.1,true,"deg","",-125},
+    {"Engine Cylinder 13 Ignition Timing Offset",8,0.1,true,"deg","",-125},
+    {"Engine Cylinder 14 Ignition Timing Offset",8,0.1,true,"deg","",-125},
+    {"Engine Cylinder 15 Ignition Timing Offset",8,0.1,true,"deg","",-125},
+    {"Engine Cylinder 16 Ignition Timing Offset",8,0.1,true,"deg","",-125},
     {0}}},
     
     {"Engine Ignition Timing Offset 3",
@@ -3477,14 +3477,14 @@
     8,
     0,
     {
-    {"Engine Cylinder 17 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
-    {"Engine Cylinder 18 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
-    {"Engine Cylinder 19 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
-    {"Engine Cylinder 20 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
-    {"Engine Cylinder 21 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
-    {"Engine Cylinder 22 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
-    {"Engine Cylinder 23 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
-    {"Engine Cylinder 24 Ignition Timing Offset",8,0.1,false,"deg","",-12.5},
+    {"Engine Cylinder 17 Ignition Timing Offset",8,0.1,true,"deg","",-125},
+    {"Engine Cylinder 18 Ignition Timing Offset",8,0.1,true,"deg","",-125},
+    {"Engine Cylinder 19 Ignition Timing Offset",8,0.1,true,"deg","",-125},
+    {"Engine Cylinder 20 Ignition Timing Offset",8,0.1,true,"deg","",-125},
+    {"Engine Cylinder 21 Ignition Timing Offset",8,0.1,true,"deg","",-125},
+    {"Engine Cylinder 22 Ignition Timing Offset",8,0.1,true,"deg","",-125},
+    {"Engine Cylinder 23 Ignition Timing Offset",8,0.1,true,"deg","",-125},
+    {"Engine Cylinder 24 Ignition Timing Offset",8,0.1,true,"deg","",-125},
     {0}}},
     
     {"Engine Throttle / Fuel Actuator Control Command 2",
@@ -3503,8 +3503,8 @@
     8,
     0,
     {
-    {"Engine Exhaust 1 NOx 2",16,0.05,false,"ppm","",-200},
-    {"Aftertreatment 1 Intake Percent Oxygen 2",16,0.000514,false,"%","",-12},
+    {"Engine Exhaust 1 NOx 2",16,0.05,true,"ppm","",-4000},
+    {"Aftertreatment 1 Intake Percent Oxygen 2",16,0.000514,true,"%","",-23346.303501945524},
     {"Aftertreatment 1 Intake Gas Sensor 2 Power In Range",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 1 Intake Gas Sensor 2 at Temperature",2,RES_BITFIELD,false,0,"",0},
     {"Engine Exhaust 1 NOx 2 Reading Stable",2,RES_BITFIELD,false,0,"",0},
@@ -3522,8 +3522,8 @@
     8,
     0,
     {
-    {"Aftertreatment 1 Outlet NOx 2",16,0.05,false,"ppm","",-200},
-    {"Aftertreatment 1 Outlet Percent Oxygen 2",16,0.000514,false,"%","",-12},
+    {"Aftertreatment 1 Outlet NOx 2",16,0.05,true,"ppm","",-4000},
+    {"Aftertreatment 1 Outlet Percent Oxygen 2",16,0.000514,true,"%","",-23346.303501945524},
     {"Aftertreatment 1 Outlet Gas Sensor 2 Power In Range",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 1 Outlet Gas Sensor 2 at Temperature",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 1 Outlet NOx 2 Reading Stable",2,RES_BITFIELD,false,0,"",0},
@@ -3541,8 +3541,8 @@
     8,
     0,
     {
-    {"Engine Exhaust 2 NOx 2",16,0.05,false,"ppm","",-200},
-    {"Aftertreatment 2 Intake Percent Oxygen 2",16,0.000514,false,"%","",-12},
+    {"Engine Exhaust 2 NOx 2",16,0.05,true,"ppm","",-4000},
+    {"Aftertreatment 2 Intake Percent Oxygen 2",16,0.000514,true,"%","",-23346.303501945524},
     {"Aftertreatment 2 Intake Gas Sensor 2 Power In Range",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 2 Intake Gas Sensor 2 at Temperature",2,RES_BITFIELD,false,0,"",0},
     {"Engine Exhaust 2 NOx 2 Reading Stable",2,RES_BITFIELD,false,0,"",0},
@@ -3560,8 +3560,8 @@
     8,
     0,
     {
-    {"Aftertreatment 2 Outlet NOx 2",16,0.05,false,"ppm","",-200},
-    {"Aftertreatment 2 Outlet Percent Oxygen 2",16,0.000514,false,"%","",-12},
+    {"Aftertreatment 2 Outlet NOx 2",16,0.05,true,"ppm","",-4000},
+    {"Aftertreatment 2 Outlet Percent Oxygen 2",16,0.000514,true,"%","",-23346.303501945524},
     {"Aftertreatment 2 Outlet Gas Sensor 2 Power In Range",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 2 Outlet Gas Sensor 2 at Temperature",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 2 Outlet NOx  2 Reading Stable",2,RES_BITFIELD,false,0,"",0},
@@ -3703,7 +3703,7 @@
     8,
     0,
     {
-    {"Well Stimulation Pump Suction Pressure",16,0.1,false,"kPa","",-3212.7},
+    {"Well Stimulation Pump Suction Pressure",16,0.1,true,"kPa","",-32126.999999999996},
     {"Well Stimulation Pump Discharge Pressure",16,5,false,"kPa","",0},
     {0}}},
     
@@ -3714,9 +3714,9 @@
     0,
     {
     {"Well Stimulation Pump Gear Box Oil Pressure",16,0.1,false,"kPa","",0},
-    {"Well Stimulation Pump Gear Box Oil Temperature",8,1,false,"°C","",-40},
+    {"Well Stimulation Pump Gear Box Oil Temperature",8,1,true,"°C","",-40},
     {"Well Stimulation Pump Speed",16,0.125,false,"rpm","",0},
-    {"Well Stimulation Pump Gear Box Outlet Oil Temperature",8,1,false,"°C","",-40},
+    {"Well Stimulation Pump Gear Box Outlet Oil Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"High Voltage Energy Storage System Module Status 1",
@@ -3813,9 +3813,9 @@
     8,
     0,
     {
-    {"Dump Body Roll Angle",16,0.0078125,false,"deg","",-200},
-    {"Dump Body Raise Angle",16,0.0078125,false,"deg","",-200},
-    {"Dump Body Raise Position Relative to Recommended Maximum",16,0.005,false,"%","",-150},
+    {"Dump Body Roll Angle",16,0.0078125,true,"deg","",-25600},
+    {"Dump Body Raise Angle",16,0.0078125,true,"deg","",-25600},
+    {"Dump Body Raise Position Relative to Recommended Maximum",16,0.005,true,"%","",-30000},
     {"Dump Body Ejector Blade Position",8,0.4,false,"%","",0},
     {0}}},
     
@@ -3845,8 +3845,8 @@
     8,
     0,
     {
-    {"Engine Fuel Valve 1 Differential Pressure (High Resolution)",16,0.0078125,false,"kPa","",-100},
-    {"Engine Gaseous Fuel Supply Filter Differential Pressure",16,0.0078125,false,"kPa","",-100},
+    {"Engine Fuel Valve 1 Differential Pressure (High Resolution)",16,0.0078125,true,"kPa","",-12800},
+    {"Engine Gaseous Fuel Supply Filter Differential Pressure",16,0.0078125,true,"kPa","",-12800},
     {"Engine Gaseous Fuel Supply Filter Intake Pressure",16,0.5,false,"kPa","",0},
     {0}}},
     
@@ -3893,9 +3893,9 @@
     0,
     {
     {"DC/DC 1 Low Side Voltage",16,0.01,false,"V","",0},
-    {"DC/DC 1 Low Side Current",16,0.1,false,"A","",-3212.7},
+    {"DC/DC 1 Low Side Current",16,0.1,true,"A","",-32126.999999999996},
     {"DC/DC 1 High Side Voltage",16,0.05,false,"V","",0},
-    {"DC/DC 1 High Side Current",16,0.1,false,"A","",-3212.7},
+    {"DC/DC 1 High Side Current",16,0.1,true,"A","",-32126.999999999996},
     {0}}},
     
     {"DC/DC Converter 1 SLI Battery Status",
@@ -3905,8 +3905,8 @@
     0,
     {
     {"DC/DC 1 SLI Battery Terminal Voltage",16,0.01,false,"V","",0},
-    {"DC/DC 1 SLI Battery Terminal Current",16,0.1,false,"A","",-3212.7},
-    {"DC/DC 1 SLI Battery Terminal Temperature",8,1,false,"°C","",-40},
+    {"DC/DC 1 SLI Battery Terminal Current",16,0.1,true,"A","",-32126.999999999996},
+    {"DC/DC 1 SLI Battery Terminal Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"Well Stimulation Pump System 3",
@@ -3928,8 +3928,8 @@
     8,
     0,
     {
-    {"DC/DC 1 Low Side Power",16,0.05,false,"kW","",-1600},
-    {"DC/DC 1 High Side Power",16,0.05,false,"kW","",-1600},
+    {"DC/DC 1 Low Side Power",16,0.05,true,"kW","",-32000},
+    {"DC/DC 1 High Side Power",16,0.05,true,"kW","",-32000},
     {"DC/DC 1 High Side Negative to Chassis Ground Voltage",16,0.05,false,"V","",0},
     {0}}},
     
@@ -3976,9 +3976,9 @@
     0,
     {
     {"DC/DC 2 Low Side Voltage",16,0.01,false,"V","",0},
-    {"DC/DC 2 Low Side Current",16,0.1,false,"A","",-3212.7},
+    {"DC/DC 2 Low Side Current",16,0.1,true,"A","",-32126.999999999996},
     {"DC/DC 2 High Side Voltage",16,0.05,false,"V","",0},
-    {"DC/DC 2 High Side Current",16,0.1,false,"A","",-3212.7},
+    {"DC/DC 2 High Side Current",16,0.1,true,"A","",-32126.999999999996},
     {0}}},
     
     {"DC/DC Converter 2 SLI Battery Status",
@@ -3988,8 +3988,8 @@
     0,
     {
     {"DC/DC 2 SLI Battery Terminal Voltage",16,0.01,false,"V","",0},
-    {"DC/DC 2 SLI Battery Terminal Current",16,0.1,false,"A","",-3212.7},
-    {"DC/DC 2 SLI Battery Terminal Temperature",8,1,false,"°C","",-40},
+    {"DC/DC 2 SLI Battery Terminal Current",16,0.1,true,"A","",-32126.999999999996},
+    {"DC/DC 2 SLI Battery Terminal Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"DC/DC Converter 2 Status 2",
@@ -3998,8 +3998,8 @@
     8,
     0,
     {
-    {"DC/DC 2 Low Side Power",16,0.05,false,"kW","",-1600},
-    {"DC/DC 2 High Side Power",16,0.05,false,"kW","",-1600},
+    {"DC/DC 2 Low Side Power",16,0.05,true,"kW","",-32000},
+    {"DC/DC 2 High Side Power",16,0.05,true,"kW","",-32000},
     {"DC/DC 2 High Side Negative to Chassis Ground Voltage",16,0.05,false,"V","",0},
     {0}}},
     
@@ -4046,9 +4046,9 @@
     0,
     {
     {"DC/DC 3 Low Side Voltage",16,0.01,false,"V","",0},
-    {"DC/DC 3 Low Side Current",16,0.1,false,"A","",-3212.7},
+    {"DC/DC 3 Low Side Current",16,0.1,true,"A","",-32126.999999999996},
     {"DC/DC 3 High Side Voltage",16,0.05,false,"V","",0},
-    {"DC/DC 3 High Side Current",16,0.1,false,"A","",-3212.7},
+    {"DC/DC 3 High Side Current",16,0.1,true,"A","",-32126.999999999996},
     {0}}},
     
     {"DC/DC Converter 3 SLI Battery Status",
@@ -4058,8 +4058,8 @@
     0,
     {
     {"DC/DC 3 SLI Battery Terminal Voltage",16,0.01,false,"V","",0},
-    {"DC/DC 3 SLI Battery Terminal Current",16,0.1,false,"A","",-3212.7},
-    {"DC/DC 3 SLI Battery Terminal Temperature",8,1,false,"°C","",-40},
+    {"DC/DC 3 SLI Battery Terminal Current",16,0.1,true,"A","",-32126.999999999996},
+    {"DC/DC 3 SLI Battery Terminal Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"DC/DC Converter 3 Status 2",
@@ -4068,8 +4068,8 @@
     8,
     0,
     {
-    {"DC/DC 3 Low Side Power",16,0.05,false,"kW","",-1600},
-    {"DC/DC 3 High Side Power",16,0.05,false,"kW","",-1600},
+    {"DC/DC 3 Low Side Power",16,0.05,true,"kW","",-32000},
+    {"DC/DC 3 High Side Power",16,0.05,true,"kW","",-32000},
     {"DC/DC 3 High Side Negative to Chassis Ground Voltage",16,0.05,false,"V","",0},
     {0}}},
     
@@ -4116,9 +4116,9 @@
     0,
     {
     {"DC/DC 4 Low Side Voltage",16,0.01,false,"V","",0},
-    {"DC/DC 4 Low Side Current",16,0.1,false,"A","",-3212.7},
+    {"DC/DC 4 Low Side Current",16,0.1,true,"A","",-32126.999999999996},
     {"DC/DC 4 High Side Voltage",16,0.05,false,"V","",0},
-    {"DC/DC 4 High Side Current",16,0.1,false,"A","",-3212.7},
+    {"DC/DC 4 High Side Current",16,0.1,true,"A","",-32126.999999999996},
     {0}}},
     
     {"DC/DC Converter 4 SLI Battery Status",
@@ -4128,8 +4128,8 @@
     0,
     {
     {"DC/DC 4 SLI Battery Terminal Voltage",16,0.01,false,"V","",0},
-    {"DC/DC 4 SLI Battery Terminal Current",16,0.1,false,"A","",-3212.7},
-    {"DC/DC 4 SLI Battery Terminal Temperature",8,1,false,"°C","",-40},
+    {"DC/DC 4 SLI Battery Terminal Current",16,0.1,true,"A","",-32126.999999999996},
+    {"DC/DC 4 SLI Battery Terminal Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"DC/DC Converter 4 Status 2",
@@ -4138,8 +4138,8 @@
     8,
     0,
     {
-    {"DC/DC 4 Low Side Power",16,0.05,false,"kW","",-1600},
-    {"DC/DC 4 High Side Power",16,0.05,false,"kW","",-1600},
+    {"DC/DC 4 Low Side Power",16,0.05,true,"kW","",-32000},
+    {"DC/DC 4 High Side Power",16,0.05,true,"kW","",-32000},
     {"DC/DC 4 High Side Negative to Chassis Ground Voltage",16,0.05,false,"V","",0},
     {0}}},
     
@@ -4376,10 +4376,10 @@
     8,
     0,
     {
-    {"Engine Pre-Chamber Fuel Valve 1 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Pre-Chamber Fuel Valve 2 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Pre-Chamber Fuel Valve 3 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Pre-Chamber Fuel Valve 4 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
+    {"Engine Pre-Chamber Fuel Valve 1 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Pre-Chamber Fuel Valve 2 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Pre-Chamber Fuel Valve 3 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Pre-Chamber Fuel Valve 4 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
     {0}}},
     
     {"Engine Pre-Chamber Fuel Valve Start of Actuation Command 2",
@@ -4388,10 +4388,10 @@
     8,
     0,
     {
-    {"Engine Pre-Chamber Fuel Valve 5 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Pre-Chamber Fuel Valve 6 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Pre-Chamber Fuel Valve 7 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Pre-Chamber Fuel Valve 8 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
+    {"Engine Pre-Chamber Fuel Valve 5 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Pre-Chamber Fuel Valve 6 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Pre-Chamber Fuel Valve 7 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Pre-Chamber Fuel Valve 8 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
     {0}}},
     
     {"Engine Pre-Chamber Fuel Valve Start of Actuation Command 3",
@@ -4400,10 +4400,10 @@
     8,
     0,
     {
-    {"Engine Pre-Chamber Fuel Valve 9 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Pre-Chamber Fuel Valve 10 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Pre-Chamber Fuel Valve 11 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Pre-Chamber Fuel Valve 12 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
+    {"Engine Pre-Chamber Fuel Valve 9 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Pre-Chamber Fuel Valve 10 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Pre-Chamber Fuel Valve 11 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Pre-Chamber Fuel Valve 12 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
     {0}}},
     
     {"Engine Pre-Chamber Fuel Valve Start of Actuation Command 4",
@@ -4412,10 +4412,10 @@
     8,
     0,
     {
-    {"Engine Pre-Chamber Fuel Valve 13 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Pre-Chamber Fuel Valve 14 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Pre-Chamber Fuel Valve 15 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Pre-Chamber Fuel Valve 16 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
+    {"Engine Pre-Chamber Fuel Valve 13 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Pre-Chamber Fuel Valve 14 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Pre-Chamber Fuel Valve 15 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Pre-Chamber Fuel Valve 16 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
     {0}}},
     
     {"Engine Pre-Chamber Fuel Valve Start of Actuation Command 5",
@@ -4424,10 +4424,10 @@
     8,
     0,
     {
-    {"Engine Pre-Chamber Fuel Valve 17 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Pre-Chamber Fuel Valve 18 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Pre-Chamber Fuel Valve 19 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
-    {"Engine Pre-Chamber Fuel Valve 20 Start of Actuation Command",16,0.0078125,false,"deg","",-400},
+    {"Engine Pre-Chamber Fuel Valve 17 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Pre-Chamber Fuel Valve 18 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Pre-Chamber Fuel Valve 19 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
+    {"Engine Pre-Chamber Fuel Valve 20 Start of Actuation Command",16,0.0078125,true,"deg","",-51200},
     {0}}},
     
     {"Active Steering System Controls 1",
@@ -4465,8 +4465,8 @@
     8,
     0,
     {
-    {"Stationary Inverter Total Reactive Power",32,1,false,"VAr","",-2000000000},
-    {"Stationary Inverter Overall Power Factor",16,0.00006103515625,false,"","",-1},
+    {"Stationary Inverter Total Reactive Power",32,1,true,"VAr","",-2000000000},
+    {"Stationary Inverter Overall Power Factor",16,0.00006103515625,true,"","",-16384},
     {"Stationary Inverter Overall Power Factor Lagging",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -4476,8 +4476,8 @@
     8,
     0,
     {
-    {"Stationary Inverter Total Real Power",32,1,false,"W","",-2000000000},
-    {"Stationary Inverter Total Apparent Power",32,1,false,"VA","",-2000000000},
+    {"Stationary Inverter Total Real Power",32,1,true,"W","",-2000000000},
+    {"Stationary Inverter Total Apparent Power",32,1,true,"VA","",-2000000000},
     {0}}},
     
     {"Stationary Inverter Control",
@@ -4501,7 +4501,7 @@
     {"Stationary Inverter to Bus Frequency Match",2,RES_BITFIELD,false,0,"",0},
     {"Stationary Inverter to Bus Voltage Match",2,RES_BITFIELD,false,0,"",0},
     {"Stationary Inverter to Bus In Sync",2,RES_BITFIELD,false,0,"",0},
-    {"Stationary Inverter to Bus AC Phase Difference",16,0.0078125,false,"deg","",-200},
+    {"Stationary Inverter to Bus AC Phase Difference",16,0.0078125,true,"deg","",-25600},
     {0}}},
     
     {"Engine Cylinder 1 Combustion Pressures",
@@ -4750,10 +4750,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 1 Instantaneous Start of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 1 Instantaneous Center of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 1 Instantaneous Combustion Timing, Point 1",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 1 Instantaneous Combustion Timing, Point 2",16,0.00390625,false,"deg","",-125},
+    {"Engine Cylinder 1 Instantaneous Start of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 1 Instantaneous Center of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 1 Instantaneous Combustion Timing, Point 1",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 1 Instantaneous Combustion Timing, Point 2",16,0.00390625,true,"deg","",-32000},
     {0}}},
     
     {"Engine Cylinder 2 Combustion Timing",
@@ -4762,10 +4762,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 2 Instantaneous Start of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 2 Instantaneous Center of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 2 Instantaneous Combustion Timing, Point 1",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 2 Instantaneous Combustion Timing, Point 2",16,0.00390625,false,"deg","",-125},
+    {"Engine Cylinder 2 Instantaneous Start of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 2 Instantaneous Center of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 2 Instantaneous Combustion Timing, Point 1",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 2 Instantaneous Combustion Timing, Point 2",16,0.00390625,true,"deg","",-32000},
     {0}}},
     
     {"Engine Cylinder 3 Combustion Timing",
@@ -4774,10 +4774,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 3 Instantaneous Start of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 3 Instantaneous Center of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 3 Instantaneous Combustion Timing, Point 1",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 3 Instantaneous Combustion Timing, Point 2",16,0.00390625,false,"deg","",-125},
+    {"Engine Cylinder 3 Instantaneous Start of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 3 Instantaneous Center of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 3 Instantaneous Combustion Timing, Point 1",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 3 Instantaneous Combustion Timing, Point 2",16,0.00390625,true,"deg","",-32000},
     {0}}},
     
     {"Engine Cylinder 4 Combustion Timing",
@@ -4786,10 +4786,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 4 Instantaneous Start of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 4 Instantaneous Center of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 4 Instantaneous Combustion Timing, Point 1",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 4 Instantaneous Combustion Timing, Point 2",16,0.00390625,false,"deg","",-125},
+    {"Engine Cylinder 4 Instantaneous Start of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 4 Instantaneous Center of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 4 Instantaneous Combustion Timing, Point 1",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 4 Instantaneous Combustion Timing, Point 2",16,0.00390625,true,"deg","",-32000},
     {0}}},
     
     {"Engine Cylinder 5 Combustion Timing",
@@ -4798,10 +4798,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 5 Instantaneous Start of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 5 Instantaneous Center of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 5 Instantaneous Combustion Timing, Point 1",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 5 Instantaneous Combustion Timing, Point 2",16,0.00390625,false,"deg","",-125},
+    {"Engine Cylinder 5 Instantaneous Start of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 5 Instantaneous Center of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 5 Instantaneous Combustion Timing, Point 1",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 5 Instantaneous Combustion Timing, Point 2",16,0.00390625,true,"deg","",-32000},
     {0}}},
     
     {"Engine Cylinder 6 Combustion Timing",
@@ -4810,10 +4810,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 6 Instantaneous Start of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 6 Instantaneous Center of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 6 Instantaneous Combustion Timing, Point 1",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 6 Instantaneous Combustion Timing, Point 2",16,0.00390625,false,"deg","",-125},
+    {"Engine Cylinder 6 Instantaneous Start of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 6 Instantaneous Center of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 6 Instantaneous Combustion Timing, Point 1",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 6 Instantaneous Combustion Timing, Point 2",16,0.00390625,true,"deg","",-32000},
     {0}}},
     
     {"Engine Cylinder 7 Combustion Timing",
@@ -4822,10 +4822,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 7 Instantaneous Start of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 7 Instantaneous Center of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 7 Instantaneous Combustion Timing, Point 1",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 7 Instantaneous Combustion Timing, Point 2",16,0.00390625,false,"deg","",-125},
+    {"Engine Cylinder 7 Instantaneous Start of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 7 Instantaneous Center of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 7 Instantaneous Combustion Timing, Point 1",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 7 Instantaneous Combustion Timing, Point 2",16,0.00390625,true,"deg","",-32000},
     {0}}},
     
     {"Engine Cylinder 8 Combustion Timing",
@@ -4834,10 +4834,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 8 Instantaneous Start of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 8 Instantaneous Center of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 8 Instantaneous Combustion Timing, Point 1",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 8 Instantaneous Combustion Timing, Point 2",16,0.00390625,false,"deg","",-125},
+    {"Engine Cylinder 8 Instantaneous Start of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 8 Instantaneous Center of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 8 Instantaneous Combustion Timing, Point 1",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 8 Instantaneous Combustion Timing, Point 2",16,0.00390625,true,"deg","",-32000},
     {0}}},
     
     {"Engine Cylinder 9 Combustion Timing",
@@ -4846,10 +4846,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 9 Instantaneous Start of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 9 Instantaneous Center of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 9 Instantaneous Combustion Timing, Point 1",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 9 Instantaneous Combustion Timing, Point 2",16,0.00390625,false,"deg","",-125},
+    {"Engine Cylinder 9 Instantaneous Start of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 9 Instantaneous Center of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 9 Instantaneous Combustion Timing, Point 1",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 9 Instantaneous Combustion Timing, Point 2",16,0.00390625,true,"deg","",-32000},
     {0}}},
     
     {"Engine Cylinder 10 Combustion Timing",
@@ -4858,10 +4858,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 10 Instantaneous Start of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 10 Instantaneous Center of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 10 Instantaneous Combustion Timing, Point 1",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 10 Instantaneous Combustion Timing, Point 2",16,0.00390625,false,"deg","",-125},
+    {"Engine Cylinder 10 Instantaneous Start of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 10 Instantaneous Center of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 10 Instantaneous Combustion Timing, Point 1",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 10 Instantaneous Combustion Timing, Point 2",16,0.00390625,true,"deg","",-32000},
     {0}}},
     
     {"Engine Cylinder 11 Combustion Timing",
@@ -4870,10 +4870,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 11 Instantaneous Start of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 11 Instantaneous Center of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 11 Instantaneous Combustion Timing, Point 1",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 11 Instantaneous Combustion Timing, Point 2",16,0.00390625,false,"deg","",-125},
+    {"Engine Cylinder 11 Instantaneous Start of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 11 Instantaneous Center of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 11 Instantaneous Combustion Timing, Point 1",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 11 Instantaneous Combustion Timing, Point 2",16,0.00390625,true,"deg","",-32000},
     {0}}},
     
     {"Engine Cylinder 12 Combustion Timing",
@@ -4882,10 +4882,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 12 Instantaneous Start of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 12 Instantaneous Center of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 12 Instantaneous Combustion Timing, Point 1",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 12 Instantaneous Combustion Timing, Point 2",16,0.00390625,false,"deg","",-125},
+    {"Engine Cylinder 12 Instantaneous Start of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 12 Instantaneous Center of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 12 Instantaneous Combustion Timing, Point 1",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 12 Instantaneous Combustion Timing, Point 2",16,0.00390625,true,"deg","",-32000},
     {0}}},
     
     {"Engine Cylinder 13 Combustion Timing",
@@ -4894,10 +4894,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 13 Instantaneous Start of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 13 Instantaneous Center of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 13 Instantaneous Combustion Timing, Point 1",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 13 Instantaneous Combustion Timing, Point 2",16,0.00390625,false,"deg","",-125},
+    {"Engine Cylinder 13 Instantaneous Start of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 13 Instantaneous Center of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 13 Instantaneous Combustion Timing, Point 1",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 13 Instantaneous Combustion Timing, Point 2",16,0.00390625,true,"deg","",-32000},
     {0}}},
     
     {"Engine Cylinder 14 Combustion Timing",
@@ -4906,10 +4906,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 14 Instantaneous Start of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 14 Instantaneous Center of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 14 Instantaneous Combustion Timing, Point 1",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 14 Instantaneous Combustion Timing, Point 2",16,0.00390625,false,"deg","",-125},
+    {"Engine Cylinder 14 Instantaneous Start of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 14 Instantaneous Center of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 14 Instantaneous Combustion Timing, Point 1",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 14 Instantaneous Combustion Timing, Point 2",16,0.00390625,true,"deg","",-32000},
     {0}}},
     
     {"Engine Cylinder 15 Combustion Timing",
@@ -4918,10 +4918,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 15 Instantaneous Start of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 15 Instantaneous Center of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 15 Instantaneous Combustion Timing, Point 1",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 15 Instantaneous Combustion Timing, Point 2",16,0.00390625,false,"deg","",-125},
+    {"Engine Cylinder 15 Instantaneous Start of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 15 Instantaneous Center of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 15 Instantaneous Combustion Timing, Point 1",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 15 Instantaneous Combustion Timing, Point 2",16,0.00390625,true,"deg","",-32000},
     {0}}},
     
     {"Engine Cylinder 16 Combustion Timing",
@@ -4930,10 +4930,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 16 Instantaneous Start of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 16 Instantaneous Center of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 16 Instantaneous Combustion Timing, Point 1",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 16 Instantaneous Combustion Timing, Point 2",16,0.00390625,false,"deg","",-125},
+    {"Engine Cylinder 16 Instantaneous Start of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 16 Instantaneous Center of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 16 Instantaneous Combustion Timing, Point 1",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 16 Instantaneous Combustion Timing, Point 2",16,0.00390625,true,"deg","",-32000},
     {0}}},
     
     {"Engine Cylinder 17 Combustion Timing",
@@ -4942,10 +4942,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 17 Instantaneous Start of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 17 Instantaneous Center of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 17 Instantaneous Combustion Timing, Point 1",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 17 Instantaneous Combustion Timing, Point 2",16,0.00390625,false,"deg","",-125},
+    {"Engine Cylinder 17 Instantaneous Start of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 17 Instantaneous Center of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 17 Instantaneous Combustion Timing, Point 1",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 17 Instantaneous Combustion Timing, Point 2",16,0.00390625,true,"deg","",-32000},
     {0}}},
     
     {"Engine Cylinder 18 Combustion Timing",
@@ -4954,10 +4954,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 18 Instantaneous Start of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 18 Instantaneous Center of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 18 Instantaneous Combustion Timing, Point 1",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 18 Instantaneous Combustion Timing, Point 2",16,0.00390625,false,"deg","",-125},
+    {"Engine Cylinder 18 Instantaneous Start of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 18 Instantaneous Center of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 18 Instantaneous Combustion Timing, Point 1",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 18 Instantaneous Combustion Timing, Point 2",16,0.00390625,true,"deg","",-32000},
     {0}}},
     
     {"Engine Cylinder 19 Combustion Timing",
@@ -4966,10 +4966,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 19 Instantaneous Start of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 19 Instantaneous Center of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 19 Instantaneous Combustion Timing, Point 1",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 19 Instantaneous Combustion Timing, Point 2",16,0.00390625,false,"deg","",-125},
+    {"Engine Cylinder 19 Instantaneous Start of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 19 Instantaneous Center of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 19 Instantaneous Combustion Timing, Point 1",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 19 Instantaneous Combustion Timing, Point 2",16,0.00390625,true,"deg","",-32000},
     {0}}},
     
     {"Engine Cylinder 20 Combustion Timing",
@@ -4978,10 +4978,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 20 Instantaneous Start of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 20 Instantaneous Center of Combustion Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 20 Instantaneous Combustion Timing, Point 1",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 20 Instantaneous Combustion Timing, Point 2",16,0.00390625,false,"deg","",-125},
+    {"Engine Cylinder 20 Instantaneous Start of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 20 Instantaneous Center of Combustion Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 20 Instantaneous Combustion Timing, Point 1",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 20 Instantaneous Combustion Timing, Point 2",16,0.00390625,true,"deg","",-32000},
     {0}}},
     
     {"Engine Cylinder 1 Combustion Metrics",
@@ -4990,11 +4990,11 @@
     8,
     0,
     {
-    {"Engine Cylinder 1 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 1 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
+    {"Engine Cylinder 1 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 1 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
     {"Engine Cylinder 1 Indicated Mean Effective Pressure Coefficient of Variance ",8,0.04,false,"%","",0},
     {"Engine Cylinder 1 Misfire Rate",8,0.4,false,"%","",0},
-    {"Engine Cylinder 1 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Cylinder 1 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Engine Cylinder 2 Combustion Metrics",
@@ -5003,11 +5003,11 @@
     8,
     0,
     {
-    {"Engine Cylinder 2 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 2 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
+    {"Engine Cylinder 2 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 2 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
     {"Engine Cylinder 2 Indicated Mean Effective Pressure Coefficient of Variance ",8,0.04,false,"%","",0},
     {"Engine Cylinder 2 Misfire Rate",8,0.4,false,"%","",0},
-    {"Engine Cylinder 2 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Cylinder 2 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Engine Cylinder 3 Combustion Metrics",
@@ -5016,11 +5016,11 @@
     8,
     0,
     {
-    {"Engine Cylinder 3 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 3 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
+    {"Engine Cylinder 3 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 3 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
     {"Engine Cylinder 3 Indicated Mean Effective Pressure Coefficient of Variance ",8,0.04,false,"%","",0},
     {"Engine Cylinder 3 Misfire Rate",8,0.4,false,"%","",0},
-    {"Engine Cylinder 3 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Cylinder 3 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Engine Cylinder 4 Combustion Metrics",
@@ -5029,11 +5029,11 @@
     8,
     0,
     {
-    {"Engine Cylinder 4 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 4 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
+    {"Engine Cylinder 4 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 4 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
     {"Engine Cylinder 4 Indicated Mean Effective Pressure Coefficient of Variance ",8,0.04,false,"%","",0},
     {"Engine Cylinder 4 Misfire Rate",8,0.4,false,"%","",0},
-    {"Engine Cylinder 4 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Cylinder 4 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Engine Cylinder 5 Combustion Metrics",
@@ -5042,11 +5042,11 @@
     8,
     0,
     {
-    {"Engine Cylinder 5 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 5 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
+    {"Engine Cylinder 5 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 5 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
     {"Engine Cylinder 5 Indicated Mean Effective Pressure Coefficient of Variance ",8,0.04,false,"%","",0},
     {"Engine Cylinder 5 Misfire Rate",8,0.4,false,"%","",0},
-    {"Engine Cylinder 5 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Cylinder 5 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Engine Cylinder 6 Combustion Metrics",
@@ -5055,11 +5055,11 @@
     8,
     0,
     {
-    {"Engine Cylinder 6 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 6 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
+    {"Engine Cylinder 6 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 6 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
     {"Engine Cylinder 6 Indicated Mean Effective Pressure Coefficient of Variance ",8,0.04,false,"%","",0},
     {"Engine Cylinder 6 Misfire Rate",8,0.4,false,"%","",0},
-    {"Engine Cylinder 6 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Cylinder 6 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Engine Cylinder 7 Combustion Metrics",
@@ -5068,11 +5068,11 @@
     8,
     0,
     {
-    {"Engine Cylinder 7 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 7 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
+    {"Engine Cylinder 7 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 7 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
     {"Engine Cylinder 7 Indicated Mean Effective Pressure Coefficient of Variance ",8,0.04,false,"%","",0},
     {"Engine Cylinder 7 Misfire Rate",8,0.4,false,"%","",0},
-    {"Engine Cylinder 7 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Cylinder 7 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Engine Cylinder 8 Combustion Metrics",
@@ -5081,11 +5081,11 @@
     8,
     0,
     {
-    {"Engine Cylinder 8 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 8 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
+    {"Engine Cylinder 8 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 8 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
     {"Engine Cylinder 8 Indicated Mean Effective Pressure Coefficient of Variance ",8,0.04,false,"%","",0},
     {"Engine Cylinder 8 Misfire Rate",8,0.4,false,"%","",0},
-    {"Engine Cylinder 8 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Cylinder 8 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Engine Cylinder 9 Combustion Metrics",
@@ -5094,11 +5094,11 @@
     8,
     0,
     {
-    {"Engine Cylinder 9 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 9 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
+    {"Engine Cylinder 9 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 9 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
     {"Engine Cylinder 9 Indicated Mean Effective Pressure Coefficient of Variance ",8,0.04,false,"%","",0},
     {"Engine Cylinder 9 Misfire Rate",8,0.4,false,"%","",0},
-    {"Engine Cylinder 9 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Cylinder 9 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Engine Cylinder 10 Combustion Metrics",
@@ -5107,11 +5107,11 @@
     8,
     0,
     {
-    {"Engine Cylinder 10 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 10 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
+    {"Engine Cylinder 10 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 10 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
     {"Engine Cylinder 10 Indicated Mean Effective Pressure Coefficient of Variance ",8,0.04,false,"%","",0},
     {"Engine Cylinder 10 Misfire Rate",8,0.4,false,"%","",0},
-    {"Engine Cylinder 10 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Cylinder 10 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Engine Cylinder 11 Combustion Metrics",
@@ -5120,11 +5120,11 @@
     8,
     0,
     {
-    {"Engine Cylinder 11 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 11 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
+    {"Engine Cylinder 11 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 11 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
     {"Engine Cylinder 11 Indicated Mean Effective Pressure Coefficient of Variance ",8,0.04,false,"%","",0},
     {"Engine Cylinder 11 Misfire Rate",8,0.4,false,"%","",0},
-    {"Engine Cylinder 11 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Cylinder 11 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Engine Cylinder 12 Combustion Metrics",
@@ -5133,11 +5133,11 @@
     8,
     0,
     {
-    {"Engine Cylinder 12 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 12 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
+    {"Engine Cylinder 12 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 12 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
     {"Engine Cylinder 12 Indicated Mean Effective Pressure Coefficient of Variance ",8,0.04,false,"%","",0},
     {"Engine Cylinder 12 Misfire Rate",8,0.4,false,"%","",0},
-    {"Engine Cylinder 12 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Cylinder 12 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Engine Cylinder 13 Combustion Metrics",
@@ -5146,11 +5146,11 @@
     8,
     0,
     {
-    {"Engine Cylinder 13 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 13 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
+    {"Engine Cylinder 13 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 13 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
     {"Engine Cylinder 13 Indicated Mean Effective Pressure Coefficient of Variance ",8,0.04,false,"%","",0},
     {"Engine Cylinder 13 Misfire Rate",8,0.4,false,"%","",0},
-    {"Engine Cylinder 13 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Cylinder 13 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Engine Cylinder 14 Combustion Metrics",
@@ -5159,11 +5159,11 @@
     8,
     0,
     {
-    {"Engine Cylinder 14 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 14 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
+    {"Engine Cylinder 14 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 14 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
     {"Engine Cylinder 14 Indicated Mean Effective Pressure Coefficient of Variance ",8,0.04,false,"%","",0},
     {"Engine Cylinder 14 Misfire Rate",8,0.4,false,"%","",0},
-    {"Engine Cylinder 14 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Cylinder 14 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Engine Cylinder 15 Combustion Metrics",
@@ -5172,11 +5172,11 @@
     8,
     0,
     {
-    {"Engine Cylinder 15 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 15 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
+    {"Engine Cylinder 15 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 15 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
     {"Engine Cylinder 15 Indicated Mean Effective Pressure Coefficient of Variance ",8,0.04,false,"%","",0},
     {"Engine Cylinder 15 Misfire Rate",8,0.4,false,"%","",0},
-    {"Engine Cylinder 15 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Cylinder 15 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Engine Cylinder 16 Combustion Metrics",
@@ -5185,11 +5185,11 @@
     8,
     0,
     {
-    {"Engine Cylinder 16 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 16 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
+    {"Engine Cylinder 16 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 16 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
     {"Engine Cylinder 16 Indicated Mean Effective Pressure Coefficient of Variance ",8,0.04,false,"%","",0},
     {"Engine Cylinder 16 Misfire Rate",8,0.4,false,"%","",0},
-    {"Engine Cylinder 16 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Cylinder 16 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Engine Cylinder 17 Combustion Metrics",
@@ -5198,11 +5198,11 @@
     8,
     0,
     {
-    {"Engine Cylinder 17 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 17 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
+    {"Engine Cylinder 17 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 17 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
     {"Engine Cylinder 17 Indicated Mean Effective Pressure Coefficient of Variance ",8,0.04,false,"%","",0},
     {"Engine Cylinder 17 Misfire Rate",8,0.4,false,"%","",0},
-    {"Engine Cylinder 17 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Cylinder 17 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Engine Cylinder 18 Combustion Metrics",
@@ -5211,11 +5211,11 @@
     8,
     0,
     {
-    {"Engine Cylinder 18 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 18 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
+    {"Engine Cylinder 18 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 18 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
     {"Engine Cylinder 18 Indicated Mean Effective Pressure Coefficient of Variance ",8,0.04,false,"%","",0},
     {"Engine Cylinder 18 Misfire Rate",8,0.4,false,"%","",0},
-    {"Engine Cylinder 18 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Cylinder 18 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Engine Cylinder 19 Combustion Metrics",
@@ -5224,11 +5224,11 @@
     8,
     0,
     {
-    {"Engine Cylinder 19 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 19 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
+    {"Engine Cylinder 19 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 19 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
     {"Engine Cylinder 19 Indicated Mean Effective Pressure Coefficient of Variance ",8,0.04,false,"%","",0},
     {"Engine Cylinder 19 Misfire Rate",8,0.4,false,"%","",0},
-    {"Engine Cylinder 19 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Cylinder 19 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Engine Cylinder 20 Combustion Metrics",
@@ -5237,11 +5237,11 @@
     8,
     0,
     {
-    {"Engine Cylinder 20 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,false,"deg","",-125},
-    {"Engine Cylinder 20 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,false,"MPa","",-1},
+    {"Engine Cylinder 20 Instantaneous Peak Combustion Pressure Timing",16,0.00390625,true,"deg","",-32000},
+    {"Engine Cylinder 20 Instantaneous Indicated Mean Effective Pressure",16,0.0001220703125,true,"MPa","",-8192},
     {"Engine Cylinder 20 Indicated Mean Effective Pressure Coefficient of Variance ",8,0.04,false,"%","",0},
     {"Engine Cylinder 20 Misfire Rate",8,0.4,false,"%","",0},
-    {"Engine Cylinder 20 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Cylinder 20 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Motor/Generator 1 Inverter Mode Feedback 1",
@@ -5265,10 +5265,10 @@
     {
     {"Motor/Generator 1 Inverter Limits Active Power CRC",8,1,false,"count","",0},
     {"Motor/Generator 1 Inverter Limits Active Power Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 1 Inverter Limits Active Mechanical Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 1 Inverter Limits Active Mechanical Power Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 1 Inverter Limits Active DC Side Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 1 Inverter Limits Active DC Side Power Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 1 Inverter Limits Active Mechanical Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 1 Inverter Limits Active Mechanical Power Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 1 Inverter Limits Active DC Side Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 1 Inverter Limits Active DC Side Power Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 1 Inverter Limits Active Mechanical",
@@ -5279,10 +5279,10 @@
     {
     {"Motor/Generator 1 Inverter Limits Active Mechanical CRC",8,1,false,"count","",0},
     {"Motor/Generator 1 Inverter Limits Active Mechanical Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 1 Inverter Limits Active Torque Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 1 Inverter Limits Active Torque Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 1 Inverter Limits Active Speed Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 1 Inverter Limits Active Speed Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 1 Inverter Limits Active Torque Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 1 Inverter Limits Active Torque Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 1 Inverter Limits Active Speed Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 1 Inverter Limits Active Speed Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 1 Inverter Limits Active DC Side",
@@ -5293,10 +5293,10 @@
     {
     {"Motor/Generator 1 Inverter Limits Active DC Side CRC",8,1,false,"count","",0},
     {"Motor/Generator 1 Inverter Limits Active DC Side Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 1 Inverter Limits Active DC Side Voltage Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 1 Inverter Limits Active DC Side Voltage Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 1 Inverter Limits Active DC Side Current Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 1 Inverter Limits Active DC Side Current Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 1 Inverter Limits Active DC Side Voltage Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 1 Inverter Limits Active DC Side Voltage Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 1 Inverter Limits Active DC Side Current Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 1 Inverter Limits Active DC Side Current Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 1 Inverter Low Voltage",
@@ -5330,10 +5330,10 @@
     {
     {"Motor/Generator 2 Inverter Limits Active Power CRC",8,1,false,"count","",0},
     {"Motor/Generator 2 Inverter Limits Active Power Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 2 Inverter Limits Active Mechanical Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 2 Inverter Limits Active Mechanical Power Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 2 Inverter Limits Active DC Side Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 2 Inverter Limits Active DC Side Power Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 2 Inverter Limits Active Mechanical Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 2 Inverter Limits Active Mechanical Power Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 2 Inverter Limits Active DC Side Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 2 Inverter Limits Active DC Side Power Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 2 Inverter Limits Active Mechanical",
@@ -5344,10 +5344,10 @@
     {
     {"Motor/Generator 2 Inverter Limits Active Mechanical CRC",8,1,false,"count","",0},
     {"Motor/Generator 2 Inverter Limits Active Mechanical Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 2 Inverter Limits Active Torque Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 2 Inverter Limits Active Torque Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 2 Inverter Limits Active Speed Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 2 Inverter Limits Active Speed Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 2 Inverter Limits Active Torque Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 2 Inverter Limits Active Torque Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 2 Inverter Limits Active Speed Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 2 Inverter Limits Active Speed Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 2 Inverter Limits Active DC Side",
@@ -5358,10 +5358,10 @@
     {
     {"Motor/Generator 2 Inverter Limits Active DC Side CRC",8,1,false,"count","",0},
     {"Motor/Generator 2 Inverter Limits Active DC Side Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 2 Inverter Limits Active DC Side Voltage Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 2 Inverter Limits Active DC Side Voltage Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 2 Inverter Limits Active DC Side Current Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 2 Inverter Limits Active DC Side Current Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 2 Inverter Limits Active DC Side Voltage Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 2 Inverter Limits Active DC Side Voltage Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 2 Inverter Limits Active DC Side Current Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 2 Inverter Limits Active DC Side Current Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 2 Inverter Low Voltage",
@@ -5382,8 +5382,8 @@
     {
     {"Motor/Generator 1 Inverter Status 2 CRC",8,1,false,"count","",0},
     {"Motor/Generator 1 Inverter Status 2 Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 1 Available Maximum Torque",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 1 Available Minimum Torque",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 1 Available Maximum Torque",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 1 Available Minimum Torque",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 1 Inverter Rate Limits Active 1",
@@ -5406,8 +5406,8 @@
     {
     {"Motor/Generator 2 Inverter Status 2 CRC",8,1,false,"count","",0},
     {"Motor/Generator 2 Inverter Status 2 Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 2 Available Maximum Torque",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 2 Available Minimum Torque",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 2 Available Maximum Torque",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 2 Available Minimum Torque",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 2 Inverter Rate Limits Active 1",
@@ -5464,7 +5464,7 @@
     {"HVESP1 Available Discharge Power",16,0.05,false,"kW","",0},
     {"HVESP1 Available Charge Power",16,0.05,false,"kW","",0},
     {"HVESP1 Voltage Level",16,0.05,false,"V","",0},
-    {"HVESP1 Current",16,0.05,false,"A","",-1600},
+    {"HVESP1 Current",16,0.05,true,"A","",-32000},
     {0}}},
     
     {"High Voltage Energy Storage Pack 1 Data 2",
@@ -5485,9 +5485,9 @@
     8,
     0,
     {
-    {"HVESP1 Highest Cell Temperature",16,0.03125,false,"°C","",-273},
-    {"HVESP1 Lowest Cell Temperature",16,0.03125,false,"°C","",-273},
-    {"HVESP1 Average Cell Temperature",16,0.03125,false,"°C","",-273},
+    {"HVESP1 Highest Cell Temperature",16,0.03125,true,"°C","",-8736},
+    {"HVESP1 Lowest Cell Temperature",16,0.03125,true,"°C","",-8736},
+    {"HVESP1 Average Cell Temperature",16,0.03125,true,"°C","",-8736},
     {"HVESP1 Cell Temperature Differential Status",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -5508,8 +5508,8 @@
     8,
     0,
     {
-    {"HVESP1 Discharge Current Limit",16,0.05,false,"A","",-1600},
-    {"HVESP1 Charge Current Limit",16,0.05,false,"A","",-1600},
+    {"HVESP1 Discharge Current Limit",16,0.05,true,"A","",-32000},
+    {"HVESP1 Charge Current Limit",16,0.05,true,"A","",-32000},
     {"HVESP1 Lowest Cell State of Charge",16,0.0015625,false,"%","",0},
     {"HVESP1 Highest Cell State of Charge",16,0.0015625,false,"%","",0},
     {0}}},
@@ -5522,10 +5522,10 @@
     {
     {"HVESP1 Bus Voltage",16,0.05,false,"V","",0},
     {"HVESP1 Ignition Voltage",16,0.01,false,"V","",0},
-    {"HVESP1 Intake Coolant Temperature",8,1,false,"°C","",-40},
-    {"HVESP1 Outlet Coolant Temperature",8,1,false,"°C","",-40},
-    {"HVESP1 Electronics Temperature",8,1,false,"°C","",-40},
-    {"HVESP1 Temperature",8,1,false,"°C","",-40},
+    {"HVESP1 Intake Coolant Temperature",8,1,true,"°C","",-40},
+    {"HVESP1 Outlet Coolant Temperature",8,1,true,"°C","",-40},
+    {"HVESP1 Electronics Temperature",8,1,true,"°C","",-40},
+    {"HVESP1 Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"High Voltage Energy Storage Pack 1 Status 1",
@@ -5680,7 +5680,7 @@
     {"HVESP2 Available Discharge Power",16,0.05,false,"kW","",0},
     {"HVESP2 Available Charge Power",16,0.05,false,"kW","",0},
     {"HVESP2 Voltage Level",16,0.05,false,"V","",0},
-    {"HVESP2 Current",16,0.05,false,"A","",-1600},
+    {"HVESP2 Current",16,0.05,true,"A","",-32000},
     {0}}},
     
     {"High Voltage Energy Storage Pack 2 Data 2",
@@ -5701,9 +5701,9 @@
     8,
     0,
     {
-    {"HVESP2 Highest Cell Temperature",16,0.03125,false,"°C","",-273},
-    {"HVESP2 Lowest Cell Temperature",16,0.03125,false,"°C","",-273},
-    {"HVESP2 Average Cell Temperature",16,0.03125,false,"°C","",-273},
+    {"HVESP2 Highest Cell Temperature",16,0.03125,true,"°C","",-8736},
+    {"HVESP2 Lowest Cell Temperature",16,0.03125,true,"°C","",-8736},
+    {"HVESP2 Average Cell Temperature",16,0.03125,true,"°C","",-8736},
     {"HVESP2 Cell Temperature Differential Status",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -5724,8 +5724,8 @@
     8,
     0,
     {
-    {"HVESP2 Discharge Current Limit",16,0.05,false,"A","",-1600},
-    {"HVESP2 Charge Current Limit",16,0.05,false,"A","",-1600},
+    {"HVESP2 Discharge Current Limit",16,0.05,true,"A","",-32000},
+    {"HVESP2 Charge Current Limit",16,0.05,true,"A","",-32000},
     {"HVESP2 Lowest Cell State of Charge",16,0.0015625,false,"%","",0},
     {"HVESP2 Highest Cell State of Charge",16,0.0015625,false,"%","",0},
     {0}}},
@@ -5738,10 +5738,10 @@
     {
     {"HVESP2 Bus Voltage",16,0.05,false,"V","",0},
     {"HVESP2 Ignition Voltage",16,0.01,false,"V","",0},
-    {"HVESP2 Intake Coolant Temperature",8,1,false,"°C","",-40},
-    {"HVESP2 Outlet Coolant Temperature",8,1,false,"°C","",-40},
-    {"HVESP2 Electronics Temperature",8,1,false,"°C","",-40},
-    {"HVESP2 Temperature",8,1,false,"°C","",-40},
+    {"HVESP2 Intake Coolant Temperature",8,1,true,"°C","",-40},
+    {"HVESP2 Outlet Coolant Temperature",8,1,true,"°C","",-40},
+    {"HVESP2 Electronics Temperature",8,1,true,"°C","",-40},
+    {"HVESP2 Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"High Voltage Energy Storage Pack 2 Status 1",
@@ -5896,7 +5896,7 @@
     {"HVESP3 Available Discharge Power",16,0.05,false,"kW","",0},
     {"HVESP3 Available Charge Power",16,0.05,false,"kW","",0},
     {"HVESP3 Voltage Level",16,0.05,false,"V","",0},
-    {"HVESP3 Current",16,0.05,false,"A","",-1600},
+    {"HVESP3 Current",16,0.05,true,"A","",-32000},
     {0}}},
     
     {"High Voltage Energy Storage Pack 3 Data 2",
@@ -5917,9 +5917,9 @@
     8,
     0,
     {
-    {"HVESP3 Highest Cell Temperature",16,0.03125,false,"°C","",-273},
-    {"HVESP3 Lowest Cell Temperature",16,0.03125,false,"°C","",-273},
-    {"HVESP3 Average Cell Temperature",16,0.03125,false,"°C","",-273},
+    {"HVESP3 Highest Cell Temperature",16,0.03125,true,"°C","",-8736},
+    {"HVESP3 Lowest Cell Temperature",16,0.03125,true,"°C","",-8736},
+    {"HVESP3 Average Cell Temperature",16,0.03125,true,"°C","",-8736},
     {"HVESP3 Cell Temperature Differential Status",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -5940,8 +5940,8 @@
     8,
     0,
     {
-    {"HVESP3 Discharge Current Limit",16,0.05,false,"A","",-1600},
-    {"HVESP3 Charge Current Limit",16,0.05,false,"A","",-1600},
+    {"HVESP3 Discharge Current Limit",16,0.05,true,"A","",-32000},
+    {"HVESP3 Charge Current Limit",16,0.05,true,"A","",-32000},
     {"HVESP3 Lowest Cell State of Charge",16,0.0015625,false,"%","",0},
     {"HVESP3 Highest Cell State of Charge",16,0.0015625,false,"%","",0},
     {0}}},
@@ -5954,10 +5954,10 @@
     {
     {"HVESP3 Bus Voltage",16,0.05,false,"V","",0},
     {"HVESP3 Ignition Voltage",16,0.01,false,"V","",0},
-    {"HVESP3 Intake Coolant Temperature",8,1,false,"°C","",-40},
-    {"HVESP3 Outlet Coolant Temperature",8,1,false,"°C","",-40},
-    {"HVESP3 Electronics Temperature",8,1,false,"°C","",-40},
-    {"HVESP3 Temperature",8,1,false,"°C","",-40},
+    {"HVESP3 Intake Coolant Temperature",8,1,true,"°C","",-40},
+    {"HVESP3 Outlet Coolant Temperature",8,1,true,"°C","",-40},
+    {"HVESP3 Electronics Temperature",8,1,true,"°C","",-40},
+    {"HVESP3 Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"High Voltage Energy Storage Pack 3 Status 1",
@@ -6112,7 +6112,7 @@
     {"HVESP4 Available Discharge Power",16,0.05,false,"kW","",0},
     {"HVESP4 Available Charge Power",16,0.05,false,"kW","",0},
     {"HVESP4 Voltage Level",16,0.05,false,"V","",0},
-    {"HVESP4 Current",16,0.05,false,"A","",-1600},
+    {"HVESP4 Current",16,0.05,true,"A","",-32000},
     {0}}},
     
     {"High Voltage Energy Storage Pack 4 Data 2",
@@ -6133,9 +6133,9 @@
     8,
     0,
     {
-    {"HVESP4 Highest Cell Temperature",16,0.03125,false,"°C","",-273},
-    {"HVESP4 Lowest Cell Temperature",16,0.03125,false,"°C","",-273},
-    {"HVESP4 Average Cell Temperature",16,0.03125,false,"°C","",-273},
+    {"HVESP4 Highest Cell Temperature",16,0.03125,true,"°C","",-8736},
+    {"HVESP4 Lowest Cell Temperature",16,0.03125,true,"°C","",-8736},
+    {"HVESP4 Average Cell Temperature",16,0.03125,true,"°C","",-8736},
     {"HVESP4 Cell Temperature Differential Status",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -6156,8 +6156,8 @@
     8,
     0,
     {
-    {"HVESP4 Discharge Current Limit",16,0.05,false,"A","",-1600},
-    {"HVESP4 Charge Current Limit",16,0.05,false,"A","",-1600},
+    {"HVESP4 Discharge Current Limit",16,0.05,true,"A","",-32000},
+    {"HVESP4 Charge Current Limit",16,0.05,true,"A","",-32000},
     {"HVESP4 Lowest Cell State of Charge",16,0.0015625,false,"%","",0},
     {"HVESP4 Highest Cell State of Charge",16,0.0015625,false,"%","",0},
     {0}}},
@@ -6170,10 +6170,10 @@
     {
     {"HVESP4 Bus Voltage",16,0.05,false,"V","",0},
     {"HVESP4 Ignition Voltage",16,0.01,false,"V","",0},
-    {"HVESP4 Intake Coolant Temperature",8,1,false,"°C","",-40},
-    {"HVESP4 Outlet Coolant Temperature",8,1,false,"°C","",-40},
-    {"HVESP4 Electronics Temperature",8,1,false,"°C","",-40},
-    {"HVESP4 Temperature",8,1,false,"°C","",-40},
+    {"HVESP4 Intake Coolant Temperature",8,1,true,"°C","",-40},
+    {"HVESP4 Outlet Coolant Temperature",8,1,true,"°C","",-40},
+    {"HVESP4 Electronics Temperature",8,1,true,"°C","",-40},
+    {"HVESP4 Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"High Voltage Energy Storage Pack 4 Status 1",
@@ -6328,7 +6328,7 @@
     {"HVESP5 Available Discharge Power",16,0.05,false,"kW","",0},
     {"HVESP5 Available Charge Power",16,0.05,false,"kW","",0},
     {"HVESP5 Voltage Level",16,0.05,false,"V","",0},
-    {"HVESP5 Current",16,0.05,false,"A","",-1600},
+    {"HVESP5 Current",16,0.05,true,"A","",-32000},
     {0}}},
     
     {"High Voltage Energy Storage Pack 5 Data 2",
@@ -6349,9 +6349,9 @@
     8,
     0,
     {
-    {"HVESP5 Highest Cell Temperature",16,0.03125,false,"°C","",-273},
-    {"HVESP5 Lowest Cell Temperature",16,0.03125,false,"°C","",-273},
-    {"HVESP5 Average Cell Temperature",16,0.03125,false,"°C","",-273},
+    {"HVESP5 Highest Cell Temperature",16,0.03125,true,"°C","",-8736},
+    {"HVESP5 Lowest Cell Temperature",16,0.03125,true,"°C","",-8736},
+    {"HVESP5 Average Cell Temperature",16,0.03125,true,"°C","",-8736},
     {"HVESP5 Cell Temperature Differential Status",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -6372,8 +6372,8 @@
     8,
     0,
     {
-    {"HVESP5 Discharge Current Limit",16,0.05,false,"A","",-1600},
-    {"HVESP5 Charge Current Limit",16,0.05,false,"A","",-1600},
+    {"HVESP5 Discharge Current Limit",16,0.05,true,"A","",-32000},
+    {"HVESP5 Charge Current Limit",16,0.05,true,"A","",-32000},
     {"HVESP5 Lowest Cell State of Charge",16,0.0015625,false,"%","",0},
     {"HVESP5 Highest Cell State of Charge",16,0.0015625,false,"%","",0},
     {0}}},
@@ -6386,10 +6386,10 @@
     {
     {"HVESP5 Bus Voltage",16,0.05,false,"V","",0},
     {"HVESP5 Ignition Voltage",16,0.01,false,"V","",0},
-    {"HVESP5 Intake Coolant Temperature",8,1,false,"°C","",-40},
-    {"HVESP5 Outlet Coolant Temperature",8,1,false,"°C","",-40},
-    {"HVESP5 Electronics Temperature",8,1,false,"°C","",-40},
-    {"HVESP5 Temperature",8,1,false,"°C","",-40},
+    {"HVESP5 Intake Coolant Temperature",8,1,true,"°C","",-40},
+    {"HVESP5 Outlet Coolant Temperature",8,1,true,"°C","",-40},
+    {"HVESP5 Electronics Temperature",8,1,true,"°C","",-40},
+    {"HVESP5 Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"High Voltage Energy Storage Pack 5 Status 1",
@@ -6544,7 +6544,7 @@
     {"HVESP6 Available Discharge Power",16,0.05,false,"kW","",0},
     {"HVESP6 Available Charge Power",16,0.05,false,"kW","",0},
     {"HVESP6 Voltage Level",16,0.05,false,"V","",0},
-    {"HVESP6 Current",16,0.05,false,"A","",-1600},
+    {"HVESP6 Current",16,0.05,true,"A","",-32000},
     {0}}},
     
     {"High Voltage Energy Storage Pack 6 Data 2",
@@ -6565,9 +6565,9 @@
     8,
     0,
     {
-    {"HVESP6 Highest Cell Temperature",16,0.03125,false,"°C","",-273},
-    {"HVESP6 Lowest Cell Temperature",16,0.03125,false,"°C","",-273},
-    {"HVESP6 Average Cell Temperature",16,0.03125,false,"°C","",-273},
+    {"HVESP6 Highest Cell Temperature",16,0.03125,true,"°C","",-8736},
+    {"HVESP6 Lowest Cell Temperature",16,0.03125,true,"°C","",-8736},
+    {"HVESP6 Average Cell Temperature",16,0.03125,true,"°C","",-8736},
     {"HVESP6 Cell Temperature Differential Status",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -6588,8 +6588,8 @@
     8,
     0,
     {
-    {"HVESP6 Discharge Current Limit",16,0.05,false,"A","",-1600},
-    {"HVESP6 Charge Current Limit",16,0.05,false,"A","",-1600},
+    {"HVESP6 Discharge Current Limit",16,0.05,true,"A","",-32000},
+    {"HVESP6 Charge Current Limit",16,0.05,true,"A","",-32000},
     {"HVESP6 Lowest Cell State of Charge",16,0.0015625,false,"%","",0},
     {"HVESP6 Highest Cell State of Charge",16,0.0015625,false,"%","",0},
     {0}}},
@@ -6602,10 +6602,10 @@
     {
     {"HVESP6 Bus Voltage",16,0.05,false,"V","",0},
     {"HVESP6 Ignition Voltage",16,0.01,false,"V","",0},
-    {"HVESP6 Intake Coolant Temperature",8,1,false,"°C","",-40},
-    {"HVESP6 Outlet Coolant Temperature",8,1,false,"°C","",-40},
-    {"HVESP6 Electronics Temperature",8,1,false,"°C","",-40},
-    {"HVESP6 Temperature",8,1,false,"°C","",-40},
+    {"HVESP6 Intake Coolant Temperature",8,1,true,"°C","",-40},
+    {"HVESP6 Outlet Coolant Temperature",8,1,true,"°C","",-40},
+    {"HVESP6 Electronics Temperature",8,1,true,"°C","",-40},
+    {"HVESP6 Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"High Voltage Energy Storage Pack 6 Status 1",
@@ -6752,10 +6752,10 @@
     {
     {"Motor/Generator 3 Inverter Limits Active Power CRC",8,1,false,"count","",0},
     {"Motor/Generator 3 Inverter Limits Active Power Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 3 Inverter Limits Active Mechanical Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 3 Inverter Limits Active Mechanical Power Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 3 Inverter Limits Active DC Side Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 3 Inverter Limits Active DC Side Power Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 3 Inverter Limits Active Mechanical Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 3 Inverter Limits Active Mechanical Power Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 3 Inverter Limits Active DC Side Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 3 Inverter Limits Active DC Side Power Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 3 Inverter Limits Active Mechanical",
@@ -6766,10 +6766,10 @@
     {
     {"Motor/Generator 3 Inverter Limits Active Mechanical CRC",8,1,false,"count","",0},
     {"Motor/Generator 3 Inverter Limits Active Mechanical Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 3 Inverter Limits Active Torque Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 3 Inverter Limits Active Torque Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 3 Inverter Limits Active Speed Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 3 Inverter Limits Active Speed Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 3 Inverter Limits Active Torque Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 3 Inverter Limits Active Torque Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 3 Inverter Limits Active Speed Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 3 Inverter Limits Active Speed Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 3 Inverter Limits Active DC Side",
@@ -6780,10 +6780,10 @@
     {
     {"Motor/Generator 3 Inverter Limits Active DC Side CRC",8,1,false,"count","",0},
     {"Motor/Generator 3 Inverter Limits Active DC Side Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 3 Inverter Limits Active DC Side Voltage Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 3 Inverter Limits Active DC Side Voltage Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 3 Inverter Limits Active DC Side Current Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 3 Inverter Limits Active DC Side Current Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 3 Inverter Limits Active DC Side Voltage Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 3 Inverter Limits Active DC Side Voltage Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 3 Inverter Limits Active DC Side Current Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 3 Inverter Limits Active DC Side Current Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 3 Inverter Low Voltage",
@@ -6804,8 +6804,8 @@
     {
     {"Motor/Generator 3 Inverter Status 2 CRC",8,1,false,"count","",0},
     {"Motor/Generator 3 Inverter Status 2 Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 3 Available Maximum Torque",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 3 Available Minimum Torque",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 3 Available Maximum Torque",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 3 Available Minimum Torque",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 3 Inverter Rate Limits Active 1",
@@ -6841,10 +6841,10 @@
     {
     {"Motor/Generator 4 Inverter Limits Active Power CRC",8,1,false,"count","",0},
     {"Motor/Generator 4 Inverter Limits Active Power Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 4 Inverter Limits Active Mechanical Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 4 Inverter Limits Active Mechanical Power Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 4 Inverter Limits Active DC Side Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 4 Inverter Limits Active DC Side Power Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 4 Inverter Limits Active Mechanical Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 4 Inverter Limits Active Mechanical Power Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 4 Inverter Limits Active DC Side Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 4 Inverter Limits Active DC Side Power Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 4 Inverter Limits Active Mechanical",
@@ -6855,10 +6855,10 @@
     {
     {"Motor/Generator 4 Inverter Limits Active Mechanical CRC",8,1,false,"count","",0},
     {"Motor/Generator 4 Inverter Limits Active Mechanical Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 4 Inverter Limits Active Torque Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 4 Inverter Limits Active Torque Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 4 Inverter Limits Active Speed Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 4 Inverter Limits Active Speed Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 4 Inverter Limits Active Torque Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 4 Inverter Limits Active Torque Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 4 Inverter Limits Active Speed Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 4 Inverter Limits Active Speed Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 4 Inverter Limits Active DC Side",
@@ -6869,10 +6869,10 @@
     {
     {"Motor/Generator 4 Inverter Limits Active DC Side CRC",8,1,false,"count","",0},
     {"Motor/Generator 4 Inverter Limits Active DC Side Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 4 Inverter Limits Active DC Side Voltage Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 4 Inverter Limits Active DC Side Voltage Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 4 Inverter Limits Active DC Side Current Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 4 Inverter Limits Active DC Side Current Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 4 Inverter Limits Active DC Side Voltage Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 4 Inverter Limits Active DC Side Voltage Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 4 Inverter Limits Active DC Side Current Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 4 Inverter Limits Active DC Side Current Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 4 Inverter Low Voltage",
@@ -6893,8 +6893,8 @@
     {
     {"Motor/Generator 4 Inverter Status 2 CRC",8,1,false,"count","",0},
     {"Motor/Generator 4 Inverter Status 2 Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 4 Available Maximum Torque",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 4 Available Minimum Torque",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 4 Available Maximum Torque",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 4 Available Minimum Torque",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 4 Inverter Rate Limits Active 1",
@@ -6930,10 +6930,10 @@
     {
     {"Motor/Generator 5 Inverter Limits Active Power CRC",8,1,false,"count","",0},
     {"Motor/Generator 5 Inverter Limits Active Power Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 5 Inverter Limits Active Mechanical Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 5 Inverter Limits Active Mechanical Power Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 5 Inverter Limits Active DC Side Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 5 Inverter Limits Active DC Side Power Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 5 Inverter Limits Active Mechanical Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 5 Inverter Limits Active Mechanical Power Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 5 Inverter Limits Active DC Side Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 5 Inverter Limits Active DC Side Power Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 5 Inverter Limits Active Mechanical",
@@ -6944,10 +6944,10 @@
     {
     {"Motor/Generator 5 Inverter Limits Active Mechanical CRC",8,1,false,"count","",0},
     {"Motor/Generator 5 Inverter Limits Active Mechanical Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 5 Inverter Limits Active Torque Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 5 Inverter Limits Active Torque Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 5 Inverter Limits Active Speed Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 5 Inverter Limits Active Speed Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 5 Inverter Limits Active Torque Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 5 Inverter Limits Active Torque Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 5 Inverter Limits Active Speed Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 5 Inverter Limits Active Speed Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 5 Inverter Limits Active DC Side",
@@ -6958,10 +6958,10 @@
     {
     {"Motor/Generator 5 Inverter Limits Active DC Side CRC",8,1,false,"count","",0},
     {"Motor/Generator 5 Inverter Limits Active DC Side Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 5 Inverter Limits Active DC Side Voltage Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 5 Inverter Limits Active DC Side Voltage Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 5 Inverter Limits Active DC Side Current Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 5 Inverter Limits Active DC Side Current Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 5 Inverter Limits Active DC Side Voltage Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 5 Inverter Limits Active DC Side Voltage Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 5 Inverter Limits Active DC Side Current Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 5 Inverter Limits Active DC Side Current Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 5 Inverter Low Voltage",
@@ -6982,8 +6982,8 @@
     {
     {"Motor/Generator 5 Inverter Status 2 CRC",8,1,false,"count","",0},
     {"Motor/Generator 5 Inverter Status 2 Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 5 Available Maximum Torque",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 5 Available Minimum Torque",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 5 Available Maximum Torque",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 5 Available Minimum Torque",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 5 Inverter Rate Limits Active 1",
@@ -7019,10 +7019,10 @@
     {
     {"Motor/Generator 6 Inverter Limits Active Power CRC",8,1,false,"count","",0},
     {"Motor/Generator 6 Inverter Limits Active Power Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 6 Inverter Limits Active Mechanical Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 6 Inverter Limits Active Mechanical Power Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 6 Inverter Limits Active DC Side Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 6 Inverter Limits Active DC Side Power Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 6 Inverter Limits Active Mechanical Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 6 Inverter Limits Active Mechanical Power Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 6 Inverter Limits Active DC Side Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 6 Inverter Limits Active DC Side Power Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 6 Inverter Limits Active Mechanical",
@@ -7033,10 +7033,10 @@
     {
     {"Motor/Generator 6 Inverter Limits Active Mechanical CRC",8,1,false,"count","",0},
     {"Motor/Generator 6 Inverter Limits Active Mechanical Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 6 Inverter Limits Active Torque Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 6 Inverter Limits Active Torque Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 6 Inverter Limits Active Speed Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 6 Inverter Limits Active Speed Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 6 Inverter Limits Active Torque Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 6 Inverter Limits Active Torque Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 6 Inverter Limits Active Speed Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 6 Inverter Limits Active Speed Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 6 Inverter Limits Active DC Side",
@@ -7047,10 +7047,10 @@
     {
     {"Motor/Generator 6 Inverter Limits Active DC Side CRC",8,1,false,"count","",0},
     {"Motor/Generator 6 Inverter Limits Active DC Side Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 6 Inverter Limits Active DC Side Voltage Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 6 Inverter Limits Active DC Side Voltage Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 6 Inverter Limits Active DC Side Current Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 6 Inverter Limits Active DC Side Current Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 6 Inverter Limits Active DC Side Voltage Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 6 Inverter Limits Active DC Side Voltage Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 6 Inverter Limits Active DC Side Current Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 6 Inverter Limits Active DC Side Current Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 6 Inverter Low Voltage",
@@ -7071,8 +7071,8 @@
     {
     {"Motor/Generator 6 Inverter Status 2 CRC",8,1,false,"count","",0},
     {"Motor/Generator 6 Inverter Status 2 Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 6 Available Maximum Torque",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 6 Available Minimum Torque",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 6 Available Maximum Torque",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 6 Available Minimum Torque",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 6 Inverter Rate Limits Active 1",
@@ -7110,7 +7110,7 @@
     0,
     {
     {"Winch Motor Encoder Position",16,1,false,"count","",0},
-    {"Winch Revolution Counter",16,1,false,"count","",-32128},
+    {"Winch Revolution Counter",16,1,true,"count","",-32128},
     {0}}},
     
     {"Motor/Generator 3 Inverter Control",
@@ -7122,10 +7122,10 @@
     {"Motor/Generator 3 Inverter Control CRC",8,1,false,"count","",0},
     {"Motor/Generator 3 Inverter Control Counter",4,RES_BITFIELD,false,0,"",0},
     {"Motor/Generator 3 Inverter Control Limits Request Override Mode",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 3 Inverter Control Limits Request Override Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 3 Inverter Control Limits Request Override Minimum ",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 3 Inverter Control Limits Request Override Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 3 Inverter Control Limits Request Override Minimum ",12,0.0625,true,"%","",-2000},
     {"Motor/Generator 3 Inverter Control Setpoint Mode Request",5,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 3 Inverter Control Setpoint Request",16,0.00390625,false,"%","",-125},
+    {"Motor/Generator 3 Inverter Control Setpoint Request",16,0.00390625,true,"%","",-32000},
     {0}}},
     
     {"Motor/Generator 3 Inverter Rate Limits Request 1",
@@ -7149,10 +7149,10 @@
     {"Motor/Generator 4 Inverter Control CRC",8,1,false,"count","",0},
     {"Motor/Generator 4 Inverter Control Counter",4,RES_BITFIELD,false,0,"",0},
     {"Motor/Generator 4 Inverter Control Limits Request Override Mode",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 4 Inverter Control Limits Request Override Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 4 Inverter Control Limits Request Override Minimum ",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 4 Inverter Control Limits Request Override Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 4 Inverter Control Limits Request Override Minimum ",12,0.0625,true,"%","",-2000},
     {"Motor/Generator 4 Inverter Control Setpoint Mode Request",5,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 4 Inverter Control Setpoint Request",16,0.00390625,false,"%","",-125},
+    {"Motor/Generator 4 Inverter Control Setpoint Request",16,0.00390625,true,"%","",-32000},
     {0}}},
     
     {"Motor/Generator 4 Inverter Rate Limits Request 1",
@@ -7176,10 +7176,10 @@
     {"Motor/Generator 5 Inverter Control CRC",8,1,false,"count","",0},
     {"Motor/Generator 5 Inverter Control Counter",4,RES_BITFIELD,false,0,"",0},
     {"Motor/Generator 5 Inverter Control Limits Request Override Mode",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 5 Inverter Control Limits Request Override Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 5 Inverter Control Limits Request Override Minimum ",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 5 Inverter Control Limits Request Override Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 5 Inverter Control Limits Request Override Minimum ",12,0.0625,true,"%","",-2000},
     {"Motor/Generator 5 Inverter Control Setpoint Mode Request",5,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 5 Inverter Control Setpoint Request",16,0.00390625,false,"%","",-125},
+    {"Motor/Generator 5 Inverter Control Setpoint Request",16,0.00390625,true,"%","",-32000},
     {0}}},
     
     {"Motor/Generator 5 Inverter Rate Limits Request 1",
@@ -7203,10 +7203,10 @@
     {"Motor/Generator 6 Inverter Control CRC",8,1,false,"count","",0},
     {"Motor/Generator 6 Inverter Control Counter",4,RES_BITFIELD,false,0,"",0},
     {"Motor/Generator 6 Inverter Control Limits Request Override Mode",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 6 Inverter Control Limits Request Override Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 6 Inverter Control Limits Request Override Minimum ",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 6 Inverter Control Limits Request Override Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 6 Inverter Control Limits Request Override Minimum ",12,0.0625,true,"%","",-2000},
     {"Motor/Generator 6 Inverter Control Setpoint Mode Request",5,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 6 Inverter Control Setpoint Request",16,0.00390625,false,"%","",-125},
+    {"Motor/Generator 6 Inverter Control Setpoint Request",16,0.00390625,true,"%","",-32000},
     {0}}},
     
     {"Motor/Generator 6 Inverter Rate Limits Request 1",
@@ -7227,14 +7227,14 @@
     LEN_VARIABLE,
     0,
     {
-    {"EVCC1 Control Pilot maximum voltage.",16,0.05,false,"V","",-1606},
-    {"EVCC1 Control Pilot minimum voltage.",16,0.05,false,"V","",-1606},
+    {"EVCC1 Control Pilot maximum voltage.",16,0.05,true,"V","",-32120},
+    {"EVCC1 Control Pilot minimum voltage.",16,0.05,true,"V","",-32120},
     {"EVCC1 Control Pilot PWM frequency",16,1,false,"Hz","",0},
     {"EVCC1 Control Pilot Duty Cycle",8,0.5,false,"%","",0},
     {"EVCC1 Control Pilot State",4,RES_BITFIELD,false,0,"",0},
     {"EVCC1 Control Pilot Sub-State",4,RES_BITFIELD,false,0,"",0},
     {"EVCC1 Proximity circuit voltage",16,0.01,false,"V","",0},
-    {"EVCC1 Inlet connector temperature",8,1,false,"°C","",-40},
+    {"EVCC1 Inlet connector temperature",8,1,true,"°C","",-40},
     {"EVCC1 Compatibility Code",4,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -7255,9 +7255,9 @@
     8,
     0,
     {
-    {"Engine Cylinder Temperature Average",16,0.03125,false,"°C","",-273},
-    {"Engine Cylinder Bank 1 Temperature Average",16,0.03125,false,"°C","",-273},
-    {"Engine Cylinder Bank 2 Temperature Average",16,0.03125,false,"°C","",-273},
+    {"Engine Cylinder Temperature Average",16,0.03125,true,"°C","",-8736},
+    {"Engine Cylinder Bank 1 Temperature Average",16,0.03125,true,"°C","",-8736},
+    {"Engine Cylinder Bank 2 Temperature Average",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Turbocharger Information 8",
@@ -7266,10 +7266,10 @@
     8,
     0,
     {
-    {"Engine Turbocharger 3 Oil Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Turbocharger 4 Oil Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Turbocharger 5 Oil Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Turbocharger 6 Oil Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Turbocharger 3 Oil Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Turbocharger 4 Oil Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Turbocharger 5 Oil Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Turbocharger 6 Oil Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Automated Driving System Control",
@@ -7287,7 +7287,7 @@
     8,
     0,
     {
-    {"EVSE1 AC RMS Current",16,0.05,false,"A","",-1600},
+    {"EVSE1 AC RMS Current",16,0.05,true,"A","",-32000},
     {"EVSE1 AC RMS Voltage",16,0.05,false,"V","",0},
     {0}}},
     
@@ -8152,7 +8152,7 @@
     {"Motor/Generator 6 Inverter PID Control Normalized Differential Gain",8,0.03125,false,"%/(%/s)","",0},
     {"Motor/Generator 6 Inverter PID Control Normalized Integral Gain",16,0.015625,false,"%/(%*s)","",0},
     {"Motor/Generator 6 Inverter PID Control Normalized Proportional Gain",12,0.0625,false,"%/%","",0},
-    {"Motor/Generator 6 Inverter PID Control Feed-Forward Torque",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 6 Inverter PID Control Feed-Forward Torque",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 6 Inverter Limits Request Power",
@@ -8163,10 +8163,10 @@
     {
     {"Motor/Generator 6 Inverter Limits Request Power CRC",8,1,false,"count","",0},
     {"Motor/Generator 6 Inverter Limits Request Power Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 6 Inverter Limits Request Mechanical Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 6 Inverter Limits Request Mechanical Power Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 6 Inverter Limits Request DC Side Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 6 Inverter Limits Request DC Side Power Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 6 Inverter Limits Request Mechanical Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 6 Inverter Limits Request Mechanical Power Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 6 Inverter Limits Request DC Side Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 6 Inverter Limits Request DC Side Power Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 6 Inverter Limits Request Mechanical",
@@ -8177,10 +8177,10 @@
     {
     {"Motor/Generator 6 Inverter Limits Request Mechanical CRC",8,1,false,"count","",0},
     {"Motor/Generator 6 Inverter Limits Request Mechanical Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 6 Inverter Limits Request Torque Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 6 Inverter Limits Request Torque Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 6 Inverter Limits Request Speed Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 6 Inverter Limits Request Speed Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 6 Inverter Limits Request Torque Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 6 Inverter Limits Request Torque Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 6 Inverter Limits Request Speed Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 6 Inverter Limits Request Speed Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 6 Inverter Limits Request DC Side",
@@ -8191,10 +8191,10 @@
     {
     {"Motor/Generator 6 Inverter Limits Request DC Side CRC",8,1,false,"count","",0},
     {"Motor/Generator 6 Inverter Limits Request DC Side Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 6 Inverter Limits Request DC Side Voltage Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 6 Inverter Limits Request DC Side Voltage Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 6 Inverter Limits Request DC Side Current Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 6 Inverter Limits Request DC Side Current Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 6 Inverter Limits Request DC Side Voltage Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 6 Inverter Limits Request DC Side Voltage Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 6 Inverter Limits Request DC Side Current Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 6 Inverter Limits Request DC Side Current Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 6 Inverter Isolation Integrity Request",
@@ -8221,7 +8221,7 @@
     {"Motor/Generator 5 Inverter PID Control Normalized Differential Gain",8,0.03125,false,"%/(%/s)","",0},
     {"Motor/Generator 5 Inverter PID Control Normalized Integral Gain",16,0.015625,false,"%/(%*s)","",0},
     {"Motor/Generator 5 Inverter PID Control Normalized Proportional Gain",12,0.0625,false,"%/%","",0},
-    {"Motor/Generator 5 Inverter PID Control Feed-Forward Torque",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 5 Inverter PID Control Feed-Forward Torque",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 5 Inverter Limits Request Power",
@@ -8232,10 +8232,10 @@
     {
     {"Motor/Generator 5 Inverter Limits Request Power CRC",8,1,false,"count","",0},
     {"Motor/Generator 5 Inverter Limits Request Power Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 5 Inverter Limits Request Mechanical Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 5 Inverter Limits Request Mechanical Power Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 5 Inverter Limits Request DC Side Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 5 Inverter Limits Request DC Side Power Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 5 Inverter Limits Request Mechanical Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 5 Inverter Limits Request Mechanical Power Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 5 Inverter Limits Request DC Side Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 5 Inverter Limits Request DC Side Power Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 5 Inverter Limits Request Mechanical",
@@ -8246,10 +8246,10 @@
     {
     {"Motor/Generator 5 Inverter Limits Request Mechanical CRC",8,1,false,"count","",0},
     {"Motor/Generator 5 Inverter Limits Request Mechanical Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 5 Inverter Limits Request Torque Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 5 Inverter Limits Request Torque Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 5 Inverter Limits Request Speed Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 5 Inverter Limits Request Speed Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 5 Inverter Limits Request Torque Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 5 Inverter Limits Request Torque Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 5 Inverter Limits Request Speed Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 5 Inverter Limits Request Speed Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 5 Inverter Limits Request DC Side",
@@ -8260,10 +8260,10 @@
     {
     {"Motor/Generator 5 Inverter Limits Request DC Side CRC",8,1,false,"count","",0},
     {"Motor/Generator 5 Inverter Limits Request DC Side Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 5 Inverter Limits Request DC Side Voltage Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 5 Inverter Limits Request DC Side Voltage Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 5 Inverter Limits Request DC Side Current Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 5 Inverter Limits Request DC Side Current Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 5 Inverter Limits Request DC Side Voltage Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 5 Inverter Limits Request DC Side Voltage Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 5 Inverter Limits Request DC Side Current Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 5 Inverter Limits Request DC Side Current Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 5 Inverter Isolation Integrity Request",
@@ -8290,7 +8290,7 @@
     {"Motor/Generator 4 Inverter PID Control Normalized Differential Gain",8,0.03125,false,"%/(%/s)","",0},
     {"Motor/Generator 4 Inverter PID Control Normalized Integral Gain",16,0.015625,false,"%/(%*s)","",0},
     {"Motor/Generator 4 Inverter PID Control Normalized Proportional Gain",12,0.0625,false,"%/%","",0},
-    {"Motor/Generator 4 Inverter PID Control Feed-Forward Torque",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 4 Inverter PID Control Feed-Forward Torque",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 4 Inverter Limits Request Power",
@@ -8301,10 +8301,10 @@
     {
     {"Motor/Generator 4 Inverter Limits Request Power CRC",8,1,false,"count","",0},
     {"Motor/Generator 4 Inverter Limits Request Power Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 4 Inverter Limits Request Mechanical Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 4 Inverter Limits Request Mechanical Power Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 4 Inverter Limits Request DC Side Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 4 Inverter Limits Request DC Side Power Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 4 Inverter Limits Request Mechanical Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 4 Inverter Limits Request Mechanical Power Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 4 Inverter Limits Request DC Side Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 4 Inverter Limits Request DC Side Power Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 4 Inverter Limits Request Mechanical",
@@ -8315,10 +8315,10 @@
     {
     {"Motor/Generator 4 Inverter Limits Request Mechanical CRC",8,1,false,"count","",0},
     {"Motor/Generator 4 Inverter Limits Request Mechanical Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 4 Inverter Limits Request Torque Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 4 Inverter Limits Request Torque Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 4 Inverter Limits Request Speed Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 4 Inverter Limits Request Speed Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 4 Inverter Limits Request Torque Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 4 Inverter Limits Request Torque Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 4 Inverter Limits Request Speed Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 4 Inverter Limits Request Speed Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 4 Inverter Limits Request DC Side",
@@ -8329,10 +8329,10 @@
     {
     {"Motor/Generator 4 Inverter Limits Request DC Side CRC",8,1,false,"count","",0},
     {"Motor/Generator 4 Inverter Limits Request DC Side Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 4 Inverter Limits Request DC Side Voltage Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 4 Inverter Limits Request DC Side Voltage Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 4 Inverter Limits Request DC Side Current Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 4 Inverter Limits Request DC Side Current Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 4 Inverter Limits Request DC Side Voltage Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 4 Inverter Limits Request DC Side Voltage Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 4 Inverter Limits Request DC Side Current Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 4 Inverter Limits Request DC Side Current Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 4 Inverter Isolation Integrity Request",
@@ -8359,7 +8359,7 @@
     {"Motor/Generator 3 Inverter PID Control Normalized Differential Gain",8,0.03125,false,"%/(%/s)","",0},
     {"Motor/Generator 3 Inverter PID Control Normalized Integral Gain",16,0.015625,false,"%/(%*s)","",0},
     {"Motor/Generator 3 Inverter PID Control Normalized Proportional Gain",12,0.0625,false,"%/%","",0},
-    {"Motor/Generator 3 Inverter PID Control Feed-Forward Torque",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 3 Inverter PID Control Feed-Forward Torque",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 3 Inverter Limits Request Power",
@@ -8370,10 +8370,10 @@
     {
     {"Motor/Generator 3 Inverter Limits Request Power CRC",8,1,false,"count","",0},
     {"Motor/Generator 3 Inverter Limits Request Power Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 3 Inverter Limits Request Mechanical Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 3 Inverter Limits Request Mechanical Power Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 3 Inverter Limits Request DC Side Power Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 3 Inverter Limits Request DC Side Power Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 3 Inverter Limits Request Mechanical Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 3 Inverter Limits Request Mechanical Power Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 3 Inverter Limits Request DC Side Power Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 3 Inverter Limits Request DC Side Power Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 3 Inverter Limits Request Mechanical",
@@ -8384,10 +8384,10 @@
     {
     {"Motor/Generator 3 Inverter Limits Request Mechanical CRC",8,1,false,"count","",0},
     {"Motor/Generator 3 Inverter Limits Request Mechanical Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 3 Inverter Limits Request Torque Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 3 Inverter Limits Request Torque Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 3 Inverter Limits Request Speed Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 3 Inverter Limits Request Speed Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 3 Inverter Limits Request Torque Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 3 Inverter Limits Request Torque Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 3 Inverter Limits Request Speed Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 3 Inverter Limits Request Speed Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 3 Inverter Limits Request DC Side",
@@ -8398,10 +8398,10 @@
     {
     {"Motor/Generator 3 Inverter Limits Request DC Side CRC",8,1,false,"count","",0},
     {"Motor/Generator 3 Inverter Limits Request DC Side Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 3 Inverter Limits Request DC Side Voltage Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 3 Inverter Limits Request DC Side Voltage Minimum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 3 Inverter Limits Request DC Side Current Maximum",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 3 Inverter Limits Request DC Side Current Minimum",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 3 Inverter Limits Request DC Side Voltage Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 3 Inverter Limits Request DC Side Voltage Minimum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 3 Inverter Limits Request DC Side Current Maximum",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 3 Inverter Limits Request DC Side Current Minimum",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 3 Inverter Isolation Integrity Request",
@@ -8424,8 +8424,8 @@
     {
     {"Engine Turbocharger 5 Speed",16,4,false,"rpm","",0},
     {"Engine Turbocharger 6 Speed",16,4,false,"rpm","",0},
-    {"Engine Turbocharger 5 Compressor Intake Pressure",16,0.0078125,false,"kPa","",-250},
-    {"Engine Turbocharger 6 Compressor Intake Pressure",16,0.0078125,false,"kPa","",-250},
+    {"Engine Turbocharger 5 Compressor Intake Pressure",16,0.0078125,true,"kPa","",-32000},
+    {"Engine Turbocharger 6 Compressor Intake Pressure",16,0.0078125,true,"kPa","",-32000},
     {0}}},
     
     {"Winch Information 2",
@@ -8458,10 +8458,10 @@
     {
     {"Motor/Generator 6 Inverter Status 1 CRC",8,1,false,"count","",0},
     {"Motor/Generator 6 Inverter Status 1 Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 6 Torque",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 6 Speed",16,0.00390625,false,"%","",-125},
-    {"Motor/Generator 6 Inverter DC Side Current",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 6 Inverter DC Side Voltage",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 6 Torque",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 6 Speed",16,0.00390625,true,"%","",-32000},
+    {"Motor/Generator 6 Inverter DC Side Current",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 6 Inverter DC Side Voltage",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 6 Inverter Reference 2",
@@ -8482,10 +8482,10 @@
     8,
     0,
     {
-    {"Motor/Generator 6 Inverter Temperature 1",8,1,false,"°C","",-40},
-    {"Motor/Generator 6 Inverter Temperature 2",8,1,false,"°C","",-40},
-    {"Motor/Generator 6 Inverter Temperature 3",8,1,false,"°C","",-40},
-    {"Motor/Generator 6 Inverter Temperature 4",8,1,false,"°C","",-40},
+    {"Motor/Generator 6 Inverter Temperature 1",8,1,true,"°C","",-40},
+    {"Motor/Generator 6 Inverter Temperature 2",8,1,true,"°C","",-40},
+    {"Motor/Generator 6 Inverter Temperature 3",8,1,true,"°C","",-40},
+    {"Motor/Generator 6 Inverter Temperature 4",8,1,true,"°C","",-40},
     {0}}},
     
     {"Motor/Generator 6 Inverter Motor Temperature",
@@ -8494,10 +8494,10 @@
     8,
     0,
     {
-    {"Motor/Generator 6 Temperature 1",8,1,false,"°C","",-40},
-    {"Motor/Generator 6 Temperature 2",8,1,false,"°C","",-40},
-    {"Motor/Generator 6 Temperature 3",8,1,false,"°C","",-40},
-    {"Motor/Generator 6 Temperature 4",8,1,false,"°C","",-40},
+    {"Motor/Generator 6 Temperature 1",8,1,true,"°C","",-40},
+    {"Motor/Generator 6 Temperature 2",8,1,true,"°C","",-40},
+    {"Motor/Generator 6 Temperature 3",8,1,true,"°C","",-40},
+    {"Motor/Generator 6 Temperature 4",8,1,true,"°C","",-40},
     {0}}},
     
     {"Motor/Generator 6 Inverter Isolation Integrity",
@@ -8508,7 +8508,7 @@
     {
     {"Motor/Generator 6 Inverter Isolation Integrity CRC",8,1,false,"count","",0},
     {"Motor/Generator 6 Inverter Isolation Integrity Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 6 Inverter DC Side Negative to Chassis Ground Voltage",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 6 Inverter DC Side Negative to Chassis Ground Voltage",12,0.0625,true,"%","",-2000},
     {"Motor/Generator 6 Inverter High-Voltage Bus Active Isolation Test Status",4,RES_BITFIELD,false,0,"",0},
     {"Motor/Generator 6 Inverter High-Voltage Bus Passive Isolation Test Status",4,RES_BITFIELD,false,0,"",0},
     {"Motor/Generator 6 Inverter High-Voltage Bus Active Isolation Test Results",16,0.1,false,"ohm/V","",0},
@@ -8559,10 +8559,10 @@
     {
     {"Motor/Generator 5 Inverter Status 1 CRC",8,1,false,"count","",0},
     {"Motor/Generator 5 Inverter Status 1 Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 5 Torque",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 5 Speed",16,0.00390625,false,"%","",-125},
-    {"Motor/Generator 5 Inverter DC Side Current",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 5 Inverter DC Side Voltage",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 5 Torque",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 5 Speed",16,0.00390625,true,"%","",-32000},
+    {"Motor/Generator 5 Inverter DC Side Current",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 5 Inverter DC Side Voltage",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 5 Inverter Reference 2",
@@ -8583,10 +8583,10 @@
     8,
     0,
     {
-    {"Motor/Generator 5 Inverter Temperature 1",8,1,false,"°C","",-40},
-    {"Motor/Generator 5 Inverter Temperature 2",8,1,false,"°C","",-40},
-    {"Motor/Generator 5 Inverter Temperature 3",8,1,false,"°C","",-40},
-    {"Motor/Generator 5 Inverter Temperature 4",8,1,false,"°C","",-40},
+    {"Motor/Generator 5 Inverter Temperature 1",8,1,true,"°C","",-40},
+    {"Motor/Generator 5 Inverter Temperature 2",8,1,true,"°C","",-40},
+    {"Motor/Generator 5 Inverter Temperature 3",8,1,true,"°C","",-40},
+    {"Motor/Generator 5 Inverter Temperature 4",8,1,true,"°C","",-40},
     {0}}},
     
     {"Motor/Generator 5 Inverter Motor Temperature",
@@ -8595,10 +8595,10 @@
     8,
     0,
     {
-    {"Motor/Generator 5 Temperature 1",8,1,false,"°C","",-40},
-    {"Motor/Generator 5 Temperature 2",8,1,false,"°C","",-40},
-    {"Motor/Generator 5 Temperature 3",8,1,false,"°C","",-40},
-    {"Motor/Generator 5 Temperature 4",8,1,false,"°C","",-40},
+    {"Motor/Generator 5 Temperature 1",8,1,true,"°C","",-40},
+    {"Motor/Generator 5 Temperature 2",8,1,true,"°C","",-40},
+    {"Motor/Generator 5 Temperature 3",8,1,true,"°C","",-40},
+    {"Motor/Generator 5 Temperature 4",8,1,true,"°C","",-40},
     {0}}},
     
     {"Motor/Generator 5 Inverter Isolation Integrity",
@@ -8609,7 +8609,7 @@
     {
     {"Motor/Generator 5 Inverter Isolation Integrity CRC",8,1,false,"count","",0},
     {"Motor/Generator 5 Inverter Isolation Integrity Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 5 Inverter DC Side Negative to Chassis Ground Voltage",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 5 Inverter DC Side Negative to Chassis Ground Voltage",12,0.0625,true,"%","",-2000},
     {"Motor/Generator 5 Inverter High-Voltage Bus Active Isolation Test Status",4,RES_BITFIELD,false,0,"",0},
     {"Motor/Generator 5 Inverter High-Voltage Bus Passive Isolation Test Status",4,RES_BITFIELD,false,0,"",0},
     {"Motor/Generator 5 Inverter High-Voltage Bus Active Isolation Test Results",16,0.1,false,"ohm/V","",0},
@@ -8660,10 +8660,10 @@
     {
     {"Motor/Generator 4 Inverter Status 1 CRC",8,1,false,"count","",0},
     {"Motor/Generator 4 Inverter Status 1 Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 4 Torque",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 4 Speed",16,0.00390625,false,"%","",-125},
-    {"Motor/Generator 4 Inverter DC Side Current",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 4 Inverter DC Side Voltage",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 4 Torque",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 4 Speed",16,0.00390625,true,"%","",-32000},
+    {"Motor/Generator 4 Inverter DC Side Current",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 4 Inverter DC Side Voltage",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 4 Inverter Reference 2",
@@ -8684,10 +8684,10 @@
     8,
     0,
     {
-    {"Motor/Generator 4 Inverter Temperature 1",8,1,false,"°C","",-40},
-    {"Motor/Generator 4 Inverter Temperature 2",8,1,false,"°C","",-40},
-    {"Motor/Generator 4 Inverter Temperature 3",8,1,false,"°C","",-40},
-    {"Motor/Generator 4 Inverter Temperature 4",8,1,false,"°C","",-40},
+    {"Motor/Generator 4 Inverter Temperature 1",8,1,true,"°C","",-40},
+    {"Motor/Generator 4 Inverter Temperature 2",8,1,true,"°C","",-40},
+    {"Motor/Generator 4 Inverter Temperature 3",8,1,true,"°C","",-40},
+    {"Motor/Generator 4 Inverter Temperature 4",8,1,true,"°C","",-40},
     {0}}},
     
     {"Motor/Generator 4 Inverter Motor Temperature",
@@ -8696,10 +8696,10 @@
     8,
     0,
     {
-    {"Motor/Generator 4 Temperature 1",8,1,false,"°C","",-40},
-    {"Motor/Generator 4 Temperature 2",8,1,false,"°C","",-40},
-    {"Motor/Generator 4 Temperature 3",8,1,false,"°C","",-40},
-    {"Motor/Generator 4 Temperature 4",8,1,false,"°C","",-40},
+    {"Motor/Generator 4 Temperature 1",8,1,true,"°C","",-40},
+    {"Motor/Generator 4 Temperature 2",8,1,true,"°C","",-40},
+    {"Motor/Generator 4 Temperature 3",8,1,true,"°C","",-40},
+    {"Motor/Generator 4 Temperature 4",8,1,true,"°C","",-40},
     {0}}},
     
     {"Motor/Generator 4 Inverter Isolation Integrity",
@@ -8710,7 +8710,7 @@
     {
     {"Motor/Generator 4 Inverter Isolation Integrity CRC",8,1,false,"count","",0},
     {"Motor/Generator 4 Inverter Isolation Integrity Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 4 Inverter DC Side Negative to Chassis Ground Voltage",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 4 Inverter DC Side Negative to Chassis Ground Voltage",12,0.0625,true,"%","",-2000},
     {"Motor/Generator 4 Inverter High-Voltage Bus Active Isolation Test Status",4,RES_BITFIELD,false,0,"",0},
     {"Motor/Generator 4 Inverter High-Voltage Bus Passive Isolation Test Status",4,RES_BITFIELD,false,0,"",0},
     {"Motor/Generator 4 Inverter High-Voltage Bus Active Isolation Test Results",16,0.1,false,"ohm/V","",0},
@@ -8761,10 +8761,10 @@
     {
     {"Motor/Generator 3 Inverter Status 1 CRC",8,1,false,"count","",0},
     {"Motor/Generator 3 Inverter Status 1 Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 3 Torque",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 3 Speed",16,0.00390625,false,"%","",-125},
-    {"Motor/Generator 3 Inverter DC Side Current",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 3 Inverter DC Side Voltage",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 3 Torque",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 3 Speed",16,0.00390625,true,"%","",-32000},
+    {"Motor/Generator 3 Inverter DC Side Current",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 3 Inverter DC Side Voltage",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 3 Inverter Reference 2",
@@ -8785,10 +8785,10 @@
     8,
     0,
     {
-    {"Motor/Generator 3 Inverter Temperature 1",8,1,false,"°C","",-40},
-    {"Motor/Generator 3 Inverter Temperature 2",8,1,false,"°C","",-40},
-    {"Motor/Generator 3 Inverter Temperature 3",8,1,false,"°C","",-40},
-    {"Motor/Generator 3 Inverter Temperature 4",8,1,false,"°C","",-40},
+    {"Motor/Generator 3 Inverter Temperature 1",8,1,true,"°C","",-40},
+    {"Motor/Generator 3 Inverter Temperature 2",8,1,true,"°C","",-40},
+    {"Motor/Generator 3 Inverter Temperature 3",8,1,true,"°C","",-40},
+    {"Motor/Generator 3 Inverter Temperature 4",8,1,true,"°C","",-40},
     {0}}},
     
     {"Motor/Generator 3 Inverter Motor Temperature",
@@ -8797,10 +8797,10 @@
     8,
     0,
     {
-    {"Motor/Generator 3 Temperature 1",8,1,false,"°C","",-40},
-    {"Motor/Generator 3 Temperature 2",8,1,false,"°C","",-40},
-    {"Motor/Generator 3 Temperature 3",8,1,false,"°C","",-40},
-    {"Motor/Generator 3 Temperature 4",8,1,false,"°C","",-40},
+    {"Motor/Generator 3 Temperature 1",8,1,true,"°C","",-40},
+    {"Motor/Generator 3 Temperature 2",8,1,true,"°C","",-40},
+    {"Motor/Generator 3 Temperature 3",8,1,true,"°C","",-40},
+    {"Motor/Generator 3 Temperature 4",8,1,true,"°C","",-40},
     {0}}},
     
     {"Motor/Generator 3 Inverter Isolation Integrity",
@@ -8811,7 +8811,7 @@
     {
     {"Motor/Generator 3 Inverter Isolation Integrity CRC",8,1,false,"count","",0},
     {"Motor/Generator 3 Inverter Isolation Integrity Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 3 Inverter DC Side Negative to Chassis Ground Voltage",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 3 Inverter DC Side Negative to Chassis Ground Voltage",12,0.0625,true,"%","",-2000},
     {"Motor/Generator 3 Inverter High-Voltage Bus Active Isolation Test Status",4,RES_BITFIELD,false,0,"",0},
     {"Motor/Generator 3 Inverter High-Voltage Bus Passive Isolation Test Status",4,RES_BITFIELD,false,0,"",0},
     {"Motor/Generator 3 Inverter High-Voltage Bus Active Isolation Test Results",16,0.1,false,"ohm/V","",0},
@@ -8882,7 +8882,7 @@
     8,
     0,
     {
-    {"Hoist Lever Position",16,0.005,false,"%","",-150},
+    {"Hoist Lever Position",16,0.005,true,"%","",-30000},
     {"Hoist Lever Detent Position Status",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -8909,8 +8909,8 @@
     {"HVESP6 Recommended Maximum Operating Voltage",16,0.05,false,"V","",0},
     {"HVESP6 Recommended Minimum State Of Charge",16,0.0015625,false,"%","",0},
     {"HVESP6 Recommended Maximum State Of Charge",16,0.0015625,false,"%","",0},
-    {"HVESP6 Recommended Maximum Operating Temperature",16,0.03125,false,"°C","",-273},
-    {"HVESP6 Recommended Minimum Operating Temperature",16,0.03125,false,"°C","",-273},
+    {"HVESP6 Recommended Maximum Operating Temperature",16,0.03125,true,"°C","",-8736},
+    {"HVESP6 Recommended Minimum Operating Temperature",16,0.03125,true,"°C","",-8736},
     {"HVESP6 Cell Maximum Voltage Limit",8,0.02044,false,"V","",0},
     {"HVESP6 Cell Minimum Voltage Limit",8,0.02044,false,"V","",0},
     {0}}},
@@ -8938,8 +8938,8 @@
     {"HVESP5 Recommended Maximum Operating Voltage",16,0.05,false,"V","",0},
     {"HVESP5 Recommended Minimum State Of Charge",16,0.0015625,false,"%","",0},
     {"HVESP5 Recommended Maximum State Of Charge",16,0.0015625,false,"%","",0},
-    {"HVESP5 Recommended Maximum Operating Temperature",16,0.03125,false,"°C","",-273},
-    {"HVESP5 Recommended Minimum Operating Temperature",16,0.03125,false,"°C","",-273},
+    {"HVESP5 Recommended Maximum Operating Temperature",16,0.03125,true,"°C","",-8736},
+    {"HVESP5 Recommended Minimum Operating Temperature",16,0.03125,true,"°C","",-8736},
     {"HVESP5 Cell Maximum Voltage Limit",8,0.02044,false,"V","",0},
     {"HVESP5 Cell Minimum Voltage Limit",8,0.02044,false,"V","",0},
     {0}}},
@@ -8967,8 +8967,8 @@
     {"HVESP4 Recommended Maximum Operating Voltage",16,0.05,false,"V","",0},
     {"HVESP4 Recommended Minimum State Of Charge",16,0.0015625,false,"%","",0},
     {"HVESP4 Recommended Maximum State Of Charge",16,0.0015625,false,"%","",0},
-    {"HVESP4 Recommended Maximum Operating Temperature",16,0.03125,false,"°C","",-273},
-    {"HVESP4 Recommended Minimum Operating Temperature",16,0.03125,false,"°C","",-273},
+    {"HVESP4 Recommended Maximum Operating Temperature",16,0.03125,true,"°C","",-8736},
+    {"HVESP4 Recommended Minimum Operating Temperature",16,0.03125,true,"°C","",-8736},
     {"HVESP4 Cell Maximum Voltage Limit",8,0.02044,false,"V","",0},
     {"HVESP4 Cell Minimum Voltage Limit",8,0.02044,false,"V","",0},
     {0}}},
@@ -8996,8 +8996,8 @@
     {"HVESP3 Recommended Maximum Operating Voltage",16,0.05,false,"V","",0},
     {"HVESP3 Recommended Minimum State Of Charge",16,0.0015625,false,"%","",0},
     {"HVESP3 Recommended Maximum State Of Charge",16,0.0015625,false,"%","",0},
-    {"HVESP3 Recommended Maximum Operating Temperature",16,0.03125,false,"°C","",-273},
-    {"HVESP3 Recommended Minimum Operating Temperature",16,0.03125,false,"°C","",-273},
+    {"HVESP3 Recommended Maximum Operating Temperature",16,0.03125,true,"°C","",-8736},
+    {"HVESP3 Recommended Minimum Operating Temperature",16,0.03125,true,"°C","",-8736},
     {"HVESP3 Cell Maximum Voltage Limit",8,0.02044,false,"V","",0},
     {"HVESP3 Cell Minimum Voltage Limit",8,0.02044,false,"V","",0},
     {0}}},
@@ -9025,8 +9025,8 @@
     {"HVESP2 Recommended Maximum Operating Voltage",16,0.05,false,"V","",0},
     {"HVESP2 Recommended Minimum State Of Charge",16,0.0015625,false,"%","",0},
     {"HVESP2 Recommended Maximum State Of Charge",16,0.0015625,false,"%","",0},
-    {"HVESP2 Recommended Maximum Operating Temperature",16,0.03125,false,"°C","",-273},
-    {"HVESP2 Recommended Minimum Operating Temperature",16,0.03125,false,"°C","",-273},
+    {"HVESP2 Recommended Maximum Operating Temperature",16,0.03125,true,"°C","",-8736},
+    {"HVESP2 Recommended Minimum Operating Temperature",16,0.03125,true,"°C","",-8736},
     {"HVESP2 Cell Maximum Voltage Limit",8,0.02044,false,"V","",0},
     {"HVESP2 Cell Minimum Voltage Limit",8,0.02044,false,"V","",0},
     {0}}},
@@ -9054,8 +9054,8 @@
     {"HVESP1 Recommended Maximum Operating Voltage",16,0.05,false,"V","",0},
     {"HVESP1 Recommended Minimum State Of Charge",16,0.0015625,false,"%","",0},
     {"HVESP1 Recommended Maximum State Of Charge",16,0.0015625,false,"%","",0},
-    {"HVESP1 Recommended Maximum Operating Temperature",16,0.03125,false,"°C","",-273},
-    {"HVESP1 Recommended Minimum Operating Temperature",16,0.03125,false,"°C","",-273},
+    {"HVESP1 Recommended Maximum Operating Temperature",16,0.03125,true,"°C","",-8736},
+    {"HVESP1 Recommended Minimum Operating Temperature",16,0.03125,true,"°C","",-8736},
     {"HVESP1 Cell Maximum Voltage Limit",8,0.02044,false,"V","",0},
     {"HVESP1 Cell Minimum Voltage Limit",8,0.02044,false,"V","",0},
     {0}}},
@@ -9367,7 +9367,7 @@
     {
     {"Motor/Generator 2 Inverter Isolation Integrity CRC",8,1,false,"count","",0},
     {"Motor/Generator 2 Inverter Isolation Integrity Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 2 Inverter DC Side Negative to Chassis Ground Voltage",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 2 Inverter DC Side Negative to Chassis Ground Voltage",12,0.0625,true,"%","",-2000},
     {"Motor/Generator 2 Inverter High-Voltage Bus Active Isolation Test Status",4,RES_BITFIELD,false,0,"",0},
     {"Motor/Generator 2 Inverter High-Voltage Bus Passive Isolation Test Status",4,RES_BITFIELD,false,0,"",0},
     {"Motor/Generator 2 Inverter High-Voltage Bus Active Isolation Test Results",16,0.1,false,"ohm/V","",0},
@@ -9405,7 +9405,7 @@
     {
     {"Motor/Generator 1 Inverter Isolation Integrity CRC",8,1,false,"count","",0},
     {"Motor/Generator 1 Inverter Isolation Integrity Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 1 Inverter DC Side Negative to Chassis Ground Voltage",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 1 Inverter DC Side Negative to Chassis Ground Voltage",12,0.0625,true,"%","",-2000},
     {"Motor/Generator 1 Inverter High-Voltage Bus Active Isolation Test Status",4,RES_BITFIELD,false,0,"",0},
     {"Motor/Generator 1 Inverter High-Voltage Bus Passive Isolation Test Status",4,RES_BITFIELD,false,0,"",0},
     {"Motor/Generator 1 Inverter High-Voltage Bus Active Isolation Test Results",16,0.1,false,"ohm/V","",0},
@@ -9442,10 +9442,10 @@
     {
     {"Motor/Generator 2 Inverter Status 1 CRC",8,1,false,"count","",0},
     {"Motor/Generator 2 Inverter Status 1 Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 2 Torque",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 2 Speed",16,0.00390625,false,"%","",-125},
-    {"Motor/Generator 2 Inverter DC Side Current",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 2 Inverter DC Side Voltage",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 2 Torque",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 2 Speed",16,0.00390625,true,"%","",-32000},
+    {"Motor/Generator 2 Inverter DC Side Current",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 2 Inverter DC Side Voltage",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 2 Inverter Reference 2",
@@ -9466,10 +9466,10 @@
     8,
     0,
     {
-    {"Motor/Generator 2 Inverter Temperature 1",8,1,false,"°C","",-40},
-    {"Motor/Generator 2 Inverter Temperature 2",8,1,false,"°C","",-40},
-    {"Motor/Generator 2 Inverter Temperature 3",8,1,false,"°C","",-40},
-    {"Motor/Generator 2 Inverter Temperature 4",8,1,false,"°C","",-40},
+    {"Motor/Generator 2 Inverter Temperature 1",8,1,true,"°C","",-40},
+    {"Motor/Generator 2 Inverter Temperature 2",8,1,true,"°C","",-40},
+    {"Motor/Generator 2 Inverter Temperature 3",8,1,true,"°C","",-40},
+    {"Motor/Generator 2 Inverter Temperature 4",8,1,true,"°C","",-40},
     {0}}},
     
     {"Motor/Generator 2 Inverter Motor Temperature",
@@ -9478,10 +9478,10 @@
     8,
     0,
     {
-    {"Motor/Generator 2 Temperature 1",8,1,false,"°C","",-40},
-    {"Motor/Generator 2 Temperature 2",8,1,false,"°C","",-40},
-    {"Motor/Generator 2 Temperature 3",8,1,false,"°C","",-40},
-    {"Motor/Generator 2 Temperature 4",8,1,false,"°C","",-40},
+    {"Motor/Generator 2 Temperature 1",8,1,true,"°C","",-40},
+    {"Motor/Generator 2 Temperature 2",8,1,true,"°C","",-40},
+    {"Motor/Generator 2 Temperature 3",8,1,true,"°C","",-40},
+    {"Motor/Generator 2 Temperature 4",8,1,true,"°C","",-40},
     {0}}},
     
     {"Motor/Generator 1 Inverter Motor Temperature",
@@ -9490,10 +9490,10 @@
     8,
     0,
     {
-    {"Motor/Generator 1 Temperature 1",8,1,false,"°C","",-40},
-    {"Motor/Generator 1 Temperature 2",8,1,false,"°C","",-40},
-    {"Motor/Generator 1 Temperature 3",8,1,false,"°C","",-40},
-    {"Motor/Generator 1 Temperature 4",8,1,false,"°C","",-40},
+    {"Motor/Generator 1 Temperature 1",8,1,true,"°C","",-40},
+    {"Motor/Generator 1 Temperature 2",8,1,true,"°C","",-40},
+    {"Motor/Generator 1 Temperature 3",8,1,true,"°C","",-40},
+    {"Motor/Generator 1 Temperature 4",8,1,true,"°C","",-40},
     {0}}},
     
     {"Motor/Generator 1 Inverter Temperature",
@@ -9502,10 +9502,10 @@
     8,
     0,
     {
-    {"Motor/Generator 1 Inverter Temperature 1",8,1,false,"°C","",-40},
-    {"Motor/Generator 1 Inverter Temperature 2",8,1,false,"°C","",-40},
-    {"Motor/Generator 1 Inverter Temperature 3",8,1,false,"°C","",-40},
-    {"Motor/Generator 1 Inverter Temperature 4",8,1,false,"°C","",-40},
+    {"Motor/Generator 1 Inverter Temperature 1",8,1,true,"°C","",-40},
+    {"Motor/Generator 1 Inverter Temperature 2",8,1,true,"°C","",-40},
+    {"Motor/Generator 1 Inverter Temperature 3",8,1,true,"°C","",-40},
+    {"Motor/Generator 1 Inverter Temperature 4",8,1,true,"°C","",-40},
     {0}}},
     
     {"Motor/Generator 1 Inverter Reference 2",
@@ -9528,10 +9528,10 @@
     {
     {"Motor/Generator 1 Inverter Status 1 CRC",8,1,false,"count","",0},
     {"Motor/Generator 1 Inverter Status 1 Counter",4,RES_BITFIELD,false,0,"",0},
-    {"Motor/Generator 1 Torque",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 1 Speed",16,0.00390625,false,"%","",-125},
-    {"Motor/Generator 1 Inverter DC Side Current",12,0.0625,false,"%","",-125},
-    {"Motor/Generator 1 Inverter DC Side Voltage",12,0.0625,false,"%","",-125},
+    {"Motor/Generator 1 Torque",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 1 Speed",16,0.00390625,true,"%","",-32000},
+    {"Motor/Generator 1 Inverter DC Side Current",12,0.0625,true,"%","",-2000},
+    {"Motor/Generator 1 Inverter DC Side Voltage",12,0.0625,true,"%","",-2000},
     {0}}},
     
     {"Motor/Generator 1 Inverter Reference 1",
@@ -9571,14 +9571,14 @@
     8,
     0,
     {
-    {"Engine Cylinder 1 Compression Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 1 Expansion Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 2 Compression Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 2 Expansion Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 3 Compression Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 3 Expansion Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 4 Compression Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 4 Expansion Gamma Ratio",8,0.004,false,"Ratio","",1},
+    {"Engine Cylinder 1 Compression Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 1 Expansion Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 2 Compression Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 2 Expansion Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 3 Compression Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 3 Expansion Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 4 Compression Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 4 Expansion Gamma Ratio",8,0.004,true,"Ratio","",250},
     {0}}},
     
     {"Engine Cylinder Pressure Gamma 2",
@@ -9587,14 +9587,14 @@
     8,
     0,
     {
-    {"Engine Cylinder 5 Compression Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 5 Expansion Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 6 Compression Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 6 Expansion Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 7 Compression Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 7 Expansion Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 8 Compression Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 8 Expansion Gamma Ratio",8,0.004,false,"Ratio","",1},
+    {"Engine Cylinder 5 Compression Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 5 Expansion Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 6 Compression Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 6 Expansion Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 7 Compression Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 7 Expansion Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 8 Compression Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 8 Expansion Gamma Ratio",8,0.004,true,"Ratio","",250},
     {0}}},
     
     {"Engine Cylinder Pressure Gamma 3",
@@ -9603,14 +9603,14 @@
     8,
     0,
     {
-    {"Engine Cylinder 9 Compression Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 9 Expansion Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 10 Compression Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 10 Expansion Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 11 Compression Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 11 Expansion Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 12 Compression Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 12 Expansion Gamma Ratio",8,0.004,false,"Ratio","",1},
+    {"Engine Cylinder 9 Compression Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 9 Expansion Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 10 Compression Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 10 Expansion Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 11 Compression Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 11 Expansion Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 12 Compression Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 12 Expansion Gamma Ratio",8,0.004,true,"Ratio","",250},
     {0}}},
     
     {"Engine Cylinder Pressure Gamma 4",
@@ -9619,14 +9619,14 @@
     8,
     0,
     {
-    {"Engine Cylinder 13 Compression Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 13 Expansion Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 14 Compression Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 14 Expansion Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 15 Compression Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 15 Expansion Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 16 Compression Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 16 Expansion Gamma Ratio",8,0.004,false,"Ratio","",1},
+    {"Engine Cylinder 13 Compression Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 13 Expansion Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 14 Compression Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 14 Expansion Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 15 Compression Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 15 Expansion Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 16 Compression Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 16 Expansion Gamma Ratio",8,0.004,true,"Ratio","",250},
     {0}}},
     
     {"Engine Cylinder Pressure Gamma 5",
@@ -9635,14 +9635,14 @@
     8,
     0,
     {
-    {"Engine Cylinder 17 Compression Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 17 Expansion Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 18 Compression Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 18 Expansion Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 19 Compression Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 19 Expansion Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 20 Compression Gamma Ratio",8,0.004,false,"Ratio","",1},
-    {"Engine Cylinder 20 Expansion Gamma Ratio",8,0.004,false,"Ratio","",1},
+    {"Engine Cylinder 17 Compression Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 17 Expansion Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 18 Compression Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 18 Expansion Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 19 Compression Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 19 Expansion Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 20 Compression Gamma Ratio",8,0.004,true,"Ratio","",250},
+    {"Engine Cylinder 20 Expansion Gamma Ratio",8,0.004,true,"Ratio","",250},
     {0}}},
     
     {"Electrified Accessory Generator Coolant Pump Status",
@@ -9655,7 +9655,7 @@
     {"Generator Coolant Pump Controller Status Reason Code",4,RES_BITFIELD,false,0,"",0},
     {"Generator Coolant Pump Controller Command Status",2,RES_BITFIELD,false,0,"",0},
     {"Generator Coolant Pump Motor Speed",16,0.5,false,"rpm","",0},
-    {"Generator Coolant Pump Control Temperature",16,0.03125,false,"°C","",-273},
+    {"Generator Coolant Pump Control Temperature",16,0.03125,true,"°C","",-8736},
     {"Generator Coolant Pump Power",16,0.5,false,"W","",0},
     {"Generator Coolant Pump Service Indicator",2,RES_BITFIELD,false,0,"",0},
     {"Generator Coolant Pump Operating Status",2,RES_BITFIELD,false,0,"",0},
@@ -9671,7 +9671,7 @@
     {"Generator Coolant Fan Controller Status Reason Code",4,RES_BITFIELD,false,0,"",0},
     {"Generator Coolant Fan Controller Command Status",2,RES_BITFIELD,false,0,"",0},
     {"Generator Coolant Fan Motor Speed",16,0.5,false,"rpm","",0},
-    {"Generator Coolant Fan Control Temperature",16,0.03125,false,"°C","",-273},
+    {"Generator Coolant Fan Control Temperature",16,0.03125,true,"°C","",-8736},
     {"Generator Coolant Fan Power",16,0.5,false,"W","",0},
     {"Generator Coolant Fan Service Indicator",2,RES_BITFIELD,false,0,"",0},
     {"Generator Coolant Fan Operating Status",2,RES_BITFIELD,false,0,"",0},
@@ -9914,11 +9914,11 @@
     8,
     0,
     {
-    {"DC/AC Accessory Inverter 1 Controller Temperature",8,1,false,"°C","",-40},
-    {"DC/AC Accessory Inverter 1 Inverter Electronic Filter Temperature",8,1,false,"°C","",-40},
-    {"DC/AC Accessory Inverter 1 Power Electronics Temperature",8,1,false,"°C","",-40},
-    {"DC/AC Accessory Inverter 1 Coolant  In Temperature",8,1,false,"°C","",-40},
-    {"DC/AC Accessory Inverter 1 Coolant Out Temperature",8,1,false,"°C","",-40},
+    {"DC/AC Accessory Inverter 1 Controller Temperature",8,1,true,"°C","",-40},
+    {"DC/AC Accessory Inverter 1 Inverter Electronic Filter Temperature",8,1,true,"°C","",-40},
+    {"DC/AC Accessory Inverter 1 Power Electronics Temperature",8,1,true,"°C","",-40},
+    {"DC/AC Accessory Inverter 1 Coolant  In Temperature",8,1,true,"°C","",-40},
+    {"DC/AC Accessory Inverter 1 Coolant Out Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"DC/AC Accessory Inverter 1 DC Side Limits ",
@@ -9930,7 +9930,7 @@
     {"DC/AC Accessory Inverter 1 DC Side Voltage Minimum Limit Request",16,0.05,false,"V","",0},
     {"DC/AC Accessory Inverter 1 DC Side Current Maximum Limit Request",16,0.05,false,"A","",0},
     {"DC/AC Accessory Inverter 1 DC Side Voltage Maximum Limit Request",16,0.05,false,"V","",0},
-    {"DC/AC Accessory Inverter 1 DC Side Current Minimum Limit Request",16,0.05,false,"A","",-3212.75},
+    {"DC/AC Accessory Inverter 1 DC Side Current Minimum Limit Request",16,0.05,true,"A","",-64255},
     {0}}},
     
     {"DC/AC Accessory Inverter 1 AC Side Limits ",
@@ -9955,7 +9955,7 @@
     {"DC/AC Accessory Inverter 1 AC Side RMS Voltage Maximum Limit Setting",16,0.03125,false,"Vrms","",0},
     {"DC/AC Accessory Inverter 1 AC Side RMS Current Maximum Limit Setting",16,0.03125,false,"Arms","",0},
     {"DC/AC Accessory Inverter 1 DC Side Voltage Maximum Limit Setting",16,0.05,false,"V","",0},
-    {"DC/AC Accessory Inverter 1 DC Side Current Minimum Limit Setting",16,0.05,false,"A","",-3212.75},
+    {"DC/AC Accessory Inverter 1 DC Side Current Minimum Limit Setting",16,0.05,true,"A","",-64255},
     {"DC/AC Accessory Inverter 1 AC Side Default Frequency Command Setting",8,1,false,"Hz","",0},
     {0}}},
     
@@ -9975,11 +9975,11 @@
     8,
     0,
     {
-    {"DC/AC Accessory Inverter 2 Controller Temperature",8,1,false,"°C","",-40},
-    {"DC/AC Accessory Inverter 2 Inverter Electronic Filter Temperature",8,1,false,"°C","",-40},
-    {"DC/AC Accessory Inverter 2 Power Electronics Temperature",8,1,false,"°C","",-40},
-    {"DC/AC Accessory Inverter 2 Coolant  In Temperature",8,1,false,"°C","",-40},
-    {"DC/AC Accessory Inverter 2 Coolant Out Temperature",8,1,false,"°C","",-40},
+    {"DC/AC Accessory Inverter 2 Controller Temperature",8,1,true,"°C","",-40},
+    {"DC/AC Accessory Inverter 2 Inverter Electronic Filter Temperature",8,1,true,"°C","",-40},
+    {"DC/AC Accessory Inverter 2 Power Electronics Temperature",8,1,true,"°C","",-40},
+    {"DC/AC Accessory Inverter 2 Coolant  In Temperature",8,1,true,"°C","",-40},
+    {"DC/AC Accessory Inverter 2 Coolant Out Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"DC/AC Accessory Inverter 2 DC Side Limits ",
@@ -9991,7 +9991,7 @@
     {"DC/AC Accessory Inverter 2 DC Side Voltage Minimum Limit Request",16,0.05,false,"V","",0},
     {"DC/AC Accessory Inverter 2 DC Side Current Maximum Limit Request",16,0.05,false,"A","",0},
     {"DC/AC Accessory Inverter 2 DC Side Voltage Maximum Limit Request",16,0.05,false,"V","",0},
-    {"DC/AC Accessory Inverter 2 DC Side Current Minimum Limit Request",16,0.05,false,"A","",-3212.75},
+    {"DC/AC Accessory Inverter 2 DC Side Current Minimum Limit Request",16,0.05,true,"A","",-64255},
     {0}}},
     
     {"DC/AC Accessory Inverter 2 AC Side Limits ",
@@ -10016,7 +10016,7 @@
     {"DC/AC Accessory Inverter 2 AC Side RMS Voltage Maximum Limit Setting",16,0.03125,false,"Vrms","",0},
     {"DC/AC Accessory Inverter 2 AC Side RMS Current Maximum Limit Setting",16,0.03125,false,"Arms","",0},
     {"DC/AC Accessory Inverter 2 DC Side Voltage Maximum Limit Setting",16,0.05,false,"V","",0},
-    {"DC/AC Accessory Inverter 2 DC Side Current Minimum Limit Setting",16,0.05,false,"A","",-3212.75},
+    {"DC/AC Accessory Inverter 2 DC Side Current Minimum Limit Setting",16,0.05,true,"A","",-64255},
     {"DC/AC Accessory Inverter 2 AC Side Default Frequency Command Setting",8,1,false,"Hz","",0},
     {0}}},
     
@@ -10036,11 +10036,11 @@
     8,
     0,
     {
-    {"DC/AC Accessory Inverter 3 Controller Temperature",8,1,false,"°C","",-40},
-    {"DC/AC Accessory Inverter 3 Inverter Electronic Filter Temperature",8,1,false,"°C","",-40},
-    {"DC/AC Accessory Inverter 3 Power Electronics Temperature",8,1,false,"°C","",-40},
-    {"DC/AC Accessory Inverter 3 Coolant  In Temperature",8,1,false,"°C","",-40},
-    {"DC/AC Accessory Inverter 3 Coolant Out Temperature",8,1,false,"°C","",-40},
+    {"DC/AC Accessory Inverter 3 Controller Temperature",8,1,true,"°C","",-40},
+    {"DC/AC Accessory Inverter 3 Inverter Electronic Filter Temperature",8,1,true,"°C","",-40},
+    {"DC/AC Accessory Inverter 3 Power Electronics Temperature",8,1,true,"°C","",-40},
+    {"DC/AC Accessory Inverter 3 Coolant  In Temperature",8,1,true,"°C","",-40},
+    {"DC/AC Accessory Inverter 3 Coolant Out Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"DC/AC Accessory Inverter 3 DC Side Limits ",
@@ -10052,7 +10052,7 @@
     {"DC/AC Accessory Inverter 3 DC Side Voltage Minimum Limit Request",16,0.05,false,"V","",0},
     {"DC/AC Accessory Inverter 3 DC Side Current Maximum Limit Request",16,0.05,false,"A","",0},
     {"DC/AC Accessory Inverter 3 DC Side Voltage Maximum Limit Request",16,0.05,false,"V","",0},
-    {"DC/AC Accessory Inverter 3 DC Side Current Minimum Limit Request",16,0.05,false,"A","",-3212.75},
+    {"DC/AC Accessory Inverter 3 DC Side Current Minimum Limit Request",16,0.05,true,"A","",-64255},
     {0}}},
     
     {"DC/AC Accessory Inverter 3 AC Side Limits ",
@@ -10077,7 +10077,7 @@
     {"DC/AC Accessory Inverter 3 AC Side RMS Voltage Maximum Limit Setting",16,0.03125,false,"Vrms","",0},
     {"DC/AC Accessory Inverter 3 AC Side RMS Current Maximum Limit Setting",16,0.03125,false,"Arms","",0},
     {"DC/AC Accessory Inverter 3 DC Side Voltage Maximum Limit Setting",16,0.05,false,"V","",0},
-    {"DC/AC Accessory Inverter 3 DC Side Current Minimum Limit Setting",16,0.05,false,"A","",-3212.75},
+    {"DC/AC Accessory Inverter 3 DC Side Current Minimum Limit Setting",16,0.05,true,"A","",-64255},
     {"DC/AC Accessory Inverter 3 AC Side Default Frequency Command Setting",8,1,false,"Hz","",0},
     {0}}},
     
@@ -10097,11 +10097,11 @@
     8,
     0,
     {
-    {"DC/AC Accessory Inverter 4 Controller Temperature",8,1,false,"°C","",-40},
-    {"DC/AC Accessory Inverter 4 Inverter Electronic Filter Temperature",8,1,false,"°C","",-40},
-    {"DC/AC Accessory Inverter 4 Power Electronics Temperature",8,1,false,"°C","",-40},
-    {"DC/AC Accessory Inverter 4 Coolant  In Temperature",8,1,false,"°C","",-40},
-    {"DC/AC Accessory Inverter 4 Coolant Out Temperature",8,1,false,"°C","",-40},
+    {"DC/AC Accessory Inverter 4 Controller Temperature",8,1,true,"°C","",-40},
+    {"DC/AC Accessory Inverter 4 Inverter Electronic Filter Temperature",8,1,true,"°C","",-40},
+    {"DC/AC Accessory Inverter 4 Power Electronics Temperature",8,1,true,"°C","",-40},
+    {"DC/AC Accessory Inverter 4 Coolant  In Temperature",8,1,true,"°C","",-40},
+    {"DC/AC Accessory Inverter 4 Coolant Out Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"DC/AC Accessory Inverter 4 DC Side Limits ",
@@ -10113,7 +10113,7 @@
     {"DC/AC Accessory Inverter 4 DC Side Voltage Minimum Limit Request",16,0.05,false,"V","",0},
     {"DC/AC Accessory Inverter 4 DC Side Current Maximum Limit Request",16,0.05,false,"A","",0},
     {"DC/AC Accessory Inverter 4 DC Side Voltage Maximum Limit Request",16,0.05,false,"V","",0},
-    {"DC/AC Accessory Inverter 4 DC Side Current Minimum Limit Request",16,0.05,false,"A","",-3212.75},
+    {"DC/AC Accessory Inverter 4 DC Side Current Minimum Limit Request",16,0.05,true,"A","",-64255},
     {0}}},
     
     {"DC/AC Accessory Inverter 4 AC Side Limits ",
@@ -10138,7 +10138,7 @@
     {"DC/AC Accessory Inverter 4 AC Side RMS Voltage Maximum Limit Setting",16,0.03125,false,"Vrms","",0},
     {"DC/AC Accessory Inverter 4 AC Side RMS Current Maximum Limit Setting",16,0.03125,false,"Arms","",0},
     {"DC/AC Accessory Inverter 4 DC Side Voltage Maximum Limit Setting",16,0.05,false,"V","",0},
-    {"DC/AC Accessory Inverter 4 DC Side Current Minimum Limit Setting",16,0.05,false,"A","",-3212.75},
+    {"DC/AC Accessory Inverter 4 DC Side Current Minimum Limit Setting",16,0.05,true,"A","",-64255},
     {"DC/AC Accessory Inverter 4 AC Side Default Frequency Command Setting",8,1,false,"Hz","",0},
     {0}}},
     
@@ -10158,11 +10158,11 @@
     8,
     0,
     {
-    {"DC/AC Accessory Inverter 5 Controller Temperature",8,1,false,"°C","",-40},
-    {"DC/AC Accessory Inverter 5 Inverter Electronic Filter Temperature",8,1,false,"°C","",-40},
-    {"DC/AC Accessory Inverter 5 Power Electronics Temperature",8,1,false,"°C","",-40},
-    {"DC/AC Accessory Inverter 5 Coolant  In Temperature",8,1,false,"°C","",-40},
-    {"DC/AC Accessory Inverter 5 Coolant Out Temperature",8,1,false,"°C","",-40},
+    {"DC/AC Accessory Inverter 5 Controller Temperature",8,1,true,"°C","",-40},
+    {"DC/AC Accessory Inverter 5 Inverter Electronic Filter Temperature",8,1,true,"°C","",-40},
+    {"DC/AC Accessory Inverter 5 Power Electronics Temperature",8,1,true,"°C","",-40},
+    {"DC/AC Accessory Inverter 5 Coolant  In Temperature",8,1,true,"°C","",-40},
+    {"DC/AC Accessory Inverter 5 Coolant Out Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"DC/AC Accessory Inverter 5 DC Side Limits ",
@@ -10174,7 +10174,7 @@
     {"DC/AC Accessory Inverter 5 DC Side Voltage Minimum Limit Request",16,0.05,false,"V","",0},
     {"DC/AC Accessory Inverter 5 DC Side Current Maximum Limit Request",16,0.05,false,"A","",0},
     {"DC/AC Accessory Inverter 5 DC Side Voltage Maximum Limit Request",16,0.05,false,"V","",0},
-    {"DC/AC Accessory Inverter 5 DC Side Current Minimum Limit Request",16,0.05,false,"A","",-3212.75},
+    {"DC/AC Accessory Inverter 5 DC Side Current Minimum Limit Request",16,0.05,true,"A","",-64255},
     {0}}},
     
     {"DC/AC Accessory Inverter 5 AC Side Limits ",
@@ -10199,7 +10199,7 @@
     {"DC/AC Accessory Inverter 5 AC Side RMS Voltage Maximum Limit Setting",16,0.03125,false,"Vrms","",0},
     {"DC/AC Accessory Inverter 5 AC Side RMS Current Maximum Limit Setting",16,0.03125,false,"Arms","",0},
     {"DC/AC Accessory Inverter 5 DC Side Voltage Maximum Limit Setting",16,0.05,false,"V","",0},
-    {"DC/AC Accessory Inverter 5 DC Side Current Minimum Limit Setting",16,0.05,false,"A","",-3212.75},
+    {"DC/AC Accessory Inverter 5 DC Side Current Minimum Limit Setting",16,0.05,true,"A","",-64255},
     {"DC/AC Accessory Inverter 5 AC Side Default Frequency Command Setting",8,1,false,"Hz","",0},
     {0}}},
     
@@ -10261,7 +10261,7 @@
     8,
     0,
     {
-    {"Aftertreatment 1 Outlet Oxygen Pumping Current",16,0.001,false,"mA","",-32.127},
+    {"Aftertreatment 1 Outlet Oxygen Pumping Current",16,0.001,true,"mA","",-32127},
     {"Aftertreatment 1 Outlet NOx Sensor Protection Air Pressure (Absolute)",16,0.1,false,"kPa","",0},
     {0}}},
     
@@ -10271,7 +10271,7 @@
     8,
     0,
     {
-    {"Aftertreatment 1 Intake Oxygen Pumping Current",16,0.001,false,"mA","",-32.127},
+    {"Aftertreatment 1 Intake Oxygen Pumping Current",16,0.001,true,"mA","",-32127},
     {"Aftertreatment 1 Intake NOx Sensor Protection Air Pressure (Absolute)",16,0.1,false,"kPa","",0},
     {0}}},
     
@@ -10301,7 +10301,7 @@
     {"DC/DC 4 Low Side Current Maximum Limit Setting",16,0.05,false,"A","",0},
     {"DC/DC 4 SLI Battery Terminal Voltage Maximum Limit Setting",16,0.01,false,"V","",0},
     {"DC/DC 4 SLI Battery Terminal Charge Current Maximum Limit Setting",16,0.05,false,"A","",0},
-    {"DC/DC 4 SLI Battery Temperature Maximum Limit Setting",8,1,false,"°C","",-40},
+    {"DC/DC 4 SLI Battery Temperature Maximum Limit Setting",8,1,true,"°C","",-40},
     {"DC/DC 4 Low Side Voltage Buck Default Setting",16,0.01,false,"V","",0},
     {0}}},
     
@@ -10313,7 +10313,7 @@
     {
     {"DC/DC 4 SLI Battery Terminal Voltage Maximum Limit Request",16,0.01,false,"V","",0},
     {"DC/DC 4 SLI Battery Terminal Charge Current Maximum Limit Request",16,0.05,false,"A","",0},
-    {"DC/DC 4 SLI Battery Temperature Maximum Limit Request",8,1,false,"°C","",-40},
+    {"DC/DC 4 SLI Battery Temperature Maximum Limit Request",8,1,true,"°C","",-40},
     {0}}},
     
     {"DC/DC Converter 4 Temperatures",
@@ -10322,11 +10322,11 @@
     8,
     0,
     {
-    {"DC/DC 4 Converter Temperature",8,1,false,"°C","",-40},
-    {"DC/DC 4 Converter Electronic Filter Temperature",8,1,false,"°C","",-40},
-    {"DC/DC 4 Power Electronics Temperature",8,1,false,"°C","",-40},
-    {"DC/DC 4 Coolant  In Temperature",8,1,false,"°C","",-40},
-    {"DC/DC 4 Coolant Out Temperature",8,1,false,"°C","",-40},
+    {"DC/DC 4 Converter Temperature",8,1,true,"°C","",-40},
+    {"DC/DC 4 Converter Electronic Filter Temperature",8,1,true,"°C","",-40},
+    {"DC/DC 4 Power Electronics Temperature",8,1,true,"°C","",-40},
+    {"DC/DC 4 Coolant  In Temperature",8,1,true,"°C","",-40},
+    {"DC/DC 4 Coolant Out Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"DC/DC Converter 4 Low Side Limits",
@@ -10377,7 +10377,7 @@
     {"DC/DC 3 Low Side Current Maximum Limit Setting",16,0.05,false,"A","",0},
     {"DC/DC 3 SLI Battery Terminal Voltage Maximum Limit Setting",16,0.01,false,"V","",0},
     {"DC/DC 3 SLI Battery Terminal Charge Current Maximum Limit Setting",16,0.05,false,"A","",0},
-    {"DC/DC 3 SLI Battery Temperature Maximum Limit Setting",8,1,false,"°C","",-40},
+    {"DC/DC 3 SLI Battery Temperature Maximum Limit Setting",8,1,true,"°C","",-40},
     {"DC/DC 3 Low Side Voltage Buck Default Setting",16,0.01,false,"V","",0},
     {0}}},
     
@@ -10389,7 +10389,7 @@
     {
     {"DC/DC 3 SLI Battery Terminal Voltage Maximum Limit Request",16,0.01,false,"V","",0},
     {"DC/DC 3 SLI Battery Terminal Charge Current Maximum Limit Request",16,0.05,false,"A","",0},
-    {"DC/DC 3 SLI Battery Temperature Maximum Limit Request",8,1,false,"°C","",-40},
+    {"DC/DC 3 SLI Battery Temperature Maximum Limit Request",8,1,true,"°C","",-40},
     {0}}},
     
     {"DC/DC Converter 3 Temperatures",
@@ -10398,11 +10398,11 @@
     8,
     0,
     {
-    {"DC/DC 3 Converter Temperature",8,1,false,"°C","",-40},
-    {"DC/DC 3 Converter Electronic Filter Temperature",8,1,false,"°C","",-40},
-    {"DC/DC 3 Power Electronics Temperature",8,1,false,"°C","",-40},
-    {"DC/DC 3 Coolant  In Temperature",8,1,false,"°C","",-40},
-    {"DC/DC 3 Coolant Out Temperature",8,1,false,"°C","",-40},
+    {"DC/DC 3 Converter Temperature",8,1,true,"°C","",-40},
+    {"DC/DC 3 Converter Electronic Filter Temperature",8,1,true,"°C","",-40},
+    {"DC/DC 3 Power Electronics Temperature",8,1,true,"°C","",-40},
+    {"DC/DC 3 Coolant  In Temperature",8,1,true,"°C","",-40},
+    {"DC/DC 3 Coolant Out Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"DC/DC Converter 3 Low Side Limits",
@@ -10453,7 +10453,7 @@
     {"DC/DC 2 Low Side Current Maximum Limit Setting",16,0.05,false,"A","",0},
     {"DC/DC 2 SLI Battery Terminal Voltage Maximum Limit Setting",16,0.01,false,"V","",0},
     {"DC/DC 2 SLI Battery Terminal Charge Current Maximum Limit Setting",16,0.05,false,"A","",0},
-    {"DC/DC 2 SLI Battery Temperature Maximum Limit Setting",8,1,false,"°C","",-40},
+    {"DC/DC 2 SLI Battery Temperature Maximum Limit Setting",8,1,true,"°C","",-40},
     {"DC/DC 2 Low Side Voltage Buck Default Setting",16,0.01,false,"V","",0},
     {0}}},
     
@@ -10465,7 +10465,7 @@
     {
     {"DC/DC 2 SLI Battery Terminal Voltage Maximum Limit Request",16,0.01,false,"V","",0},
     {"DC/DC 2 SLI Battery Terminal Charge Current Maximum Limit Request",16,0.05,false,"A","",0},
-    {"DC/DC 2 SLI Battery Temperature Maximum Limit Request",8,1,false,"°C","",-40},
+    {"DC/DC 2 SLI Battery Temperature Maximum Limit Request",8,1,true,"°C","",-40},
     {0}}},
     
     {"DC/DC Converter 2 Temperatures",
@@ -10474,11 +10474,11 @@
     8,
     0,
     {
-    {"DC/DC 2 Converter Temperature",8,1,false,"°C","",-40},
-    {"DC/DC 2 Converter Electronic Filter Temperature",8,1,false,"°C","",-40},
-    {"DC/DC 2 Power Electronics Temperature",8,1,false,"°C","",-40},
-    {"DC/DC 2 Coolant  In Temperature",8,1,false,"°C","",-40},
-    {"DC/DC 2 Coolant Out Temperature",8,1,false,"°C","",-40},
+    {"DC/DC 2 Converter Temperature",8,1,true,"°C","",-40},
+    {"DC/DC 2 Converter Electronic Filter Temperature",8,1,true,"°C","",-40},
+    {"DC/DC 2 Power Electronics Temperature",8,1,true,"°C","",-40},
+    {"DC/DC 2 Coolant  In Temperature",8,1,true,"°C","",-40},
+    {"DC/DC 2 Coolant Out Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"DC/DC Converter 2 Low Side Limits",
@@ -10533,10 +10533,10 @@
     {
     {"Well Stimulation Pump Gear Box Oil Pressure Low Threshold Setting",16,0.1,false,"kPa","",0},
     {"Well Stimulation Pump Gear Box Oil Pressure High Threshold Setting",16,0.1,false,"kPa","",0},
-    {"Well Stimulation Pump Gear Box Oil Temperature Low Threshold Setting",8,1,false,"°C","",-40},
-    {"Well Stimulation Pump Gear Box Oil Temperature High Threshold Setting",8,1,false,"°C","",-40},
-    {"Well Stimulation Pump Suction Pressure Low Threshold Setting",16,0.1,false,"kPa","",-3212.7},
-    {"Well Stimulation Pump Suction Pressure High Threshold Setting",16,0.1,false,"kPa","",-3212.7},
+    {"Well Stimulation Pump Gear Box Oil Temperature Low Threshold Setting",8,1,true,"°C","",-40},
+    {"Well Stimulation Pump Gear Box Oil Temperature High Threshold Setting",8,1,true,"°C","",-40},
+    {"Well Stimulation Pump Suction Pressure Low Threshold Setting",16,0.1,true,"kPa","",-32126.999999999996},
+    {"Well Stimulation Pump Suction Pressure High Threshold Setting",16,0.1,true,"kPa","",-32126.999999999996},
     {"Well Stimulation Pump Discharge Pressure High Threshold Setting",16,5,false,"kPa","",0},
     {"Well Stimulation Pump Crankshaft Speed Low Threshold Setting",16,0.125,false,"rpm","",0},
     {"Well Stimulation Pump Crankshaft Speed High Threshold Setting",16,0.125,false,"rpm","",0},
@@ -10585,7 +10585,7 @@
     {"DC/DC 1 Low Side Current Maximum Limit Setting",16,0.05,false,"A","",0},
     {"DC/DC 1 SLI Battery Terminal Voltage Maximum Limit Setting",16,0.01,false,"V","",0},
     {"DC/DC 1 SLI Battery Terminal Charge Current Maximum Limit Setting",16,0.05,false,"A","",0},
-    {"DC/DC 1 SLI Battery Temperature Maximum Limit Setting",8,1,false,"°C","",-40},
+    {"DC/DC 1 SLI Battery Temperature Maximum Limit Setting",8,1,true,"°C","",-40},
     {"DC/DC 1 Low Side Voltage Buck Default Setting",16,0.01,false,"V","",0},
     {0}}},
     
@@ -10597,7 +10597,7 @@
     {
     {"DC/DC 1 SLI Battery Terminal Voltage Maximum Limit Request",16,0.01,false,"V","",0},
     {"DC/DC 1 SLI Battery Terminal Charge Current Maximum Limit Request",16,0.05,false,"A","",0},
-    {"DC/DC 1 SLI Battery Temperature Maximum Limit Request",8,1,false,"°C","",-40},
+    {"DC/DC 1 SLI Battery Temperature Maximum Limit Request",8,1,true,"°C","",-40},
     {0}}},
     
     {"Pump Oil Message",
@@ -10609,7 +10609,7 @@
     {"Well Stimulation Pump Oil Viscosity",16,0.015625,false,"cP","",0},
     {"Well Stimulation Pump Oil Density",16,0.00003052,false,"g/cc","",0},
     {"Well Stimulation Pump Oil Relative Dielectricity",16,0.0001220703125,false,"","",0},
-    {"Well Stimulation Pump Oil Temperature",16,0.03125,false,"°C","",-273},
+    {"Well Stimulation Pump Oil Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Well Stimulation Pump System Lifetime Totals",
@@ -10645,7 +10645,7 @@
     {"Alternator Bearing Header Intake Pressure",8,2,false,"kPa","",0},
     {"Alternator Oil Cooler Discharge Pump Pressure",8,2,false,"kPa","",0},
     {"Engine Oil Cooler Discharge Pump Pressure",8,2,false,"kPa","",0},
-    {"Engine Oil Cooler Intake Temperature",8,1,false,"°C","",-40},
+    {"Engine Oil Cooler Intake Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"Electronic Engine Controller 21",
@@ -10679,11 +10679,11 @@
     8,
     0,
     {
-    {"DC/DC 1 Converter Temperature",8,1,false,"°C","",-40},
-    {"DC/DC 1 Converter Electronic Filter Temperature",8,1,false,"°C","",-40},
-    {"DC/DC 1 Power Electronics Temperature",8,1,false,"°C","",-40},
-    {"DC/DC 1 Coolant  In Temperature",8,1,false,"°C","",-40},
-    {"DC/DC 1 Coolant Out Temperature",8,1,false,"°C","",-40},
+    {"DC/DC 1 Converter Temperature",8,1,true,"°C","",-40},
+    {"DC/DC 1 Converter Electronic Filter Temperature",8,1,true,"°C","",-40},
+    {"DC/DC 1 Power Electronics Temperature",8,1,true,"°C","",-40},
+    {"DC/DC 1 Coolant  In Temperature",8,1,true,"°C","",-40},
+    {"DC/DC 1 Coolant Out Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"DC/DC Converter 1 Low Side Limits",
@@ -10790,10 +10790,10 @@
     8,
     0,
     {
-    {"Engine Charge Air Cooler Intake Coolant Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Charge Air Cooler Outlet Coolant Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Intake Coolant Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Intake Manifold Air to Secondary Coolant Circuit Coolant Differential Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Charge Air Cooler Intake Coolant Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Charge Air Cooler Outlet Coolant Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Intake Coolant Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Intake Manifold Air to Secondary Coolant Circuit Coolant Differential Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Intake/Exhaust Conditions 3",
@@ -10814,13 +10814,13 @@
     8,
     0,
     {
-    {"Alternator Oil Cooler Oil Intake Temperature",8,1,false,"°C","",-40},
-    {"Alternator Oil Cooler Oil Outlet Temperature",8,1,false,"°C","",-40},
-    {"Alternator Oil Cooler Coolant Intake Temperature",8,1,false,"°C","",-40},
-    {"Alternator Oil Cooler Coolant Outlet Temperature",8,1,false,"°C","",-40},
-    {"Engine Oil Cooler Coolant Outlet Temperature",8,1,false,"°C","",-40},
-    {"Alternator Aftercooler Coolant Pump Outlet Temperature",8,1,false,"°C","",-40},
-    {"Alternator Aftercooler Coolant Outlet Temperature",8,1,false,"°C","",-40},
+    {"Alternator Oil Cooler Oil Intake Temperature",8,1,true,"°C","",-40},
+    {"Alternator Oil Cooler Oil Outlet Temperature",8,1,true,"°C","",-40},
+    {"Alternator Oil Cooler Coolant Intake Temperature",8,1,true,"°C","",-40},
+    {"Alternator Oil Cooler Coolant Outlet Temperature",8,1,true,"°C","",-40},
+    {"Engine Oil Cooler Coolant Outlet Temperature",8,1,true,"°C","",-40},
+    {"Alternator Aftercooler Coolant Pump Outlet Temperature",8,1,true,"°C","",-40},
+    {"Alternator Aftercooler Coolant Outlet Temperature",8,1,true,"°C","",-40},
     {"Alternator Aftercooler Coolant Pump Outlet Pressure",8,2,false,"kPa","",0},
     {0}}},
     
@@ -10830,10 +10830,10 @@
     8,
     0,
     {
-    {"Power Rectifier Diode 9 Temperature",8,1,false,"°C","",-40},
-    {"Power Rectifier Diode 10 Temperature",8,1,false,"°C","",-40},
-    {"Power Rectifier Diode 11 Temperature",8,1,false,"°C","",-40},
-    {"Power Rectifier Diode 12 Temperature",8,1,false,"°C","",-40},
+    {"Power Rectifier Diode 9 Temperature",8,1,true,"°C","",-40},
+    {"Power Rectifier Diode 10 Temperature",8,1,true,"°C","",-40},
+    {"Power Rectifier Diode 11 Temperature",8,1,true,"°C","",-40},
+    {"Power Rectifier Diode 12 Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"Diode Temperature 1",
@@ -10842,14 +10842,14 @@
     8,
     0,
     {
-    {"Power Rectifier Diode 1 Temperature",8,1,false,"°C","",-40},
-    {"Power Rectifier Diode 2 Temperature",8,1,false,"°C","",-40},
-    {"Power Rectifier Diode 3 Temperature",8,1,false,"°C","",-40},
-    {"Power Rectifier Diode 4 Temperature",8,1,false,"°C","",-40},
-    {"Power Rectifier Diode 5 Temperature",8,1,false,"°C","",-40},
-    {"Power Rectifier Diode 6 Temperature",8,1,false,"°C","",-40},
-    {"Power Rectifier Diode 7 Temperature",8,1,false,"°C","",-40},
-    {"Power Rectifier Diode 8 Temperature",8,1,false,"°C","",-40},
+    {"Power Rectifier Diode 1 Temperature",8,1,true,"°C","",-40},
+    {"Power Rectifier Diode 2 Temperature",8,1,true,"°C","",-40},
+    {"Power Rectifier Diode 3 Temperature",8,1,true,"°C","",-40},
+    {"Power Rectifier Diode 4 Temperature",8,1,true,"°C","",-40},
+    {"Power Rectifier Diode 5 Temperature",8,1,true,"°C","",-40},
+    {"Power Rectifier Diode 6 Temperature",8,1,true,"°C","",-40},
+    {"Power Rectifier Diode 7 Temperature",8,1,true,"°C","",-40},
+    {"Power Rectifier Diode 8 Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"Alternator Temperature 2",
@@ -10858,14 +10858,14 @@
     8,
     0,
     {
-    {"Engine Alternator Winding 7 Temperature",8,1,false,"°C","",-40},
-    {"Engine Alternator Winding 8 Temperature",8,1,false,"°C","",-40},
-    {"Engine Alternator Winding 9 Temperature",8,1,false,"°C","",-40},
-    {"Engine Alternator Winding 10 Temperature",8,1,false,"°C","",-40},
-    {"Engine Alternator Winding 11 Temperature",8,1,false,"°C","",-40},
-    {"Engine Alternator Winding 12 Temperature",8,1,false,"°C","",-40},
-    {"Alternator Air Cooler Air Intake Temperature",8,1,false,"°C","",-40},
-    {"Alternator Air Cooler Air Outlet Temperature",8,1,false,"°C","",-40},
+    {"Engine Alternator Winding 7 Temperature",8,1,true,"°C","",-40},
+    {"Engine Alternator Winding 8 Temperature",8,1,true,"°C","",-40},
+    {"Engine Alternator Winding 9 Temperature",8,1,true,"°C","",-40},
+    {"Engine Alternator Winding 10 Temperature",8,1,true,"°C","",-40},
+    {"Engine Alternator Winding 11 Temperature",8,1,true,"°C","",-40},
+    {"Engine Alternator Winding 12 Temperature",8,1,true,"°C","",-40},
+    {"Alternator Air Cooler Air Intake Temperature",8,1,true,"°C","",-40},
+    {"Alternator Air Cooler Air Outlet Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"Fuel Information 7 (Gaseous)",
@@ -10879,12 +10879,12 @@
     {"Passenger Side Fuel Receptacle 1 Cover Status",2,RES_BITFIELD,false,0,"",0},
     {"Passenger Side Fuel Receptacle 2 Cover Status",2,RES_BITFIELD,false,0,"",0},
     {"Front Fuel Receptacle Cover Status",2,RES_BITFIELD,false,0,"",0},
-    {"Fuel Storage Compartment 1 Temperature 1",8,1,false,"°C","",-40},
-    {"Fuel Storage Compartment 1 Temperature 2",8,1,false,"°C","",-40},
-    {"Fuel Storage Compartment 2 Temperature 1",8,1,false,"°C","",-40},
-    {"Fuel Storage Compartment 2 Temperature 2",8,1,false,"°C","",-40},
-    {"Fuel Storage Compartment 3 Temperature 1",8,1,false,"°C","",-40},
-    {"Fuel Storage Compartment 3 Temperature 2",8,1,false,"°C","",-40},
+    {"Fuel Storage Compartment 1 Temperature 1",8,1,true,"°C","",-40},
+    {"Fuel Storage Compartment 1 Temperature 2",8,1,true,"°C","",-40},
+    {"Fuel Storage Compartment 2 Temperature 1",8,1,true,"°C","",-40},
+    {"Fuel Storage Compartment 2 Temperature 2",8,1,true,"°C","",-40},
+    {"Fuel Storage Compartment 3 Temperature 1",8,1,true,"°C","",-40},
+    {"Fuel Storage Compartment 3 Temperature 2",8,1,true,"°C","",-40},
     {0}}},
     
     {"High Voltage Energy Storage System Fan Status",
@@ -10897,7 +10897,7 @@
     {"HVESS Fan Status Reason Code",4,RES_BITFIELD,false,0,"",0},
     {"HVESS Fan Command Status",2,RES_BITFIELD,false,0,"",0},
     {"HVESS Fan Speed",16,0.5,false,"rpm","",0},
-    {"HVESS Fan Medium Temperature",16,0.03125,false,"°C","",-273},
+    {"HVESS Fan Medium Temperature",16,0.03125,true,"°C","",-8736},
     {"HVESS Fan Power",16,0.5,false,"W","",0},
     {"HVESS Fan Service Indicator",2,RES_BITFIELD,false,0,"",0},
     {"HVESS Fan Operating Status",2,RES_BITFIELD,false,0,"",0},
@@ -11076,7 +11076,7 @@
     8,
     0,
     {
-    {"Directional Vehicle Speed",16,0.0078125,false,"km/h","",-250},
+    {"Directional Vehicle Speed",16,0.0078125,true,"km/h","",-32000},
     {0}}},
     
     {"Aftertreatment 2 Diesel Oxidation Catalyst 2",
@@ -11124,7 +11124,7 @@
     {"Propulsion Motor Coolant Fan 3 Controller Status Reason Code",4,RES_BITFIELD,false,0,"",0},
     {"Propulsion Motor Coolant Fan 3 Controller Command Status",2,RES_BITFIELD,false,0,"",0},
     {"Propulsion Motor Coolant Fan 3 Motor Speed",16,0.5,false,"rpm","",0},
-    {"Propulsion Motor Coolant Fan 3 Control Temperature",16,0.03125,false,"°C","",-273},
+    {"Propulsion Motor Coolant Fan 3 Control Temperature",16,0.03125,true,"°C","",-8736},
     {"Propulsion Motor Coolant Fan 3 Power",16,0.5,false,"W","",0},
     {"Propulsion Motor Coolant Fan 3 Service Indicator",2,RES_BITFIELD,false,0,"",0},
     {"Propulsion Motor Coolant Fan 3 Operating Status",2,RES_BITFIELD,false,0,"",0},
@@ -11140,7 +11140,7 @@
     {"Propulsion Motor Coolant Fan 2 Controller Status Reason Code",4,RES_BITFIELD,false,0,"",0},
     {"Propulsion Motor Coolant Fan 2 Controller Command Status",2,RES_BITFIELD,false,0,"",0},
     {"Propulsion Motor Coolant Fan 2 Motor Speed",16,0.5,false,"rpm","",0},
-    {"Propulsion Motor Coolant Fan 2 Control Temperature",16,0.03125,false,"°C","",-273},
+    {"Propulsion Motor Coolant Fan 2 Control Temperature",16,0.03125,true,"°C","",-8736},
     {"Propulsion Motor Coolant Fan 2 Power",16,0.5,false,"W","",0},
     {"Propulsion Motor Coolant Fan 2 Service Indicator",2,RES_BITFIELD,false,0,"",0},
     {"Propulsion Motor Coolant Fan 2 Operating Status",2,RES_BITFIELD,false,0,"",0},
@@ -11156,7 +11156,7 @@
     {"Propulsion Motor Coolant Fan 1 Controller Status Reason Code",4,RES_BITFIELD,false,0,"",0},
     {"Propulsion Motor Coolant Fan 1 Controller Command Status",2,RES_BITFIELD,false,0,"",0},
     {"Propulsion Motor Coolant Fan 1 Motor Speed",16,0.5,false,"rpm","",0},
-    {"Propulsion Motor Coolant Fan 1 Control Temperature",16,0.03125,false,"°C","",-273},
+    {"Propulsion Motor Coolant Fan 1 Control Temperature",16,0.03125,true,"°C","",-8736},
     {"Propulsion Motor Coolant Fan 1 Power",16,0.5,false,"W","",0},
     {"Propulsion Motor Coolant Fan 1 Service Indicator",2,RES_BITFIELD,false,0,"",0},
     {"Propulsion Motor Coolant Fan 1 Operating Status",2,RES_BITFIELD,false,0,"",0},
@@ -11172,7 +11172,7 @@
     {"Power Electronics Coolant Fan 3 Controller Status Reason Code",4,RES_BITFIELD,false,0,"",0},
     {"Power Electronics Coolant Fan 3 Controller Command Status",2,RES_BITFIELD,false,0,"",0},
     {"Power Electronics Coolant Fan 3 Motor Speed",16,0.5,false,"rpm","",0},
-    {"Power Electronics Coolant Fan 3 Control Temperature",16,0.03125,false,"°C","",-273},
+    {"Power Electronics Coolant Fan 3 Control Temperature",16,0.03125,true,"°C","",-8736},
     {"Power Electronics Coolant Fan 3 Power",16,0.5,false,"W","",0},
     {"Power Electronics Coolant Fan 3 Service Indicator",2,RES_BITFIELD,false,0,"",0},
     {"Power Electronics Coolant Fan 3 Operating Status",2,RES_BITFIELD,false,0,"",0},
@@ -11188,7 +11188,7 @@
     {"Power Electronics Coolant Fan 2 Controller Status Reason Code",4,RES_BITFIELD,false,0,"",0},
     {"Power Electronics Coolant Fan 2 Controller Command Status",2,RES_BITFIELD,false,0,"",0},
     {"Power Electronics Coolant Fan 2 Motor Speed",16,0.5,false,"rpm","",0},
-    {"Power Electronics Coolant Fan 2 Control Temperature",16,0.03125,false,"°C","",-273},
+    {"Power Electronics Coolant Fan 2 Control Temperature",16,0.03125,true,"°C","",-8736},
     {"Power Electronics Coolant Fan 2 Power",16,0.5,false,"W","",0},
     {"Power Electronics Coolant Fan 2 Service Indicator",2,RES_BITFIELD,false,0,"",0},
     {"Power Electronics Coolant Fan 2 Operating Status",2,RES_BITFIELD,false,0,"",0},
@@ -11204,7 +11204,7 @@
     {"Power Electronics Coolant Fan 1 Controller Status Reason Code",4,RES_BITFIELD,false,0,"",0},
     {"Power Electronics Coolant Fan 1 Controller Command Status",2,RES_BITFIELD,false,0,"",0},
     {"Power Electronics Coolant Fan 1 Motor Speed",16,0.5,false,"rpm","",0},
-    {"Power Electronics Coolant Fan 1 Control Temperature",16,0.03125,false,"°C","",-273},
+    {"Power Electronics Coolant Fan 1 Control Temperature",16,0.03125,true,"°C","",-8736},
     {"Power Electronics Coolant Fan 1 Power",16,0.5,false,"W","",0},
     {"Power Electronics Coolant Fan 1 Service Indicator",2,RES_BITFIELD,false,0,"",0},
     {"Power Electronics Coolant Fan 1 Operating Status",2,RES_BITFIELD,false,0,"",0},
@@ -11220,7 +11220,7 @@
     {"Propulsion Motor Oil Pump Controller Status Reason Code",4,RES_BITFIELD,false,0,"",0},
     {"Propulsion Motor Oil Pump Controller Command Status",2,RES_BITFIELD,false,0,"",0},
     {"Propulsion Motor Oil Pump Motor Speed",16,0.5,false,"rpm","",0},
-    {"Propulsion Motor Oil Pump Control Temperature",16,0.03125,false,"°C","",-273},
+    {"Propulsion Motor Oil Pump Control Temperature",16,0.03125,true,"°C","",-8736},
     {"Propulsion Motor Oil Pump Power",16,0.5,false,"W","",0},
     {"Propulsion Motor Oil Pump Service Indicator",2,RES_BITFIELD,false,0,"",0},
     {"Propulsion Motor Oil Pump Operating Status",2,RES_BITFIELD,false,0,"",0},
@@ -11236,7 +11236,7 @@
     {"Propulsion Motor Coolant Pump Controller Status Reason Code",4,RES_BITFIELD,false,0,"",0},
     {"Propulsion Motor Coolant Pump Controller Command Status",2,RES_BITFIELD,false,0,"",0},
     {"Propulsion Motor Coolant Pump Motor Speed",16,0.5,false,"rpm","",0},
-    {"Propulsion Motor Coolant Pump Control Temperature",16,0.03125,false,"°C","",-273},
+    {"Propulsion Motor Coolant Pump Control Temperature",16,0.03125,true,"°C","",-8736},
     {"Propulsion Motor Coolant Pump Power",16,0.5,false,"W","",0},
     {"Propulsion Motor Coolant Pump Service Indicator",2,RES_BITFIELD,false,0,"",0},
     {"Propulsion Motor Coolant Pump Operating Status",2,RES_BITFIELD,false,0,"",0},
@@ -11252,7 +11252,7 @@
     {"Power Electronics Coolant Pump Controller Status Reason Code",4,RES_BITFIELD,false,0,"",0},
     {"Power Electronics Coolant Pump Controller Command Status",2,RES_BITFIELD,false,0,"",0},
     {"Power Electronics Coolant Pump Motor Speed",16,0.5,false,"rpm","",0},
-    {"Power Electronics Coolant Pump Control Temperature",16,0.03125,false,"°C","",-273},
+    {"Power Electronics Coolant Pump Control Temperature",16,0.03125,true,"°C","",-8736},
     {"Power Electronics Coolant Pump Power",16,0.5,false,"W","",0},
     {"Power Electronics Coolant Pump Service Indicator",2,RES_BITFIELD,false,0,"",0},
     {"Power Electronics Coolant Pump Operating Status",2,RES_BITFIELD,false,0,"",0},
@@ -11268,7 +11268,7 @@
     {"Electrified Accessory Motor Controller Status Reason Code",4,RES_BITFIELD,false,0,"",0},
     {"Electrified Accessory Motor Controller Command Status",2,RES_BITFIELD,false,0,"",0},
     {"Electrified Accessory Motor Speed",16,0.5,false,"rpm","",0},
-    {"Electrified Accessory Motor Medium Temperature",16,0.03125,false,"°C","",-273},
+    {"Electrified Accessory Motor Medium Temperature",16,0.03125,true,"°C","",-8736},
     {"Electrified Accessory Motor Power",16,0.5,false,"W","",0},
     {"Electrified Accessory Motor Service Indicator",2,RES_BITFIELD,false,0,"",0},
     {"Electrified Accessory Motor Operating Status",2,RES_BITFIELD,false,0,"",0},
@@ -11307,8 +11307,8 @@
     8,
     0,
     {
-    {"SLI Battery Pack 1 Battery 4 Net Current",16,0.05,false,"A","",-1600},
-    {"SLI Battery Pack 1 Battery 4 Temperature",8,1,false,"°C","",-40},
+    {"SLI Battery Pack 1 Battery 4 Net Current",16,0.05,true,"A","",-32000},
+    {"SLI Battery Pack 1 Battery 4 Temperature",8,1,true,"°C","",-40},
     {"SLI Battery Pack 1 Battery 4 Voltage",16,0.05,false,"V","",0},
     {0}}},
     
@@ -11331,8 +11331,8 @@
     8,
     0,
     {
-    {"SLI Battery Pack 1 Battery 3 Net Current",16,0.05,false,"A","",-1600},
-    {"SLI Battery Pack 1 Battery 3 Temperature",8,1,false,"°C","",-40},
+    {"SLI Battery Pack 1 Battery 3 Net Current",16,0.05,true,"A","",-32000},
+    {"SLI Battery Pack 1 Battery 3 Temperature",8,1,true,"°C","",-40},
     {"SLI Battery Pack 1 Battery 3 Voltage",16,0.05,false,"V","",0},
     {0}}},
     
@@ -11355,8 +11355,8 @@
     8,
     0,
     {
-    {"SLI Battery Pack 1 Battery 2 Net Current",16,0.05,false,"A","",-1600},
-    {"SLI Battery Pack 1 Battery 2 Temperature",8,1,false,"°C","",-40},
+    {"SLI Battery Pack 1 Battery 2 Net Current",16,0.05,true,"A","",-32000},
+    {"SLI Battery Pack 1 Battery 2 Temperature",8,1,true,"°C","",-40},
     {"SLI Battery Pack 1 Battery 2 Voltage",16,0.05,false,"V","",0},
     {0}}},
     
@@ -11379,8 +11379,8 @@
     8,
     0,
     {
-    {"SLI Battery Pack 1 Battery 1 Net Current",16,0.05,false,"A","",-1600},
-    {"SLI Battery Pack 1 Battery 1 Temperature",8,1,false,"°C","",-40},
+    {"SLI Battery Pack 1 Battery 1 Net Current",16,0.05,true,"A","",-32000},
+    {"SLI Battery Pack 1 Battery 1 Temperature",8,1,true,"°C","",-40},
     {"SLI Battery Pack 1 Battery 1 Voltage",16,0.05,false,"V","",0},
     {0}}},
     
@@ -11422,8 +11422,8 @@
     0,
     {
     {"Barometric Absolute Pressure 2",16,0.1,false,"kPa","",0},
-    {"Engine Intake 2 Air Temperature",8,1,false,"°C","",-40},
-    {"Engine Power Derate Relative Humidity Difference",16,0.01,false,"%","",-321.27},
+    {"Engine Intake 2 Air Temperature",8,1,true,"°C","",-40},
+    {"Engine Power Derate Relative Humidity Difference",16,0.01,true,"%","",-32126.999999999996},
     {0}}},
     
     {"Total Gaseous Fuel Information",
@@ -11484,8 +11484,8 @@
     {
     {"Battery Potential / Power Input 3",16,0.05,false,"V","",0},
     {"Battery Potential / Power Input 4",16,0.05,false,"V","",0},
-    {"SLI Battery 3 Net Current",16,0.05,false,"A","",-1600},
-    {"SLI Battery 4 Net Current",16,0.05,false,"A","",-1600},
+    {"SLI Battery 3 Net Current",16,0.05,true,"A","",-32000},
+    {"SLI Battery 4 Net Current",16,0.05,true,"A","",-32000},
     {0}}},
     
     {"Payload Temperature 2",
@@ -11494,7 +11494,7 @@
     8,
     0,
     {
-    {"Payload Temperature 5",16,0.03125,false,"°C","",-273},
+    {"Payload Temperature 5",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Payload Temperature 1",
@@ -11503,10 +11503,10 @@
     8,
     0,
     {
-    {"Payload Temperature 1",16,0.03125,false,"°C","",-273},
-    {"Payload Temperature 2",16,0.03125,false,"°C","",-273},
-    {"Payload Temperature 3",16,0.03125,false,"°C","",-273},
-    {"Payload Temperature 4",16,0.03125,false,"°C","",-273},
+    {"Payload Temperature 1",16,0.03125,true,"°C","",-8736},
+    {"Payload Temperature 2",16,0.03125,true,"°C","",-8736},
+    {"Payload Temperature 3",16,0.03125,true,"°C","",-8736},
+    {"Payload Temperature 4",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Payload System Totals 2",
@@ -11554,7 +11554,7 @@
     0,
     {
     {"Aftertreatment 2 Diesel Exhaust Fluid Tank Volume 2",8,0.4,false,"%","",0},
-    {"Aftertreatment 2 Diesel Exhaust Fluid Tank Temperature 2",8,1,false,"°C","",-40},
+    {"Aftertreatment 2 Diesel Exhaust Fluid Tank Temperature 2",8,1,true,"°C","",-40},
     {"Aftertreatment 2 Diesel Exhaust Fluid Tank Heater 2",8,0.4,false,"%","",0},
     {0}}},
     
@@ -11565,7 +11565,7 @@
     0,
     {
     {"Aftertreatment 1 Diesel Exhaust Fluid Tank Volume 2",8,0.4,false,"%","",0},
-    {"Aftertreatment 1 Diesel Exhaust Fluid Tank Temperature 2",8,1,false,"°C","",-40},
+    {"Aftertreatment 1 Diesel Exhaust Fluid Tank Temperature 2",8,1,true,"°C","",-40},
     {"Aftertreatment 1 Diesel Exhaust Fluid Tank Heater 2",8,0.4,false,"%","",0},
     {0}}},
     
@@ -11575,8 +11575,8 @@
     8,
     0,
     {
-    {"Aftertreatment 2 Diesel Exhaust Fluid Controller Temperature",8,1,false,"°C","",-40},
-    {"Aftertreatment 2 Diesel Exhaust Fluid Controller 2 Temperature",8,1,false,"°C","",-40},
+    {"Aftertreatment 2 Diesel Exhaust Fluid Controller Temperature",8,1,true,"°C","",-40},
+    {"Aftertreatment 2 Diesel Exhaust Fluid Controller 2 Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"Aftertreatment 1 Diesel Exhaust Fluid Information 2",
@@ -11585,8 +11585,8 @@
     8,
     0,
     {
-    {"Aftertreatment 1 Diesel Exhaust Fluid Controller 1 Temperature",8,1,false,"°C","",-40},
-    {"Aftertreatment 1 Diesel Exhaust Fluid Controller 2 Temperature",8,1,false,"°C","",-40},
+    {"Aftertreatment 1 Diesel Exhaust Fluid Controller 1 Temperature",8,1,true,"°C","",-40},
+    {"Aftertreatment 1 Diesel Exhaust Fluid Controller 2 Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"Forward Lane Image 3",
@@ -11597,9 +11597,9 @@
     {
     {"Left Distance to Lane Mark from Vehicle's Middle",8,0.02,false,"m","",0},
     {"Right Distance to Lane Mark from Vehicle's Middle",8,0.02,false,"m","",0},
-    {"Road Curvature Based on Lane Marks",16,0.0078125,false,"1/km","",-250},
-    {"Lane Departure Angle Left",8,0.1,false,"deg","",-12.5},
-    {"Lane Departure Angle Right",8,0.1,false,"deg","",-12.5},
+    {"Road Curvature Based on Lane Marks",16,0.0078125,true,"1/km","",-32000},
+    {"Lane Departure Angle Left",8,0.1,true,"deg","",-125},
+    {"Lane Departure Angle Right",8,0.1,true,"deg","",-125},
     {"Lane Mark Quality on the Left Side",3,RES_BITFIELD,false,0,"",0},
     {"Lane Mark Quality on the Right Side",3,RES_BITFIELD,false,0,"",0},
     {"Right Lane Marker Type",4,RES_BITFIELD,false,0,"",0},
@@ -11667,7 +11667,7 @@
     {
     {"LNG Tank 1 Vapor Pressure",16,0.1,false,"kPa","",0},
     {"LNG Tank 2 Vapor Pressure",16,0.1,false,"kPa","",0},
-    {"Engine Fuel 2 Injector Metering Rail 1 Temperature 2",8,1,false,"°C","",-40},
+    {"Engine Fuel 2 Injector Metering Rail 1 Temperature 2",8,1,true,"°C","",-40},
     {0}}},
     
     {"Engine Turbocharger Control 3",
@@ -11719,12 +11719,12 @@
     {"Aftertreatment Active Regeneration Inhibited Due to Low Exhaust Pressure",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment Engine Speed Increase request",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment Engine Load Request",2,RES_BITFIELD,false,0,"",0},
-    {"Aftertreatment Ambient Air Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment Ambient Air Temperature",16,0.03125,true,"°C","",-8736},
     {"Aftertreatment Diesel Exhaust Fluid Heater Circuit Breaker",2,RES_BITFIELD,false,0,"",0},
     {"Diesel Exhaust Fluid Quality Malfunction Evaluation Period Active",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment SCR Dosing Mode Status",3,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment Diesel Exhaust Fluid Tank Volume",8,0.4,false,"%","",0},
-    {"Aftertreatment Diesel Exhaust Fluid Tank Temperature",8,1,false,"°C","",-40},
+    {"Aftertreatment Diesel Exhaust Fluid Tank Temperature",8,1,true,"°C","",-40},
     {"DPF Active Regeneration Time Remaining",8,1,false,"min","",0},
     {0}}},
     
@@ -11846,10 +11846,10 @@
     8,
     0,
     {
-    {"Engine End Bearing 17 Temperature",8,1,false,"°C","",-40},
-    {"Engine End Bearing 18 Temperature",8,1,false,"°C","",-40},
-    {"Engine End Bearing 19 Temperature",8,1,false,"°C","",-40},
-    {"Engine End Bearing 20 Temperature",8,1,false,"°C","",-40},
+    {"Engine End Bearing 17 Temperature",8,1,true,"°C","",-40},
+    {"Engine End Bearing 18 Temperature",8,1,true,"°C","",-40},
+    {"Engine End Bearing 19 Temperature",8,1,true,"°C","",-40},
+    {"Engine End Bearing 20 Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"Engine End Bearing Temperature 2",
@@ -11858,14 +11858,14 @@
     8,
     0,
     {
-    {"Engine End Bearing 9 Temperature",8,1,false,"°C","",-40},
-    {"Engine End Bearing 10 Temperature",8,1,false,"°C","",-40},
-    {"Engine End Bearing 11 Temperature",8,1,false,"°C","",-40},
-    {"Engine End Bearing 12 Temperature",8,1,false,"°C","",-40},
-    {"Engine End Bearing 13 Temperature",8,1,false,"°C","",-40},
-    {"Engine End Bearing 14 Temperature",8,1,false,"°C","",-40},
-    {"Engine End Bearing 15 Temperature",8,1,false,"°C","",-40},
-    {"Engine End Bearing 16 Temperature",8,1,false,"°C","",-40},
+    {"Engine End Bearing 9 Temperature",8,1,true,"°C","",-40},
+    {"Engine End Bearing 10 Temperature",8,1,true,"°C","",-40},
+    {"Engine End Bearing 11 Temperature",8,1,true,"°C","",-40},
+    {"Engine End Bearing 12 Temperature",8,1,true,"°C","",-40},
+    {"Engine End Bearing 13 Temperature",8,1,true,"°C","",-40},
+    {"Engine End Bearing 14 Temperature",8,1,true,"°C","",-40},
+    {"Engine End Bearing 15 Temperature",8,1,true,"°C","",-40},
+    {"Engine End Bearing 16 Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"Engine End Bearing Temperature 1",
@@ -11874,14 +11874,14 @@
     8,
     0,
     {
-    {"Engine End Bearing 1 Temperature",8,1,false,"°C","",-40},
-    {"Engine End Bearing 2 Temperature",8,1,false,"°C","",-40},
-    {"Engine End Bearing 3 Temperature",8,1,false,"°C","",-40},
-    {"Engine End Bearing 4 Temperature",8,1,false,"°C","",-40},
-    {"Engine End Bearing 5 Temperature",8,1,false,"°C","",-40},
-    {"Engine End Bearing 6 Temperature",8,1,false,"°C","",-40},
-    {"Engine End Bearing 7 Temperature",8,1,false,"°C","",-40},
-    {"Engine End Bearing 8 Temperature",8,1,false,"°C","",-40},
+    {"Engine End Bearing 1 Temperature",8,1,true,"°C","",-40},
+    {"Engine End Bearing 2 Temperature",8,1,true,"°C","",-40},
+    {"Engine End Bearing 3 Temperature",8,1,true,"°C","",-40},
+    {"Engine End Bearing 4 Temperature",8,1,true,"°C","",-40},
+    {"Engine End Bearing 5 Temperature",8,1,true,"°C","",-40},
+    {"Engine End Bearing 6 Temperature",8,1,true,"°C","",-40},
+    {"Engine End Bearing 7 Temperature",8,1,true,"°C","",-40},
+    {"Engine End Bearing 8 Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"Heat Exchanger Debris Purge Information",
@@ -11923,8 +11923,8 @@
     {
     {"Engine Fuel 2 Injector Metering Rail 1 Pressure",16,2,false,"kPa","",0},
     {"Engine Fuel 2 Injector Metering Rail 2 Pressure",16,2,false,"kPa","",0},
-    {"Engine Fuel 2 Injector Metering Rail 1 Temperature",8,1,false,"°C","",-40},
-    {"Engine Fuel 2 Injector Metering Rail 2 Temperature",8,1,false,"°C","",-40},
+    {"Engine Fuel 2 Injector Metering Rail 1 Temperature",8,1,true,"°C","",-40},
+    {"Engine Fuel 2 Injector Metering Rail 2 Temperature",8,1,true,"°C","",-40},
     {"Engine Fuel 2 Injector Metering Rail 1 Pressure 2",16,2,false,"kPa","",0},
     {0}}},
     
@@ -11950,7 +11950,7 @@
     {"Under Pressure Percentage Threshold",8,0.5,false,"%","",0},
     {"Extreme Under Pressure Percentage Threshold",8,0.5,false,"%","",0},
     {"Over Pressure Percentage Threshold",8,0.5,false,"%","",0},
-    {"Over Temperature",8,1,false,"°C","",-40},
+    {"Over Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"Tire Wireless Signal Strength Indicator",
@@ -11964,7 +11964,7 @@
     {"Total Number of Tire Sensors Monitored",8,1,false,"count","",0},
     {"Tire Sensor Number",8,1,false,"count","",0},
     {"Tire Location",8,RES_BINARY,false,0,"",0},
-    {"Tire Wireless Signal Strength Indicator",8,0.5,false,"dBm","",-125},
+    {"Tire Wireless Signal Strength Indicator",8,0.5,true,"dBm","",-250},
     {0}}},
     
     {"Tire Sensor Identification Status",
@@ -12091,7 +12091,7 @@
     {
     {"Aftertreatment 2 Diesel Exhaust Fluid Doser Pressure",8,4,false,"kPa","",0},
     {"Aftertreatment 2 Diesel Exhaust Fluid Doser 2 Absolute Pressure",8,8,false,"kPa","",0},
-    {"Aftertreatment 2 Diesel Exhaust Fluid Doser 2 Temperature",8,1,false,"°C","",-40},
+    {"Aftertreatment 2 Diesel Exhaust Fluid Doser 2 Temperature",8,1,true,"°C","",-40},
     {"Aftertreatment 2 Diesel Exhaust Fluid Doser 2 Pressure",8,4,false,"kPa","",0},
     {0}}},
     
@@ -12103,7 +12103,7 @@
     {
     {"Aftertreatment 1 Diesel Exhaust Fluid Doser Pressure",8,4,false,"kPa","",0},
     {"Aftertreatment 1 Diesel Exhaust Fluid Doser 2 Absolute Pressure",8,8,false,"kPa","",0},
-    {"Aftertreatment 1 Diesel Exhaust Fluid Doser 2 Temperature",8,1,false,"°C","",-40},
+    {"Aftertreatment 1 Diesel Exhaust Fluid Doser 2 Temperature",8,1,true,"°C","",-40},
     {"Aftertreatment 1 Diesel Exhaust Fluid Doser 2 Pressure",8,4,false,"kPa","",0},
     {0}}},
     
@@ -12203,7 +12203,7 @@
     {"Engine Turbocharger 2 Lube Oil Pressure",8,4,false,"kPa","",0},
     {"Engine Turbocharger 3 Lube Oil Pressure",8,4,false,"kPa","",0},
     {"Engine Turbocharger 4 Lube Oil Pressure",8,4,false,"kPa","",0},
-    {"Engine Turbocharger 2 Oil Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Turbocharger 2 Oil Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Engine Load Sharing Information",
@@ -12227,8 +12227,8 @@
     {"HVESS Recommended Maximum Operating Voltage",16,0.05,false,"V","",0},
     {"HVESS Recommended Minimum State Of Charge",16,0.0015625,false,"%","",0},
     {"HVESS Recommended Maximum State Of Charge",16,0.0015625,false,"%","",0},
-    {"HVESS Recommended Maximum Operating Temperature",16,0.03125,false,"°C","",-273},
-    {"HVESS Recommended Minimum Operating Temperature",16,0.03125,false,"°C","",-273},
+    {"HVESS Recommended Maximum Operating Temperature",16,0.03125,true,"°C","",-8736},
+    {"HVESS Recommended Minimum Operating Temperature",16,0.03125,true,"°C","",-8736},
     {"HVESS Cell Maximum Voltage Limit",8,0.02044,false,"V","",0},
     {"HVESS Cell Minimum Voltage Limit",8,0.02044,false,"V","",0},
     {"HVESS Number of HVESPs Configured",8,1,false,"count","",0},
@@ -12255,7 +12255,7 @@
     {"Aftertreatment 1 Particulate Sensor Detection Status",4,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 1 Particulate Sensor Power Supply",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 1 Particulate Sensor Regeneration Failed Count",8,1,false,"count","",0},
-    {"Aftertreatment 1 Particulate Sensor Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 1 Particulate Sensor Temperature",16,0.03125,true,"°C","",-8736},
     {"Aftertreatment 1 Particulate Sensor Maximum Resistance",8,250,false,"kohm","",0},
     {"Aftertreatment 1 Particulate Sensor Heater Resistance",16,0.1,false,"ohm","",0},
     {0}}},
@@ -12281,8 +12281,8 @@
     0,
     {
     {"Engine Gaseous Fuel Supply Pressure 1 (Extended Range)",16,0.00390625,false,"MPa","",0},
-    {"Engine Fuel Vaporizer 1 Discharge Temperature",8,1,false,"°C","",-40},
-    {"Gaseous Fuel Accumulator Temperature",8,1,false,"°C","",-40},
+    {"Engine Fuel Vaporizer 1 Discharge Temperature",8,1,true,"°C","",-40},
+    {"Gaseous Fuel Accumulator Temperature",8,1,true,"°C","",-40},
     {"Engine Gaseous Fuel Supply Pressure Regulator Control Command",16,0.0025,false,"%","",0},
     {0}}},
     
@@ -12304,8 +12304,8 @@
     8,
     0,
     {
-    {"Engine Exhaust NOx",16,0.05,false,"ppm","",-200},
-    {"Engine Exhaust Desired NOx",16,0.05,false,"ppm","",-200},
+    {"Engine Exhaust NOx",16,0.05,true,"ppm","",-4000},
+    {"Engine Exhaust Desired NOx",16,0.05,true,"ppm","",-4000},
     {"Engine Exhaust NOx Sensor Power Supply",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -12368,7 +12368,7 @@
     {"Engine Oil Filter Intake Pressure (High Resolution/Extended Range)",16,0.1,false,"kPa","",0},
     {"Engine Common Rail Oil Pressure",8,4,false,"kPa","",0},
     {"Engine Common Rail Oil Absolute Pressure",8,4,false,"kPa","",0},
-    {"Engine Exhaust Pressure 2",16,0.0078125,false,"kPa","",-250},
+    {"Engine Exhaust Pressure 2",16,0.0078125,true,"kPa","",-32000},
     {0}}},
     
     {"Electronic Steering Control 2",
@@ -12384,7 +12384,7 @@
     {"4 Wheel Steer Actuator State",2,RES_BITFIELD,false,0,"",0},
     {"Circle Steer Mode Actuator State",2,RES_BITFIELD,false,0,"",0},
     {"Crab Steer Mode Actuator State",2,RES_BITFIELD,false,0,"",0},
-    {"Steering Controller ECU Temperature",16,0.03125,false,"°C","",-273},
+    {"Steering Controller ECU Temperature",16,0.03125,true,"°C","",-8736},
     {"Steering Mode Two Wheel Switch Input",2,RES_BITFIELD,false,0,"",0},
     {"Steering Mode Crab Switch Input",2,RES_BITFIELD,false,0,"",0},
     {"Steering Mode Circle Switch Input",2,RES_BITFIELD,false,0,"",0},
@@ -12496,13 +12496,13 @@
     8,
     0,
     {
-    {"Engine Oil Filter Differential Pressure (Extended Range)",16,0.0078125,false,"kPa","",-250},
+    {"Engine Oil Filter Differential Pressure (Extended Range)",16,0.0078125,true,"kPa","",-32000},
     {"Engine Fuel 2 Tank 1 Level",8,0.4,false,"%","",0},
     {"Engine Fuel 2 Tank 2 Level",8,0.4,false,"%","",0},
     {"Engine Fuel 2 Tank 3 Level",8,0.4,false,"%","",0},
     {"Engine Fuel 2 Tank 4 Level",8,0.4,false,"%","",0},
     {"Display Remain Powered",2,RES_BITFIELD,false,0,"",0},
-    {"Engine Oil Level High / Low",8,0.5,false,"l","",-62.5},
+    {"Engine Oil Level High / Low",8,0.5,true,"l","",-125},
     {0}}},
     
     {"Multi-fuel Engine Hours",
@@ -12723,8 +12723,8 @@
     8,
     0,
     {
-    {"Engine Ignition Control Module 1 Temperature",8,1,false,"°C","",-40},
-    {"Engine Ignition Control Module 2 Temperature",8,1,false,"°C","",-40},
+    {"Engine Ignition Control Module 1 Temperature",8,1,true,"°C","",-40},
+    {"Engine Ignition Control Module 2 Temperature",8,1,true,"°C","",-40},
     {"Engine Ignition Control Module 1 State",3,RES_BITFIELD,false,0,"",0},
     {"Engine Ignition Control Module 2 State",3,RES_BITFIELD,false,0,"",0},
     {0}}},
@@ -12990,8 +12990,8 @@
     {
     {"Dual Clutch Transmission Input Shaft 1 Speed",16,0.125,false,"rpm","",0},
     {"Dual Clutch Transmission Input Shaft 2 Speed",16,0.125,false,"rpm","",0},
-    {"Dual Clutch Transmission Selected Pre-selection Gear",8,1,false,"gear value","",-125},
-    {"Dual Clutch Transmission Current Pre-selection Gear",8,1,false,"gear value","",-125},
+    {"Dual Clutch Transmission Selected Pre-selection Gear",8,1,true,"gear value","",-125},
+    {"Dual Clutch Transmission Current Pre-selection Gear",8,1,true,"gear value","",-125},
     {0}}},
     
     {"Electronic Transmission Controller #10",
@@ -13037,7 +13037,7 @@
     0,
     {
     {"Transmission Clutch 2 Pressure",8,16,false,"kPa","",0},
-    {"Transmission Oil Transmission Cooler Outlet Temperature",8,1,false,"°C","",-40},
+    {"Transmission Oil Transmission Cooler Outlet Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"Hybrid System Status 1",
@@ -13083,7 +13083,7 @@
     8,
     0,
     {
-    {"Aftertreatment 2 SCR Intermediate Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 2 SCR Intermediate Temperature",16,0.03125,true,"°C","",-8736},
     {"Aftertreatment 2 SCR Intermediate Temperature Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {0}}},
     
@@ -13093,7 +13093,7 @@
     8,
     0,
     {
-    {"Aftertreatment 1 SCR Intermediate Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 1 SCR Intermediate Temperature",16,0.03125,true,"°C","",-8736},
     {"Aftertreatment 1 SCR Intermediate Temperature Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {0}}},
     
@@ -13124,12 +13124,12 @@
     8,
     0,
     {
-    {"Engine Throttle Valve 1 Temperature",8,1,false,"°C","",-40},
-    {"Engine Throttle Valve 2 Temperature",8,1,false,"°C","",-40},
-    {"Engine Fuel Valve 1 Temperature",8,1,false,"°C","",-40},
-    {"Engine Fuel Valve 2 Temperature",8,1,false,"°C","",-40},
-    {"Engine Turbocharger Wastegate Actuator 2 Temperature",8,1,false,"°C","",-40},
-    {"Engine Fuel Rack Fuel Supply Temperature",8,1,false,"°C","",-40},
+    {"Engine Throttle Valve 1 Temperature",8,1,true,"°C","",-40},
+    {"Engine Throttle Valve 2 Temperature",8,1,true,"°C","",-40},
+    {"Engine Fuel Valve 1 Temperature",8,1,true,"°C","",-40},
+    {"Engine Fuel Valve 2 Temperature",8,1,true,"°C","",-40},
+    {"Engine Turbocharger Wastegate Actuator 2 Temperature",8,1,true,"°C","",-40},
+    {"Engine Fuel Rack Fuel Supply Temperature",8,1,true,"°C","",-40},
     {"Engine Throttle Valve 1 Position 2",8,0.4,false,"%","",0},
     {0}}},
     
@@ -13141,11 +13141,11 @@
     {
     {"Engine Exhaust Gas Recirculation 2 Actuator 1 Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Engine Exhaust Gas Recirculation 2 Actuator 1 Temperature Status",3,RES_BITFIELD,false,0,"",0},
-    {"Engine Exhaust Gas Recirculation 2 Actuator 1 Temperature",8,1,false,"°C","",-40},
+    {"Engine Exhaust Gas Recirculation 2 Actuator 1 Temperature",8,1,true,"°C","",-40},
     {"Engine Exhaust Gas Recirculation 2 Actuator 1 Desired Position",8,0.4,false,"%","",0},
     {"Engine Exhaust Gas Recirculation 2 Actuator 2 Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Engine Exhaust Gas Recirculation 2 Actuator 2 Temperature Status",3,RES_BITFIELD,false,0,"",0},
-    {"Engine Exhaust Gas Recirculation 2 Actuator 2 Temperature",8,1,false,"°C","",-40},
+    {"Engine Exhaust Gas Recirculation 2 Actuator 2 Temperature",8,1,true,"°C","",-40},
     {"Engine Exhaust Gas Recirculation 2 Actuator 2 Desired Position",8,0.4,false,"%","",0},
     {"Engine Exhaust Gas Recirculation 2 Actuator 1 Operation Status",4,RES_BITFIELD,false,0,"",0},
     {"Engine Exhaust Gas Recirculation 2 Actuator 2 Operation Status",4,RES_BITFIELD,false,0,"",0},
@@ -13159,11 +13159,11 @@
     {
     {"Engine Exhaust Gas Recirculation 1 Actuator 1 Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Engine Exhaust Gas Recirculation 1 Actuator 1 Temperature Status",3,RES_BITFIELD,false,0,"",0},
-    {"Engine Exhaust Gas Recirculation 1 Actuator 1 Temperature",8,1,false,"°C","",-40},
+    {"Engine Exhaust Gas Recirculation 1 Actuator 1 Temperature",8,1,true,"°C","",-40},
     {"Engine Exhaust Gas Recirculation 1 Actuator 1 Desired Position",8,0.4,false,"%","",0},
     {"Engine Exhaust Gas Recirculation 1 Actuator 2 Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Engine Exhaust Gas Recirculation 1 Actuator 2 Temperature Status",3,RES_BITFIELD,false,0,"",0},
-    {"Engine Exhaust Gas Recirculation 1 Actuator 2 Temperature",8,1,false,"°C","",-40},
+    {"Engine Exhaust Gas Recirculation 1 Actuator 2 Temperature",8,1,true,"°C","",-40},
     {"Engine Exhaust Gas Recirculation 1 Actuator 2 Desired Position",8,0.4,false,"%","",0},
     {"Engine Exhaust Gas Recirculation 1 Actuator 1 Operation Status",4,RES_BITFIELD,false,0,"",0},
     {"Engine Exhaust Gas Recirculation 1 Actuator 2 Operation Status",4,RES_BITFIELD,false,0,"",0},
@@ -13336,7 +13336,7 @@
     {"Engine Filtered Fuel Delivery Pressure",8,4,false,"kPa","",0},
     {"Engine Filtered Fuel Delivery Absolute Pressure",8,4,false,"kPa","",0},
     {"Engine Fuel Filter Degradation",8,1,false,"%","",0},
-    {"Engine Fuel Return Pressure",8,1.64,false,"kPa","",-7},
+    {"Engine Fuel Return Pressure",8,1.64,true,"kPa","",-4.2682926829268295},
     {"Engine Throttle Valve 2 Differential Pressure",16,0.1,false,"kPa","",0},
     {"Engine Fuel Supply Pump Intake Absolute Pressure (Extended Range)",8,5,false,"kPa","",0},
     {0}}},
@@ -13347,7 +13347,7 @@
     8,
     0,
     {
-    {"Aftertreatment 1 Diesel Particulate Filter Intake Temperature Set Point",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 1 Diesel Particulate Filter Intake Temperature Set Point",16,0.03125,true,"°C","",-8736},
     {"Engine Unburned Fuel Percentage",16,0.0025,false,"%","",0},
     {"Aftertreatment 1 Fuel Mass Rate",16,0.05,false,"g/min","",0},
     {"Aftertreatment 2 Fuel Mass Rate",16,0.05,false,"g/min","",0},
@@ -13374,9 +13374,9 @@
     {"Supplemental Fan Velocity Status",4,RES_BITFIELD,false,0,"",0},
     {"Supplemental Fan Controller Temperature Status",3,RES_BITFIELD,false,0,"",0},
     {"Supplemental Fan Drive Status",4,RES_BITFIELD,false,0,"",0},
-    {"Supplemental Fan Controller ECU Temperature",8,1,false,"°C","",-40},
+    {"Supplemental Fan Controller ECU Temperature",8,1,true,"°C","",-40},
     {"Supplemental Fan Speed",16,0.5,false,"rpm","",0},
-    {"Supplemental Fan Current",8,1,false,"A","",-125},
+    {"Supplemental Fan Current",8,1,true,"A","",-125},
     {"Supplemental Fan Power",16,0.5,false,"W","",0},
     {0}}},
     
@@ -13402,7 +13402,7 @@
     {"Engine Fuel Dynamic Viscosity",16,0.015625,false,"cP","",0},
     {"Engine Fuel Density",16,0.00003052,false,"g/cc","",0},
     {"Engine Fuel Dielectricity (High Resolution)",16,0.0001220703125,false,"","",0},
-    {"Engine Fuel 1 Temperature 1 (High Resolution)",16,0.03125,false,"°C","",-273},
+    {"Engine Fuel 1 Temperature 1 (High Resolution)",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Hydraulic Oil Properties",
@@ -13414,7 +13414,7 @@
     {"Hydraulic Oil Dynamic Viscosity",16,0.015625,false,"cP","",0},
     {"Hydraulic Oil Density",16,0.00003052,false,"g/cc","",0},
     {"Hydraulic Oil Relative Dielectricity (High Resolution)",16,0.0001220703125,false,"","",0},
-    {"Hydraulic Oil Temperature (High Resolution)",16,0.03125,false,"°C","",-273},
+    {"Hydraulic Oil Temperature (High Resolution)",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Vehicle/Chassis Lubrication System 2",
@@ -13437,13 +13437,13 @@
     8,
     0,
     {
-    {"Engine Friction Percent Torque At Idle, Point 1",8,1,false,"%","",-125},
-    {"Engine Friction Percent Torque, Point 2",8,1,false,"%","",-125},
-    {"Engine Friction Percent Torque, Point 3",8,1,false,"%","",-125},
-    {"Engine Friction Percent Torque, Point 4",8,1,false,"%","",-125},
-    {"Engine Friction Percent Torque, Point 5",8,1,false,"%","",-125},
-    {"Engine Friction Percent Torque, Point 6",8,1,false,"%","",-125},
-    {"Engine Friction Percent Torque, Point 7",8,1,false,"%","",-125},
+    {"Engine Friction Percent Torque At Idle, Point 1",8,1,true,"%","",-125},
+    {"Engine Friction Percent Torque, Point 2",8,1,true,"%","",-125},
+    {"Engine Friction Percent Torque, Point 3",8,1,true,"%","",-125},
+    {"Engine Friction Percent Torque, Point 4",8,1,true,"%","",-125},
+    {"Engine Friction Percent Torque, Point 5",8,1,true,"%","",-125},
+    {"Engine Friction Percent Torque, Point 6",8,1,true,"%","",-125},
+    {"Engine Friction Percent Torque, Point 7",8,1,true,"%","",-125},
     {0}}},
     
     {"Intake Valve Actuation Control",
@@ -13494,8 +13494,8 @@
     8,
     0,
     {
-    {"Aftertreatment 2 Warm Up Diesel Oxidation Catalyst Intake Temperature",16,0.03125,false,"°C","",-273},
-    {"Aftertreatment 2 Warm Up Diesel Oxidation Catalyst Outlet Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 2 Warm Up Diesel Oxidation Catalyst Intake Temperature",16,0.03125,true,"°C","",-8736},
+    {"Aftertreatment 2 Warm Up Diesel Oxidation Catalyst Outlet Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Land Leveling System Reference Elevation Data",
@@ -13504,10 +13504,10 @@
     8,
     0,
     {
-    {"Blade Elevation Deviation - Left",16,1,false,"mm","",-32000},
-    {"Blade Elevation Deviation - Right",16,1,false,"mm","",-32000},
-    {"Blade Reference Elevation Offset - Left",16,1,false,"mm","",-32000},
-    {"Blade Reference Elevation Offset - Right",16,1,false,"mm","",-32000},
+    {"Blade Elevation Deviation - Left",16,1,true,"mm","",-32000},
+    {"Blade Elevation Deviation - Right",16,1,true,"mm","",-32000},
+    {"Blade Reference Elevation Offset - Left",16,1,true,"mm","",-32000},
+    {"Blade Reference Elevation Offset - Right",16,1,true,"mm","",-32000},
     {0}}},
     
     {"Engine Fluid Level/Pressure 11",
@@ -13549,9 +13549,9 @@
     {"Engine Exhaust Pressure Regulator Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Engine Exhaust Pressure Regulator Temperature Status",3,RES_BITFIELD,false,0,"",0},
     {"Engine Exhaust Pressure Regulator Control Operation Status",4,RES_BITFIELD,false,0,"",0},
-    {"Engine Turbocharger Wastegate Actuator 1 Temperature",8,1,false,"°C","",-40},
+    {"Engine Turbocharger Wastegate Actuator 1 Temperature",8,1,true,"°C","",-40},
     {"Engine Exhaust Pressure Actuator 1 Desired Position",8,0.4,false,"%","",0},
-    {"Engine Exhaust Pressure Actuator 1 Temperature",8,1,false,"°C","",-40},
+    {"Engine Exhaust Pressure Actuator 1 Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"Engine Fuel/Throttle Valve Information 1",
@@ -13588,8 +13588,8 @@
     {"Engine Turbocharger Compressor Bypass Actuator 2 Temperature Status",3,RES_BITFIELD,false,0,"",0},
     {"Engine Turbocharger Compressor Bypass Actuator 1 Operation Status",4,RES_BITFIELD,false,0,"",0},
     {"Engine Turbocharger Compressor Bypass Actuator 2 Operation Status",4,RES_BITFIELD,false,0,"",0},
-    {"Engine Turbocharger Compressor Bypass Actuator 1 Temperature",8,1,false,"°C","",-40},
-    {"Engine Turbocharger Compressor Bypass Actuator 2 Temperature",8,1,false,"°C","",-40},
+    {"Engine Turbocharger Compressor Bypass Actuator 1 Temperature",8,1,true,"°C","",-40},
+    {"Engine Turbocharger Compressor Bypass Actuator 2 Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"Charge Air Cooler 2",
@@ -13598,9 +13598,9 @@
     8,
     0,
     {
-    {"Engine Charge Air Cooler 2 Intake Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Charge Air Cooler 2 Outlet Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Charge Air Cooler 2 Ambient Air Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Charge Air Cooler 2 Intake Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Charge Air Cooler 2 Outlet Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Charge Air Cooler 2 Ambient Air Temperature",16,0.03125,true,"°C","",-8736},
     {"Engine Charge Air Cooler 2 Efficiency",8,0.4,false,"%","",0},
     {0}}},
     
@@ -13610,8 +13610,8 @@
     8,
     0,
     {
-    {"Engine Charge Air Cooler 2 Precooler Intake Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Charge Air Cooler 2 Precooler Outlet Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Charge Air Cooler 2 Precooler Intake Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Charge Air Cooler 2 Precooler Outlet Temperature",16,0.03125,true,"°C","",-8736},
     {"Engine Charge Air Cooler 2 Precooler Efficiency",8,0.4,false,"%","",0},
     {0}}},
     
@@ -13621,8 +13621,8 @@
     8,
     0,
     {
-    {"Engine Charge Air Cooler 1 Intake Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Charge Air Cooler 1 Ambient Air Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Charge Air Cooler 1 Intake Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Charge Air Cooler 1 Ambient Air Temperature",16,0.03125,true,"°C","",-8736},
     {"Engine Charge Air Cooler 1 Efficiency",8,0.4,false,"%","",0},
     {0}}},
     
@@ -13632,8 +13632,8 @@
     8,
     0,
     {
-    {"Engine Charge Air Cooler 1 Precooler Intake Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Charge Air Cooler 1 Precooler Outlet Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Charge Air Cooler 1 Precooler Intake Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Charge Air Cooler 1 Precooler Outlet Temperature",16,0.03125,true,"°C","",-8736},
     {"Engine Charge Air Cooler 1 Precooler Efficiency",8,0.4,false,"%","",0},
     {0}}},
     
@@ -13667,8 +13667,8 @@
     {
     {"Engine Exhaust Gas Recirculation 2 Valve 1 Control",16,0.0025,false,"%","",0},
     {"Engine Exhaust Gas Recirculation 2 Valve 2 Control",16,0.0025,false,"%","",0},
-    {"Engine Exhaust Gas Recirculation 2 Valve 1 Position Error",16,0.004,false,"%","",-125},
-    {"Engine Exhaust Gas Recirculation 2 Valve 2 Position Error",16,0.004,false,"%","",-125},
+    {"Engine Exhaust Gas Recirculation 2 Valve 1 Position Error",16,0.004,true,"%","",-31250},
+    {"Engine Exhaust Gas Recirculation 2 Valve 2 Position Error",16,0.004,true,"%","",-31250},
     {0}}},
     
     {"Engine Manifold Actuator Position",
@@ -13709,7 +13709,7 @@
     8,
     0,
     {
-    {"Engine Exhaust Gas Recirculation 2 Cooler Intake Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Exhaust Gas Recirculation 2 Cooler Intake Temperature",16,0.03125,true,"°C","",-8736},
     {"Engine Exhaust Gas Recirculation 2 Cooler Intake Gas Absolute Pressure",16,0.5,false,"kPa","",0},
     {"Engine Exhaust Gas Recirculation 2 Cooler Efficiency",8,0.4,false,"%","",0},
     {"Engine Exhaust Gas Recirculation 2 Cooler Bypass Actuator Position",8,0.4,false,"%","",0},
@@ -13722,8 +13722,8 @@
     8,
     0,
     {
-    {"Engine Exhaust Gas Recirculation 2 Temperature ",16,0.03125,false,"°C","",-273},
-    {"Engine Exhaust Gas Recirculation 2 Mixer Intake Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Exhaust Gas Recirculation 2 Temperature ",16,0.03125,true,"°C","",-8736},
+    {"Engine Exhaust Gas Recirculation 2 Mixer Intake Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Engine Fluid Level/Pressure 10",
@@ -13732,7 +13732,7 @@
     8,
     0,
     {
-    {"Engine Exhaust Gas Recirculation 2 Differential Pressure",16,0.0078125,false,"kPa","",-250},
+    {"Engine Exhaust Gas Recirculation 2 Differential Pressure",16,0.0078125,true,"kPa","",-32000},
     {"Engine Exhaust Gas Recirculation 2 Intake Pressure",8,2,false,"kPa","",0},
     {"Engine Exhaust Gas Recirculation 2 Outlet Absolute Pressure",16,0.1,false,"kPa","",0},
     {"Engine Exhaust Gas Recirculation 2 Intake Absolute Pressure",16,0.1,false,"kPa","",0},
@@ -13752,7 +13752,7 @@
     {"Low Voltage Disconnect Output #2 State",4,RES_BITFIELD,false,0,"",0},
     {"Low Voltage Disconnect Output #1 State",4,RES_BITFIELD,false,0,"",0},
     {"Low Voltage Disconnect Vout Output State",4,RES_BITFIELD,false,0,"",0},
-    {"Low Voltage Disconnect Temperature",8,1,false,"°C","",-40},
+    {"Low Voltage Disconnect Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"Direct Lamp Control Data 2",
@@ -13854,7 +13854,7 @@
     {"Engine Oil Viscosity",16,0.015625,false,"cP","",0},
     {"Engine Oil Density",16,0.00003052,false,"g/cc","",0},
     {"Engine Oil Relative Dielectricity (High Resolution)",16,0.0001220703125,false,"","",0},
-    {"Engine Oil Temperature 3",16,0.03125,false,"°C","",-273},
+    {"Engine Oil Temperature 3",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"High Resolution Fuel Consumption (Liquid)",
@@ -13878,7 +13878,7 @@
     {"Aftertreatment 2 Outlet NOx Sensor NO2 Correction",8,0.5,false,"%","",0},
     {"Aftertreatment 2 Outlet NOx Sensor NH3 Correction",8,0.5,false,"%","",0},
     {"Aftertreatment 2 Outlet NOx Sensor Self-diagnosis Final Result",8,1,false,"Ratio","",0},
-    {"Aftertreatment 2 Outlet Corrected NOx",16,0.05,false,"ppm","",-200},
+    {"Aftertreatment 2 Outlet Corrected NOx",16,0.05,true,"ppm","",-4000},
     {0}}},
     
     {"Aftertreatment 2 Outlet Gas NOx Sensor Correction Data 1",
@@ -13888,8 +13888,8 @@
     0,
     {
     {"Aftertreatment 2 Outlet NOx Sensor Heater Ratio",16,0.001,false,"Ratio","",0},
-    {"Aftertreatment 2 Outlet NOx Sensor New part deviation NOx Gain",16,0.1,false,"%","",-100},
-    {"Aftertreatment 2 Outlet NOx Sensor New part deviation NOx Offset",8,1,false,"ppm","",-125},
+    {"Aftertreatment 2 Outlet NOx Sensor New part deviation NOx Gain",16,0.1,true,"%","",-1000},
+    {"Aftertreatment 2 Outlet NOx Sensor New part deviation NOx Offset",8,1,true,"ppm","",-125},
     {"Aftertreatment 2 Outlet NOx Sensor Operation Hours",16,1,false,"h","",0},
     {0}}},
     
@@ -13904,7 +13904,7 @@
     {"Engine Exhaust 2 NOx Sensor NO2 Correction",8,0.5,false,"%","",0},
     {"Engine Exhaust 2 NOx Sensor NH3 Correction",8,0.5,false,"%","",0},
     {"Engine Exhaust 2 NOx Sensor Self-diagnosis Final Result",8,1,false,"Ratio","",0},
-    {"Engine Exhaust 2 Corrected Nox",16,0.05,false,"ppm","",-200},
+    {"Engine Exhaust 2 Corrected Nox",16,0.05,true,"ppm","",-4000},
     {0}}},
     
     {"Aftertreatment 2 Intake Gas NOx Sensor Correction Data 1",
@@ -13914,8 +13914,8 @@
     0,
     {
     {"Engine Exhaust 2 NOx Sensor Heater Ratio",16,0.001,false,"Ratio","",0},
-    {"Engine Exhaust 2 NOx Sensor New Part Deviation NOx Gain",16,0.1,false,"%","",-100},
-    {"Engine Exhaust 2 NOx Sensor New Part Deviation NOx Offset",8,1,false,"ppm","",-125},
+    {"Engine Exhaust 2 NOx Sensor New Part Deviation NOx Gain",16,0.1,true,"%","",-1000},
+    {"Engine Exhaust 2 NOx Sensor New Part Deviation NOx Offset",8,1,true,"ppm","",-125},
     {"Engine Exhaust 2 NOx Sensor Operation Hours",16,1,false,"h","",0},
     {0}}},
     
@@ -13930,7 +13930,7 @@
     {"Aftertreatment 1 Outlet NOx Sensor NO2 Correction",8,0.5,false,"%","",0},
     {"Aftertreatment 1 Outlet NOx Sensor NH3 Correction",8,0.5,false,"%","",0},
     {"Aftertreatment 1 Outlet NOx Sensor Self-diagnosis Final Result",8,1,false,"Ratio","",0},
-    {"Aftertreatment 1 Outlet Corrected NOx",16,0.05,false,"ppm","",-200},
+    {"Aftertreatment 1 Outlet Corrected NOx",16,0.05,true,"ppm","",-4000},
     {0}}},
     
     {"Aftertreatment 1 Outlet Gas NOx Sensor Correction Data 1",
@@ -13940,8 +13940,8 @@
     0,
     {
     {"Aftertreatment 1 Outlet NOx Sensor Heater Ratio",16,0.001,false,"Ratio","",0},
-    {"Aftertreatment 1 Outlet NOx Sensor New part deviation NOx Gain",16,0.1,false,"%","",-100},
-    {"Aftertreatment 1 Outlet NOx Sensor New part deviation NOx Offset",8,1,false,"ppm","",-125},
+    {"Aftertreatment 1 Outlet NOx Sensor New part deviation NOx Gain",16,0.1,true,"%","",-1000},
+    {"Aftertreatment 1 Outlet NOx Sensor New part deviation NOx Offset",8,1,true,"ppm","",-125},
     {"Aftertreatment 1 Outlet NOx Sensor Operation Hours",16,1,false,"h","",0},
     {0}}},
     
@@ -13956,7 +13956,7 @@
     {"Engine Exhaust 1 NOx Sensor NO2 Correction",8,0.5,false,"%","",0},
     {"Engine Exhaust 1 NOx Sensor NH3 Correction",8,0.5,false,"%","",0},
     {"Engine Exhaust 1 NOx Sensor Self-diagnosis Final Result",8,1,false,"Ratio","",0},
-    {"Engine Exhaust 1 Corrected Nox",16,0.05,false,"ppm","",-200},
+    {"Engine Exhaust 1 Corrected Nox",16,0.05,true,"ppm","",-4000},
     {0}}},
     
     {"Aftertreatment 1 Intake Gas NOx Sensor Correction Data 1",
@@ -13966,8 +13966,8 @@
     0,
     {
     {"Engine Exhaust 1 NOx Sensor Heater Ratio",16,0.001,false,"Ratio","",0},
-    {"Engine Exhaust 1 NOx Sensor New part deviation NOx Gain",16,0.1,false,"%","",-100},
-    {"Engine Exhaust 1 NOx Sensor New part deviation NOx Offset",8,1,false,"ppm","",-125},
+    {"Engine Exhaust 1 NOx Sensor New part deviation NOx Gain",16,0.1,true,"%","",-1000},
+    {"Engine Exhaust 1 NOx Sensor New part deviation NOx Offset",8,1,true,"ppm","",-125},
     {"Engine Exhaust 1 NOx Sensor Operation Hours",16,1,false,"h","",0},
     {0}}},
     
@@ -14006,7 +14006,7 @@
     {"Battery Charger 2 State",4,RES_BITFIELD,false,0,"",0},
     {"Battery Charger 2 Power Line State",2,RES_BITFIELD,false,0,"",0},
     {"Battery Charger 2 Output Voltage",16,0.05,false,"V","",0},
-    {"Battery Charger 2 Output Current",16,0.05,false,"A","",-1600},
+    {"Battery Charger 2 Output Current",16,0.05,true,"A","",-32000},
     {0}}},
     
     {"Battery Charger 1",
@@ -14018,7 +14018,7 @@
     {"Battery Charger 1 State",4,RES_BITFIELD,false,0,"",0},
     {"Battery Charger 1 Power Line State",2,RES_BITFIELD,false,0,"",0},
     {"Battery Charger 1 Output Voltage",16,0.05,false,"V","",0},
-    {"Battery Charger 1 Output Current",16,0.05,false,"A","",-1600},
+    {"Battery Charger 1 Output Current",16,0.05,true,"A","",-32000},
     {0}}},
     
     {"Occupant Classification System Information",
@@ -14214,8 +14214,8 @@
     8,
     0,
     {
-    {"Aftertreatment 1 Warm Up Diesel Oxidation Catalyst Intake Temperature",16,0.03125,false,"°C","",-273},
-    {"Aftertreatment 1 Warm Up Diesel Oxidation Catalyst Outlet Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 1 Warm Up Diesel Oxidation Catalyst Intake Temperature",16,0.03125,true,"°C","",-8736},
+    {"Aftertreatment 1 Warm Up Diesel Oxidation Catalyst Outlet Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Diesel Particulate Filter 2 Soot",
@@ -14229,7 +14229,7 @@
     {"Aftertreatment 2 Diesel Particulate Filter Mean Soot Signal",16,0.0025,false,"%","",0},
     {"Aftertreatment 2 Diesel Particulate Filter Median Soot Signal",16,0.0025,false,"%","",0},
     {"Aftertreatment 2 Diesel Particulate Filter Soot Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
-    {"Diesel Particulate Filter 2 Soot Sensor ECU Internal Temperature",8,1,false,"°C","",-40},
+    {"Diesel Particulate Filter 2 Soot Sensor ECU Internal Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"Diesel Particulate Filter 1 Soot",
@@ -14243,7 +14243,7 @@
     {"Aftertreatment 1 Diesel Particulate Filter Mean Soot Signal",16,0.0025,false,"%","",0},
     {"Aftertreatment 1 Diesel Particulate Filter Median Soot Signal",16,0.0025,false,"%","",0},
     {"Aftertreatment 1 Diesel Particulate Filter Soot Sensor Preliminary FMI",5,RES_BINARY,false,0,"",0},
-    {"Diesel Particulate Filter 1 Soot Sensor ECU Internal Temperature",8,1,false,"°C","",-40},
+    {"Diesel Particulate Filter 1 Soot Sensor ECU Internal Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"Aftertreatment Differential Temperature 2 ",
@@ -14252,8 +14252,8 @@
     8,
     0,
     {
-    {"Aftertreatment 1 Three Way Catalyst Differential Temperature",16,0.03125,false,"°C","",-273},
-    {"Aftertreatment 2 Three Way Catalyst Differential Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 1 Three Way Catalyst Differential Temperature",16,0.03125,true,"°C","",-8736},
+    {"Aftertreatment 2 Three Way Catalyst Differential Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Aftertreatment Differential Temperature 1 ",
@@ -14262,8 +14262,8 @@
     8,
     0,
     {
-    {"Aftertreatment 1 Gas Oxidation Catalyst Differential Temperature",16,0.03125,false,"°C","",-273},
-    {"Aftertreatment 2 Gas Oxidation Catalyst Differential Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 1 Gas Oxidation Catalyst Differential Temperature",16,0.03125,true,"°C","",-8736},
+    {"Aftertreatment 2 Gas Oxidation Catalyst Differential Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Aftertreatment 2 Diesel Oxidation Catalyst 1",
@@ -14272,8 +14272,8 @@
     8,
     0,
     {
-    {"Aftertreatment 2 Diesel Oxidation Catalyst Intake Temperature",16,0.03125,false,"°C","",-273},
-    {"Aftertreatment 2 Diesel Oxidation Catalyst Outlet Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 2 Diesel Oxidation Catalyst Intake Temperature",16,0.03125,true,"°C","",-8736},
+    {"Aftertreatment 2 Diesel Oxidation Catalyst Outlet Temperature",16,0.03125,true,"°C","",-8736},
     {"Aftertreatment 2 Diesel Oxidation Catalyst Differential Pressure",16,0.5,false,"kPa","",0},
     {"Aftertreatment 2 Diesel Oxidation Catalyst Intake Temperature Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Aftertreatment 2 Diesel Oxidation Catalyst Outlet Temperature Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -14286,8 +14286,8 @@
     8,
     0,
     {
-    {"Aftertreatment 1 Diesel Oxidation Catalyst Intake Temperature",16,0.03125,false,"°C","",-273},
-    {"Aftertreatment 1 Diesel Oxidation Catalyst Outlet Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 1 Diesel Oxidation Catalyst Intake Temperature",16,0.03125,true,"°C","",-8736},
+    {"Aftertreatment 1 Diesel Oxidation Catalyst Outlet Temperature",16,0.03125,true,"°C","",-8736},
     {"Aftertreatment 1 Diesel Oxidation Catalyst Differential Pressure",16,0.1,false,"kPa","",0},
     {"Aftertreatment 1 Diesel Oxidation Catalyst Intake Temperature Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Aftertreatment 1 Diesel Oxidation Catalyst Outlet Temperature Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -14300,8 +14300,8 @@
     8,
     0,
     {
-    {"Aftertreatment 2 Gas Oxidation Catalyst Intake Temperature",16,0.03125,false,"°C","",-273},
-    {"Aftertreatment 2 Gas Oxidation Catalyst Outlet Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 2 Gas Oxidation Catalyst Intake Temperature",16,0.03125,true,"°C","",-8736},
+    {"Aftertreatment 2 Gas Oxidation Catalyst Outlet Temperature",16,0.03125,true,"°C","",-8736},
     {"Aftertreatment 2 Gas Oxidation Catalyst Differential Pressure",16,0.1,false,"kPa","",0},
     {"Aftertreatment 2 Gas Oxidation Catalyst Intake Temperature Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Aftertreatment 2 Gas Oxidation Catalyst Outlet Temperature Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -14314,8 +14314,8 @@
     8,
     0,
     {
-    {"Aftertreatment 1 Gas Oxidation Catalyst Intake Temperature",16,0.03125,false,"°C","",-273},
-    {"Aftertreatment 1 Gas Oxidation Catalyst Outlet Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 1 Gas Oxidation Catalyst Intake Temperature",16,0.03125,true,"°C","",-8736},
+    {"Aftertreatment 1 Gas Oxidation Catalyst Outlet Temperature",16,0.03125,true,"°C","",-8736},
     {"Aftertreatment 1 Gas Oxidation Catalyst Differential Pressure",16,0.1,false,"kPa","",0},
     {"Aftertreatment 1 Gas Oxidation Catalyst Intake Temperature Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Aftertreatment 1 Gas Oxidation Catalyst Outlet Temperature Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -14758,7 +14758,7 @@
     0,
     {
     {"Aftertreatment 2 Diesel Exhaust Fluid Quick Thaw Tank Volume",8,0.4,false,"%","",0},
-    {"Aftertreatment 2 Diesel Exhaust Fluid Quick Thaw Tank Temperature",8,1,false,"°C","",-40},
+    {"Aftertreatment 2 Diesel Exhaust Fluid Quick Thaw Tank Temperature",8,1,true,"°C","",-40},
     {"Aftertreatment 2 Diesel Exhaust Fluid Quick Thaw Tank Level",16,0.1,false,"mm","",0},
     {"Aftertreatment 2 Diesel Exhaust Fluid Quick Thaw Level Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Aftertreatment 2 Diesel Exhaust Fluid Quick Thaw Temperature Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -14773,7 +14773,7 @@
     0,
     {
     {"Aftertreatment 2 Diesel Exhaust Fluid Tank Volume",8,0.4,false,"%","",0},
-    {"Aftertreatment 2 Diesel Exhaust Fluid Tank Temperature 1",8,1,false,"°C","",-40},
+    {"Aftertreatment 2 Diesel Exhaust Fluid Tank Temperature 1",8,1,true,"°C","",-40},
     {"Aftertreatment 2 Diesel Exhaust Fluid Tank Level",16,0.1,false,"mm","",0},
     {"Aftertreatment 2 Diesel Exhaust Fluid Tank Level/Volume Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Aftertreatment 2 Diesel Exhaust Fluid Tank 1 Temperature Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -14787,7 +14787,7 @@
     8,
     0,
     {
-    {"Aftertreatment 2 Diesel Exhaust Fluid Temperature 2",8,1,false,"°C","",-40},
+    {"Aftertreatment 2 Diesel Exhaust Fluid Temperature 2",8,1,true,"°C","",-40},
     {"Aftertreatment 2 Diesel Exhaust Fluid Concentration",8,0.25,false,"%","",0},
     {"Aftertreatment 2 Diesel Exhaust Fluid Conductivity",8,5,false,"µSiemens/mm","",0},
     {"Aftertreatment 2 Diesel Exhaust Fluid Temperature 2 Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -14813,9 +14813,9 @@
     8,
     0,
     {
-    {"Aftertreatment 2 SCR Intake Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 2 SCR Intake Temperature",16,0.03125,true,"°C","",-8736},
     {"Aftertreatment 2 SCR Intake Temperature Preliminary FMI",5,RES_BITFIELD,false,0,"",0},
-    {"Aftertreatment 2 SCR Outlet Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 2 SCR Outlet Temperature",16,0.03125,true,"°C","",-8736},
     {"Aftertreatment 2 SCR Outlet Temperature Preliminary FMI",5,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -14827,7 +14827,7 @@
     {
     {"Aftertreatment 2 SCR Differential Pressure",16,0.1,false,"kPa","",0},
     {"Aftertreatment 2 SCR Differential Pressure Preliminary FMI",5,RES_BITFIELD,false,0,"",0},
-    {"Aftertreatment 2 SCR Intake Pressure",16,0.1,false,"kPa","",-3212.7},
+    {"Aftertreatment 2 SCR Intake Pressure",16,0.1,true,"kPa","",-32126.999999999996},
     {"Aftertreatment 2 SCR Intake Absolute Pressure",16,0.1,false,"kPa","",0},
     {0}}},
     
@@ -14864,7 +14864,7 @@
     {
     {"Aftertreatment 2 SCR Dosing Air Assist Absolute Pressure",8,8,false,"kPa","",0},
     {"Aftertreatment 2 SCR Dosing Air Assist Valve",8,0.4,false,"%","",0},
-    {"Aftertreatment 2 Diesel Exhaust Fluid Doser 1 Temperature",8,1,false,"°C","",-40},
+    {"Aftertreatment 2 Diesel Exhaust Fluid Doser 1 Temperature",8,1,true,"°C","",-40},
     {"Aftertreatment 2 SCR Doser Valve Exhaust Temperature Reduction Request",3,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 2 SCR Feedback Control Status",3,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 2 Diesel Exhaust Fluid Line Heater 1 State",2,RES_BITFIELD,false,0,"",0},
@@ -14901,7 +14901,7 @@
     0,
     {
     {"Aftertreatment 1 Diesel Exhaust Fluid Quick Thaw Tank Volume",8,0.4,false,"%","",0},
-    {"Aftertreatment 1 Diesel Exhaust Fluid Quick Thaw Tank Temperature",8,1,false,"°C","",-40},
+    {"Aftertreatment 1 Diesel Exhaust Fluid Quick Thaw Tank Temperature",8,1,true,"°C","",-40},
     {"Aftertreatment 1 Diesel Exhaust Fluid Quick Thaw Tank Level",16,0.1,false,"mm","",0},
     {"Aftertreatment 1 Diesel Exhaust Fluid Quick Thaw Level/Volume Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Aftertreatment 1 Diesel Exhaust Fluid Quick Thaw Temperature Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -14915,9 +14915,9 @@
     8,
     0,
     {
-    {"Aftertreatment 1 SCR Intake Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 1 SCR Intake Temperature",16,0.03125,true,"°C","",-8736},
     {"Aftertreatment 1 SCR Intake Temperature Preliminary FMI",5,RES_BITFIELD,false,0,"",0},
-    {"Aftertreatment 1 SCR Outlet Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 1 SCR Outlet Temperature",16,0.03125,true,"°C","",-8736},
     {"Aftertreatment 1 SCR Outlet Temperature Preliminary FMI",5,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -14929,7 +14929,7 @@
     {
     {"Aftertreatment 1 SCR Differential Pressure",16,0.1,false,"kPa","",0},
     {"Aftertreatment 1 SCR Differential Pressure Preliminary FMI",5,RES_BITFIELD,false,0,"",0},
-    {"Aftertreatment 1 SCR Intake Pressure",16,0.1,false,"kPa","",-3212.7},
+    {"Aftertreatment 1 SCR Intake Pressure",16,0.1,true,"kPa","",-32126.999999999996},
     {"Aftertreatment 1 SCR Intake Absolute Pressure",16,0.1,false,"kPa","",0},
     {0}}},
     
@@ -14967,7 +14967,7 @@
     {
     {"Aftertreatment 1 SCR Dosing Air Assist Absolute Pressure",8,8,false,"kPa","",0},
     {"Aftertreatment 1 SCR Dosing Air Assist Valve",8,0.4,false,"%","",0},
-    {"Aftertreatment 1 Diesel Exhaust Fluid Doser 1 Temperature",8,1,false,"°C","",-40},
+    {"Aftertreatment 1 Diesel Exhaust Fluid Doser 1 Temperature",8,1,true,"°C","",-40},
     {"Aftertreatment 1 SCR Doser Valve Exhaust Temperature Reduction Request",3,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 1 SCR Feedback Control Status",3,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 1 Diesel Exhaust Fluid Line Heater 1 State",2,RES_BITFIELD,false,0,"",0},
@@ -14998,8 +14998,8 @@
     8,
     0,
     {
-    {"Aftertreatment 2 Three Way Catalyst Intake Temperature",16,0.03125,false,"°C","",-273},
-    {"Aftertreatment 2 Three Way Catalyst Outlet Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 2 Three Way Catalyst Intake Temperature",16,0.03125,true,"°C","",-8736},
+    {"Aftertreatment 2 Three Way Catalyst Outlet Temperature",16,0.03125,true,"°C","",-8736},
     {"Aftertreatment 2 Three Way Catalyst Differential Pressure",16,0.1,false,"kPa","",0},
     {"Aftertreatment 2 Three Way Catalyst Intake Temperature Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Aftertreatment 2 Three Way Catalyst Outlet Temperature Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -15012,8 +15012,8 @@
     8,
     0,
     {
-    {"Aftertreatment 1 Three Way Catalyst Intake Temperature",16,0.03125,false,"°C","",-273},
-    {"Aftertreatment 1 Three Way Catalyst Outlet Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 1 Three Way Catalyst Intake Temperature",16,0.03125,true,"°C","",-8736},
+    {"Aftertreatment 1 Three Way Catalyst Outlet Temperature",16,0.03125,true,"°C","",-8736},
     {"Aftertreatment 1 Three Way Catalyst Differential Pressure",16,0.1,false,"kPa","",0},
     {"Aftertreatment 1 Three Way Catalyst Intake Temperature Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Aftertreatment 1 Three Way Catalyst Outlet Temperature Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -15035,8 +15035,8 @@
     8,
     0,
     {
-    {"Long-term Fuel Trim - Bank 2",16,0.1,false,"%","",-3212.75},
-    {"Short-term Fuel Trim - Bank 2",16,0.1,false,"%","",-3212.75},
+    {"Long-term Fuel Trim - Bank 2",16,0.1,true,"%","",-32127.5},
+    {"Short-term Fuel Trim - Bank 2",16,0.1,true,"%","",-32127.5},
     {"Engine Exhaust Bank 2 O2 Sensor Closed Loop Operation",4,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -15046,8 +15046,8 @@
     8,
     0,
     {
-    {"Long-term Fuel Trim - Bank 1",16,0.1,false,"%","",-3212.75},
-    {"Short-term Fuel Trim - Bank 1",16,0.1,false,"%","",-3212.75},
+    {"Long-term Fuel Trim - Bank 1",16,0.1,true,"%","",-32127.5},
+    {"Short-term Fuel Trim - Bank 1",16,0.1,true,"%","",-32127.5},
     {"Engine Exhaust Bank 1 O2 Sensor Closed Loop Operation",4,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -15058,7 +15058,7 @@
     0,
     {
     {"Aftercooler Coolant Thermostat Mode",2,RES_BITFIELD,false,0,"",0},
-    {"Desired Aftercooler Coolant Intake Temperature",8,1,false,"°C","",-40},
+    {"Desired Aftercooler Coolant Intake Temperature",8,1,true,"°C","",-40},
     {"Desired Aftercooler Coolant Thermostat Opening",8,0.4,false,"%","",0},
     {"Engine Charge Air Cooler Bypass Valve 1 Command",16,0.0025,false,"%","",0},
     {"Engine Charge Air Cooler Bypass Valve 2 Command",16,0.0025,false,"%","",0},
@@ -15071,7 +15071,7 @@
     0,
     {
     {"Engine Coolant Thermostat Mode",2,RES_BITFIELD,false,0,"",0},
-    {"Desired Engine Coolant Pump Outlet Temperature",8,1,false,"°C","",-40},
+    {"Desired Engine Coolant Pump Outlet Temperature",8,1,true,"°C","",-40},
     {"Desired Engine Coolant Thermostat Opening",8,0.4,false,"%","",0},
     {"Engine Auxiliary Cooler Supply Valve 1 Actuator Command",8,0.4,false,"%","",0},
     {"Engine Auxiliary Cooler Supply Valve 2 Actuator Command",8,0.4,false,"%","",0},
@@ -15083,9 +15083,9 @@
     8,
     0,
     {
-    {"Engine Exhaust Temperature Average",16,0.03125,false,"°C","",-273},
-    {"Engine Exhaust Bank 1 Temperature Average",16,0.03125,false,"°C","",-273},
-    {"Engine Exhaust Bank 2 Temperature Average",16,0.03125,false,"°C","",-273},
+    {"Engine Exhaust Temperature Average",16,0.03125,true,"°C","",-8736},
+    {"Engine Exhaust Bank 1 Temperature Average",16,0.03125,true,"°C","",-8736},
+    {"Engine Exhaust Bank 2 Temperature Average",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Aftertreatment 1 Fuel Control 2",
@@ -15098,7 +15098,7 @@
     {"Aftertreatment 1 Fuel Pump Relay Control",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 1 Fuel Flow Diverter Valve Control",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 1 Fuel Pressure 2 Control",16,0.0025,false,"%","",0},
-    {"Aftertreatment 1 Hydrocarbon Doser Intake Fuel Temperature",8,1,false,"°C","",-40},
+    {"Aftertreatment 1 Hydrocarbon Doser Intake Fuel Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"Engine Temperature 4",
@@ -15107,12 +15107,12 @@
     8,
     0,
     {
-    {"Engine Coolant Temperature 2",8,1,false,"°C","",-40},
-    {"Engine Coolant Pump Outlet Temperature",8,1,false,"°C","",-40},
+    {"Engine Coolant Temperature 2",8,1,true,"°C","",-40},
+    {"Engine Coolant Pump Outlet Temperature",8,1,true,"°C","",-40},
     {"Engine Coolant Thermostat Opening",8,0.4,false,"%","",0},
-    {"Engine Exhaust Valve Actuation System Oil Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Exhaust Gas Recirculation 1 Mixer Intake Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Coolant Temperature 3",8,1,false,"°C","",-40},
+    {"Engine Exhaust Valve Actuation System Oil Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Exhaust Gas Recirculation 1 Mixer Intake Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Coolant Temperature 3",8,1,true,"°C","",-40},
     {0}}},
     
     {"Zero Net Vehicle Weight Change",
@@ -15131,7 +15131,7 @@
     0,
     {
     {"Gross Combination Weight",24,2,false,"kg","",0},
-    {"Net Vehicle Weight Change",24,2,false,"kg","",-16449535},
+    {"Net Vehicle Weight Change",24,2,true,"kg","",-8224767.5},
     {0}}},
     
     {"Axle Group Calibration Weights",
@@ -15187,8 +15187,8 @@
     8,
     0,
     {
-    {"Aftertreatment 2 Secondary Air Differential Pressure",16,0.0078125,false,"kPa","",-250},
-    {"Aftertreatment 2 Secondary Air Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 2 Secondary Air Differential Pressure",16,0.0078125,true,"kPa","",-32000},
+    {"Aftertreatment 2 Secondary Air Temperature",16,0.03125,true,"°C","",-8736},
     {"Aftertreatment 2 Secondary Air Mass Flow Rate",16,0.2,false,"kg/h","",0},
     {"Aftertreatment 2 Secondary Air Pressure",16,0.1,false,"kPa","",0},
     {0}}},
@@ -15199,8 +15199,8 @@
     8,
     0,
     {
-    {"Aftertreatment 1 Secondary Air Differential Pressure",16,0.0078125,false,"kPa","",-250},
-    {"Aftertreatment 1 Secondary Air Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 1 Secondary Air Differential Pressure",16,0.0078125,true,"kPa","",-32000},
+    {"Aftertreatment 1 Secondary Air Temperature",16,0.03125,true,"°C","",-8736},
     {"Aftertreatment 1 Secondary Air Mass Flow Rate",16,0.2,false,"kg/h","",0},
     {"Aftertreatment 1 Secondary Air Pressure",16,0.1,false,"kPa","",0},
     {0}}},
@@ -15225,7 +15225,7 @@
     0,
     {
     {"Engine Exhaust Gas Recirculation 1  Valve 2 Control",16,0.0025,false,"%","",0},
-    {"Engine Exhaust Gas Recirculation 1 Cooler Intake Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Exhaust Gas Recirculation 1 Cooler Intake Temperature",16,0.03125,true,"°C","",-8736},
     {"Engine Exhaust Gas Recirculation 1 Cooler Intake Absolute Pressure",16,0.5,false,"kPa","",0},
     {"Engine Exhaust Gas Recirculation 1 Cooler Efficiency",8,0.4,false,"%","",0},
     {0}}},
@@ -15557,7 +15557,7 @@
     8,
     0,
     {
-    {"Vehicle Roll",16,0.0078125,false,"deg","",-200},
+    {"Vehicle Roll",16,0.0078125,true,"deg","",-25600},
     {0}}},
     
     {"SAE J2012 DTC Display",
@@ -15618,9 +15618,9 @@
     8,
     0,
     {
-    {"Generator Total Percent kW",16,0.0078125,false,"%","",-251},
-    {"Generator Total Percent kVA",16,0.0078125,false,"%","",-251},
-    {"Generator Total Percent kVAr",16,0.0078125,false,"%","",-251},
+    {"Generator Total Percent kW",16,0.0078125,true,"%","",-32128},
+    {"Generator Total Percent kVA",16,0.0078125,true,"%","",-32128},
+    {"Generator Total Percent kVAr",16,0.0078125,true,"%","",-32128},
     {0}}},
     
     {"Advertised Engine Torque Curve",
@@ -15674,7 +15674,7 @@
     {"Engine Controlled Shutdown Request",2,RES_BITFIELD,false,0,"",0},
     {"Engine Emergency (Immediate) Shutdown Indication",2,RES_BITFIELD,false,0,"",0},
     {"Engine Cold Ambient Elevated Idle Status",2,RES_BITFIELD,false,0,"",0},
-    {"Engine Desired Torque Request",8,1,false,"%","",-125},
+    {"Engine Desired Torque Request",8,1,true,"%","",-125},
     {"Engine Derate Request",8,0.4,false,"%","",0},
     {0}}},
     
@@ -15690,7 +15690,7 @@
     {"Generator Alternator Efficiency",16,0.0025,false,"%","",0},
     {"Generator Governing Speed Command",2,RES_BITFIELD,false,0,"",0},
     {"Generator Frequency Selection",4,RES_BITFIELD,false,0,"",0},
-    {"Engine Speed Governor Gain Adjust",16,1,false,"count","",-32128},
+    {"Engine Speed Governor Gain Adjust",16,1,true,"count","",-32128},
     {"Engine Speed Governor Droop",8,0.04,false,"%","",0},
     {0}}},
     
@@ -15715,10 +15715,10 @@
     {"Transmission Oil Filter Restriction Switch",2,RES_BITFIELD,false,0,"",0},
     {"Transmission Oil Level Switch",2,RES_BITFIELD,false,0,"",0},
     {"Transmission Overheat Indicator",2,RES_BITFIELD,false,0,"",0},
-    {"Transmission Torque Converter Oil Outlet Temperature",16,0.03125,false,"°C","",-273},
+    {"Transmission Torque Converter Oil Outlet Temperature",16,0.03125,true,"°C","",-8736},
     {"Transmission Oil Life Remaining",8,0.4,false,"%","",0},
-    {"Transmission Oil Temperature 2",16,0.03125,false,"°C","",-273},
-    {"Transmission Oil Level 2 High / Low",8,0.5,false,"l","",-62.5},
+    {"Transmission Oil Temperature 2",16,0.03125,true,"°C","",-8736},
+    {"Transmission Oil Level 2 High / Low",8,0.5,true,"l","",-125},
     {"Transmission Oil Level 2 Countdown Timer",4,RES_BITFIELD,false,0,"",0},
     {"Transmission Oil Level 2 Measurement Status",4,RES_BITFIELD,false,0,"",0},
     {0}}},
@@ -15739,8 +15739,8 @@
     8,
     0,
     {
-    {"Engine Fuel Supply Temperature",8,1,false,"°C","",-40},
-    {"Engine Fuel Return Temperature",8,1,false,"°C","",-40},
+    {"Engine Fuel Supply Temperature",8,1,true,"°C","",-40},
+    {"Engine Fuel Return Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"Aftertreatment 1 Historical Information 1",
@@ -15785,7 +15785,7 @@
     8,
     0,
     {
-    {"Aftertreatment 1 Diesel Exhaust Fluid Temperature 2",8,1,false,"°C","",-40},
+    {"Aftertreatment 1 Diesel Exhaust Fluid Temperature 2",8,1,true,"°C","",-40},
     {"Aftertreatment 1 Diesel Exhaust Fluid Concentration",8,0.25,false,"%","",0},
     {"Aftertreatment 1 Diesel Exhaust Fluid Conductivity",8,5,false,"µSiemens/mm","",0},
     {"Aftertreatment 1 Diesel Exhaust Fluid Temperature 2 Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -15890,7 +15890,7 @@
     {
     {"Engine Fuel Valve 2 Intake Absolute Pressure",16,0.1,false,"kPa","",0},
     {"Engine Fuel System 2 Gas Mass Flow Rate",16,0.05,false,"kg/h","",0},
-    {"Engine Fuel 1 Temperature 2",8,1,false,"°C","",-40},
+    {"Engine Fuel 1 Temperature 2",8,1,true,"°C","",-40},
     {"Engine Fuel Valve 2 Outlet Absolute Pressure",16,0.1,false,"kPa","",0},
     {0}}},
     
@@ -15983,9 +15983,9 @@
     8,
     0,
     {
-    {"Generator Excitation Field Voltage",16,0.05,false,"V","",-1606},
+    {"Generator Excitation Field Voltage",16,0.05,true,"V","",-32120},
     {"Generator Excitation Field Current",16,0.05,false,"A","",0},
-    {"Generator Output Voltage Bias Percentage",16,0.1,false,"%","",-3212.75},
+    {"Generator Output Voltage Bias Percentage",16,0.1,true,"%","",-32127.5},
     {0}}},
     
     {"Voltage Regulator Operating Mode",
@@ -16035,7 +16035,7 @@
     {
     {"Engine Charge Air Cooler 1 Intake Pressure",8,2,false,"kPa","",0},
     {"Engine Charge Air Cooler 2 Intake Pressure",8,2,false,"kPa","",0},
-    {"Engine Coolant Pump Differential Pressure",8,1.64,false,"kPa","",-7},
+    {"Engine Coolant Pump Differential Pressure",8,1.64,true,"kPa","",-4.2682926829268295},
     {"Engine Centrifugal Oil Filter speed",16,4,false,"rpm","",0},
     {"Engine Charge Air Cooler Coolant Level",8,0.4,false,"%","",0},
     {"Engine Aftercooler Coolant Level",8,0.4,false,"%","",0},
@@ -16071,8 +16071,8 @@
     8,
     0,
     {
-    {"Aftertreatment 2 Exhaust Temperature 2",16,0.03125,false,"°C","",-273},
-    {"Aftertreatment 2 Diesel Particulate Filter Intermediate Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 2 Exhaust Temperature 2",16,0.03125,true,"°C","",-8736},
+    {"Aftertreatment 2 Diesel Particulate Filter Intermediate Temperature",16,0.03125,true,"°C","",-8736},
     {"Aftertreatment 2 Diesel Particulate Filter Differential Pressure",16,0.1,false,"kPa","",0},
     {"Aftertreatment 2 Exhaust Temperature 2 Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Aftertreatment 2 Diesel Particulate Filter Differential Pressure Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -16085,8 +16085,8 @@
     8,
     0,
     {
-    {"Aftertreatment 2 Exhaust Temperature 3",16,0.03125,false,"°C","",-273},
-    {"Aftertreatment 2 Diesel Particulate Filter Outlet Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 2 Exhaust Temperature 3",16,0.03125,true,"°C","",-8736},
+    {"Aftertreatment 2 Diesel Particulate Filter Outlet Temperature",16,0.03125,true,"°C","",-8736},
     {"Aftertreatment 2 Exhaust Temperature 3 Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Aftertreatment 2 Diesel Particulate Filter Exhaust Temperature Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {0}}},
@@ -16097,8 +16097,8 @@
     8,
     0,
     {
-    {"Aftertreatment 2 Exhaust Temperature 1",16,0.03125,false,"°C","",-273},
-    {"Aftertreatment 2 Diesel Particulate Filter Intake Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 2 Exhaust Temperature 1",16,0.03125,true,"°C","",-8736},
+    {"Aftertreatment 2 Diesel Particulate Filter Intake Temperature",16,0.03125,true,"°C","",-8736},
     {"Aftertreatment 2 Exhaust Temperature 1 Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Aftertreatment 2 Diesel Particulate Filter Intake Temperature Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {0}}},
@@ -16109,8 +16109,8 @@
     8,
     0,
     {
-    {"Aftertreatment 1 Exhaust Temperature 2",16,0.03125,false,"°C","",-273},
-    {"Aftertreatment 1 Diesel Particulate Filter Intermediate Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 1 Exhaust Temperature 2",16,0.03125,true,"°C","",-8736},
+    {"Aftertreatment 1 Diesel Particulate Filter Intermediate Temperature",16,0.03125,true,"°C","",-8736},
     {"Aftertreatment 1 Diesel Particulate Filter Differential Pressure",16,0.1,false,"kPa","",0},
     {"Aftertreatment 1 Exhaust Temperature 2 Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Aftertreatment 1 Diesel Particulate Filter Differential Pressure Preliminary FMI",5,RES_BINARY,false,0,"",0},
@@ -16123,8 +16123,8 @@
     8,
     0,
     {
-    {"Aftertreatment 1 Exhaust Temperature 3",16,0.03125,false,"°C","",-273},
-    {"Aftertreatment 1 Diesel Particulate Filter Outlet Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 1 Exhaust Temperature 3",16,0.03125,true,"°C","",-8736},
+    {"Aftertreatment 1 Diesel Particulate Filter Outlet Temperature",16,0.03125,true,"°C","",-8736},
     {"Aftertreatment 1 Exhaust Temperature 3 Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Aftertreatment 1 Diesel Particulate Filter Outlet Exhaust Temperature Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {0}}},
@@ -16135,8 +16135,8 @@
     8,
     0,
     {
-    {"Aftertreatment 1 Exhaust Temperature 1",16,0.03125,false,"°C","",-273},
-    {"Aftertreatment 1 Diesel Particulate Filter Intake Temperature",16,0.03125,false,"°C","",-273},
+    {"Aftertreatment 1 Exhaust Temperature 1",16,0.03125,true,"°C","",-8736},
+    {"Aftertreatment 1 Diesel Particulate Filter Intake Temperature",16,0.03125,true,"°C","",-8736},
     {"Aftertreatment 1 Exhaust Temperature 1 Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Aftertreatment 1 Diesel Particulate Filter Intake Temperature Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {0}}},
@@ -16270,8 +16270,8 @@
     8,
     0,
     {
-    {"Engine Exhaust Gas Recirculation 1 Valve 1 Position Error",16,0.004,false,"%","",-125},
-    {"Engine Exhaust Gas Recirculation 1 Valve 2 Position Error",16,0.004,false,"%","",-125},
+    {"Engine Exhaust Gas Recirculation 1 Valve 1 Position Error",16,0.004,true,"%","",-31250},
+    {"Engine Exhaust Gas Recirculation 1 Valve 2 Position Error",16,0.004,true,"%","",-31250},
     {"Engine Fuel Mass Flow Rate",16,0.005,false,"g/s","",0},
     {"Fuel Type",8,RES_BITFIELD,false,0,"",0},
     {"Engine Fuel Isolation Control",2,RES_BITFIELD,false,0,"",0},
@@ -16302,7 +16302,7 @@
     {"Foundation Brake Use",2,RES_BITFIELD,false,0,"",0},
     {"XBR System State",2,RES_BITFIELD,false,0,"",0},
     {"XBR Active Control Mode",4,RES_BITFIELD,false,0,"",0},
-    {"XBR Acceleration Limit",8,0.1,false,"m/s²","",-12.5},
+    {"XBR Acceleration Limit",8,0.1,true,"m/s²","",-125},
     {"Parking Brake Actuator Fully Activated",2,RES_BITFIELD,false,0,"",0},
     {"Emergency Braking Active",2,RES_BITFIELD,false,0,"",0},
     {"Railroad Mode",2,RES_BITFIELD,false,0,"",0},
@@ -16477,10 +16477,10 @@
     8,
     0,
     {
-    {"Engine Turbocharger 1 Compressor Outlet Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Turbocharger 2 Compressor Outlet Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Turbocharger 3 Compressor Outlet Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Turbocharger 4 Compressor Outlet Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Turbocharger 1 Compressor Outlet Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Turbocharger 2 Compressor Outlet Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Turbocharger 3 Compressor Outlet Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Turbocharger 4 Compressor Outlet Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Cab Message 3",
@@ -16509,8 +16509,8 @@
     8,
     0,
     {
-    {"Engine Turbocharger 1 Calculated Turbine Intake Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Turbocharger 1 Calculated Turbine Outlet Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Turbocharger 1 Calculated Turbine Intake Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Turbocharger 1 Calculated Turbine Outlet Temperature",16,0.03125,true,"°C","",-8736},
     {"Engine Exhaust Gas Recirculation 1 Valve 1 Control 1",16,0.0025,false,"%","",0},
     {"Engine Variable Geometry Turbocharger (VGT) Air Control Shutoff Valve",2,RES_BITFIELD,false,0,"",0},
     {"Engine Fuel Control Mode",2,RES_BITFIELD,false,0,"",0},
@@ -16719,7 +16719,7 @@
     {"Solar Intensity Percent",8,0.4,false,"%","",0},
     {"Solar Sensor Maximum",8,0.4,false,"mW/cm²","",0},
     {"Specific Humidity",16,0.01,false,"g/kg","",0},
-    {"Calculated Ambient Air Temperature",16,0.03125,false,"°C","",-273},
+    {"Calculated Ambient Air Temperature",16,0.03125,true,"°C","",-8736},
     {"Barometric Absolute Pressure (High Resolution)",16,0.1,false,"kPa","",0},
     {0}}},
     
@@ -16754,7 +16754,7 @@
     8,
     0,
     {
-    {"Travel Velocity Control Position",8,1,false,"%","",-125},
+    {"Travel Velocity Control Position",8,1,true,"%","",-125},
     {0}}},
     
     {"Equipment Performance Data",
@@ -16813,7 +16813,7 @@
     {"Bus #1/Utility Frequency Match",2,RES_BITFIELD,false,0,"",0},
     {"Bus #1/Utility Voltage Match",2,RES_BITFIELD,false,0,"",0},
     {"Bus #1/Utility In Sync",2,RES_BITFIELD,false,0,"",0},
-    {"Bus #1/Utility AC Phase Difference",16,0.0078125,false,"deg","",-200},
+    {"Bus #1/Utility AC Phase Difference",16,0.0078125,true,"deg","",-25600},
     {0}}},
     
     {"Bus #1/Generator Sync Check Status",
@@ -16827,7 +16827,7 @@
     {"Bus #1/Generator Frequency Match",2,RES_BITFIELD,false,0,"",0},
     {"Bus #1/Generator Voltage Match",2,RES_BITFIELD,false,0,"",0},
     {"Bus #1/Generator In Sync",2,RES_BITFIELD,false,0,"",0},
-    {"Bus #1/Generator AC Phase Difference",16,0.0078125,false,"deg","",-200},
+    {"Bus #1/Generator AC Phase Difference",16,0.0078125,true,"deg","",-25600},
     {0}}},
     
     {"Bus #1 Phase C  Basic AC Quantities",
@@ -16890,8 +16890,8 @@
     8,
     0,
     {
-    {"Utility Phase C Reactive Power",32,1,false,"VAr","",-2000000000},
-    {"Utility Phase C Power Factor",16,0.00006103515625,false,"","",-1},
+    {"Utility Phase C Reactive Power",32,1,true,"VAr","",-2000000000},
+    {"Utility Phase C Power Factor",16,0.00006103515625,true,"","",-16384},
     {"Utility Phase C Power Factor Lagging",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -16901,8 +16901,8 @@
     8,
     0,
     {
-    {"Utility Phase C Real Power",32,1,false,"W","",-2000000000},
-    {"Utility Phase C Apparent Power",32,1,false,"VA","",-2000000000},
+    {"Utility Phase C Real Power",32,1,true,"W","",-2000000000},
+    {"Utility Phase C Apparent Power",32,1,true,"VA","",-2000000000},
     {0}}},
     
     {"Utility Phase C AC Basic Quantities",
@@ -16923,8 +16923,8 @@
     8,
     0,
     {
-    {"Utility Phase B Reactive Power",32,1,false,"VAr","",-2000000000},
-    {"Utility Phase B Power Factor",16,0.00006103515625,false,"","",-1},
+    {"Utility Phase B Reactive Power",32,1,true,"VAr","",-2000000000},
+    {"Utility Phase B Power Factor",16,0.00006103515625,true,"","",-16384},
     {"Utility Phase B Power Factor Lagging",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -16934,8 +16934,8 @@
     8,
     0,
     {
-    {"Utility Phase B Real Power",32,1,false,"W","",-2000000000},
-    {"Utility Phase B Apparent Power",32,1,false,"VA","",-2000000000},
+    {"Utility Phase B Real Power",32,1,true,"W","",-2000000000},
+    {"Utility Phase B Apparent Power",32,1,true,"VA","",-2000000000},
     {0}}},
     
     {"Utility Phase B AC Basic Quantities",
@@ -16956,8 +16956,8 @@
     8,
     0,
     {
-    {"Utility Phase A Reactive Power",32,1,false,"VAr","",-2000000000},
-    {"Utility Phase A Power Factor",16,0.00006103515625,false,"","",-1},
+    {"Utility Phase A Reactive Power",32,1,true,"VAr","",-2000000000},
+    {"Utility Phase A Power Factor",16,0.00006103515625,true,"","",-16384},
     {"Utility Phase A Power Factor Lagging",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -16967,8 +16967,8 @@
     8,
     0,
     {
-    {"Utility Phase A Real Power",32,1,false,"W","",-2000000000},
-    {"Utility Phase A Apparent Power",32,1,false,"VA","",-2000000000},
+    {"Utility Phase A Real Power",32,1,true,"W","",-2000000000},
+    {"Utility Phase A Apparent Power",32,1,true,"VA","",-2000000000},
     {0}}},
     
     {"Utility Phase A Basic AC Quantities",
@@ -16989,8 +16989,8 @@
     8,
     0,
     {
-    {"Utility Total Reactive Power",32,1,false,"VAr","",-2000000000},
-    {"Utility Overall Power Factor",16,0.00006103515625,false,"","",-1},
+    {"Utility Total Reactive Power",32,1,true,"VAr","",-2000000000},
+    {"Utility Overall Power Factor",16,0.00006103515625,true,"","",-16384},
     {"Utility Overall Power Factor Lagging",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -17000,8 +17000,8 @@
     8,
     0,
     {
-    {"Utility Total Real Power",32,1,false,"W","",-2000000000},
-    {"Utility Total Apparent Power",32,1,false,"VA","",-2000000000},
+    {"Utility Total Real Power",32,1,true,"W","",-2000000000},
+    {"Utility Total Apparent Power",32,1,true,"VA","",-2000000000},
     {0}}},
     
     {"Utility Average Basic AC Quantities",
@@ -17032,8 +17032,8 @@
     8,
     0,
     {
-    {"Generator Phase C Reactive Power",32,1,false,"VAr","",-2000000000},
-    {"Generator Phase C Power Factor",16,0.00006103515625,false,"","",-1},
+    {"Generator Phase C Reactive Power",32,1,true,"VAr","",-2000000000},
+    {"Generator Phase C Power Factor",16,0.00006103515625,true,"","",-16384},
     {"Generator Phase C Power Factor Lagging",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -17043,8 +17043,8 @@
     8,
     0,
     {
-    {"Generator Phase C Real Power",32,1,false,"W","",-2000000000},
-    {"Generator Phase C Apparent Power",32,1,false,"VA","",-2000000000},
+    {"Generator Phase C Real Power",32,1,true,"W","",-2000000000},
+    {"Generator Phase C Apparent Power",32,1,true,"VA","",-2000000000},
     {0}}},
     
     {"Generator Phase C Basic AC Quantities",
@@ -17065,8 +17065,8 @@
     8,
     0,
     {
-    {"Generator Phase B Reactive Power",32,1,false,"VAr","",-2000000000},
-    {"Generator Phase B Power Factor",16,0.00006103515625,false,"","",-1},
+    {"Generator Phase B Reactive Power",32,1,true,"VAr","",-2000000000},
+    {"Generator Phase B Power Factor",16,0.00006103515625,true,"","",-16384},
     {"Generator Phase B Power Factor Lagging",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -17076,8 +17076,8 @@
     8,
     0,
     {
-    {"Generator Phase B Real Power",32,1,false,"W","",-2000000000},
-    {"Generator Phase B Apparent Power",32,1,false,"VA","",-2000000000},
+    {"Generator Phase B Real Power",32,1,true,"W","",-2000000000},
+    {"Generator Phase B Apparent Power",32,1,true,"VA","",-2000000000},
     {0}}},
     
     {"Generator Phase B Basic AC Quantities",
@@ -17098,8 +17098,8 @@
     8,
     0,
     {
-    {"Generator Phase A Reactive Power",32,1,false,"VAr","",-2000000000},
-    {"Generator Phase A Power Factor",16,0.00006103515625,false,"","",-1},
+    {"Generator Phase A Reactive Power",32,1,true,"VAr","",-2000000000},
+    {"Generator Phase A Power Factor",16,0.00006103515625,true,"","",-16384},
     {"Generator Phase A Power Factor Lagging",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -17109,8 +17109,8 @@
     8,
     0,
     {
-    {"Generator Phase A Real Power",32,1,false,"W","",-2000000000},
-    {"Generator Phase A Apparent Power",32,1,false,"VA","",-2000000000},
+    {"Generator Phase A Real Power",32,1,true,"W","",-2000000000},
+    {"Generator Phase A Apparent Power",32,1,true,"VA","",-2000000000},
     {0}}},
     
     {"Generator Phase A Basic AC Quantities",
@@ -17131,8 +17131,8 @@
     8,
     0,
     {
-    {"Generator Total Reactive Power",32,1,false,"VAr","",-2000000000},
-    {"Generator Overall Power Factor",16,0.00006103515625,false,"","",-1},
+    {"Generator Total Reactive Power",32,1,true,"VAr","",-2000000000},
+    {"Generator Overall Power Factor",16,0.00006103515625,true,"","",-16384},
     {"Generator Overall Power Factor Lagging",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -17142,8 +17142,8 @@
     8,
     0,
     {
-    {"Generator Total Real Power",32,1,false,"W","",-2000000000},
-    {"Generator Total Apparent Power",32,1,false,"VA","",-2000000000},
+    {"Generator Total Real Power",32,1,true,"W","",-2000000000},
+    {"Generator Total Apparent Power",32,1,true,"VA","",-2000000000},
     {0}}},
     
     {"Generator Average Basic AC Quantities",
@@ -17164,10 +17164,10 @@
     8,
     0,
     {
-    {"Engine Exhaust Manifold Bank 2 Temperature 1",16,0.03125,false,"°C","",-273},
-    {"Engine Exhaust Manifold Bank 1 Temperature 1",16,0.03125,false,"°C","",-273},
-    {"Engine Exhaust Manifold Bank 2 Temperature 2",16,0.03125,false,"°C","",-273},
-    {"Engine Exhaust Manifold Bank 1 Temperature 2",16,0.03125,false,"°C","",-273},
+    {"Engine Exhaust Manifold Bank 2 Temperature 1",16,0.03125,true,"°C","",-8736},
+    {"Engine Exhaust Manifold Bank 1 Temperature 1",16,0.03125,true,"°C","",-8736},
+    {"Engine Exhaust Manifold Bank 2 Temperature 2",16,0.03125,true,"°C","",-8736},
+    {"Engine Exhaust Manifold Bank 1 Temperature 2",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Lighting Data",
@@ -17267,7 +17267,7 @@
     {"Transmission Mode 3 Indicator",2,RES_BITFIELD,false,0,"",0},
     {"Transmission Mode 2 Indicator",2,RES_BITFIELD,false,0,"",0},
     {"Transmission Mode 1 Indicator",2,RES_BITFIELD,false,0,"",0},
-    {"Transmission Requested Gear Feedback",8,1,false,"gear value","",-125},
+    {"Transmission Requested Gear Feedback",8,1,true,"gear value","",-125},
     {"Transmission Mode 5 Indicator",2,RES_BITFIELD,false,0,"",0},
     {"Transmission Mode 6 Indicator",2,RES_BITFIELD,false,0,"",0},
     {"Transmission Mode 7 Indicator",2,RES_BITFIELD,false,0,"",0},
@@ -17292,7 +17292,7 @@
     {
     {"Transmission Torque Limit",16,1,false,"Nm","",0},
     {"Transmission Reference Torque",16,1,false,"Nm","",0},
-    {"Transmission Communications Failure Idle Torque Limit",8,1,false,"%","",-125},
+    {"Transmission Communications Failure Idle Torque Limit",8,1,true,"%","",-125},
     {0}}},
     
     {"Military Lighting Command",
@@ -17354,10 +17354,10 @@
     8,
     0,
     {
-    {"SLI Battery 1 Temperature",8,1,false,"°C","",-40},
-    {"SLI Battery 2 Temperature",8,1,false,"°C","",-40},
-    {"SLI Battery 3 Temperature",8,1,false,"°C","",-40},
-    {"SLI Battery 4 Temperature",8,1,false,"°C","",-40},
+    {"SLI Battery 1 Temperature",8,1,true,"°C","",-40},
+    {"SLI Battery 2 Temperature",8,1,true,"°C","",-40},
+    {"SLI Battery 3 Temperature",8,1,true,"°C","",-40},
+    {"SLI Battery 4 Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"Adaptive Cruise Control, Operator Input",
@@ -17376,9 +17376,9 @@
     8,
     0,
     {
-    {"Alternator Current (High Range/Resolution)",16,0.05,false,"A","",-1600},
-    {"SLI Battery 1 Net Current (High Range/Resolution)",16,0.05,false,"A","",-1600},
-    {"SLI Battery 2 Net Current",16,0.05,false,"A","",-1600},
+    {"Alternator Current (High Range/Resolution)",16,0.05,true,"A","",-32000},
+    {"SLI Battery 1 Net Current (High Range/Resolution)",16,0.05,true,"A","",-32000},
+    {"SLI Battery 2 Net Current",16,0.05,true,"A","",-32000},
     {0}}},
     
     {"Retarder Continuous Torque & Speed Limit",
@@ -17389,12 +17389,12 @@
     {
     {"Low Limit Threshold for Maximum RPM from Retarder",8,32,false,"rpm","",0},
     {"High Limit Threshold for Minimum Continuous RPM from Retarder",8,32,false,"rpm","",0},
-    {"Low Limit Threshold for Maximum Torque from Retarder",8,1,false,"%","",-125},
-    {"High Limit Threshold for Minimum Continuous Torque from Retarder",8,1,false,"%","",-125},
+    {"Low Limit Threshold for Maximum Torque from Retarder",8,1,true,"%","",-125},
+    {"High Limit Threshold for Minimum Continuous Torque from Retarder",8,1,true,"%","",-125},
     {"Maximum Continuous Retarder Speed ",8,32,false,"rpm","",0},
     {"Minimum Continuous Retarder Speed",8,32,false,"rpm","",0},
-    {"Maximum Continuous Retarder Torque",8,1,false,"%","",-125},
-    {"Minimum Continuous Retarder Torque",8,1,false,"%","",-125},
+    {"Maximum Continuous Retarder Torque",8,1,true,"%","",-125},
+    {"Minimum Continuous Retarder Torque",8,1,true,"%","",-125},
     {0}}},
     
     {"Engine Continuous Torque & Speed Limit",
@@ -17405,12 +17405,12 @@
     {
     {"Engine Low Limit Threshold for Maximum RPM from Engine",8,32,false,"rpm","",0},
     {"Engine High Limit Threshold for Minimum Continuous Engine RPM",8,32,false,"rpm","",0},
-    {"Engine Low Limit Threshold for Maximum Torque from Engine",8,1,false,"%","",-125},
-    {"Engine High Limit Threshold for Minimum Continuous Torque from Engine",8,1,false,"%","",-125},
+    {"Engine Low Limit Threshold for Maximum Torque from Engine",8,1,true,"%","",-125},
+    {"Engine High Limit Threshold for Minimum Continuous Torque from Engine",8,1,true,"%","",-125},
     {"Engine Maximum Continuous RPM",8,32,false,"rpm","",0},
     {"Engine Minimum Continuous RPM",8,32,false,"rpm","",0},
-    {"Engine Maximum Continuous Torque",8,1,false,"%","",-125},
-    {"Engine Minimum Continuous Torque",8,1,false,"%","",-125},
+    {"Engine Maximum Continuous Torque",8,1,true,"%","",-125},
+    {"Engine Minimum Continuous Torque",8,1,true,"%","",-125},
     {0}}},
     
     {"Gaseous Fuel Properties",
@@ -17431,7 +17431,7 @@
     0,
     {
     {"Aftertreatment 1 Diesel Exhaust Fluid Tank Volume",8,0.4,false,"%","",0},
-    {"Aftertreatment 1 Diesel Exhaust Fluid Tank Temperature 1",8,1,false,"°C","",-40},
+    {"Aftertreatment 1 Diesel Exhaust Fluid Tank Temperature 1",8,1,true,"°C","",-40},
     {"Aftertreatment 1 Diesel Exhaust Fluid Tank Level",16,0.1,false,"mm","",0},
     {"Aftertreatment 1 Diesel Exhaust Fluid Tank Level/Volume Preliminary FMI",5,RES_BINARY,false,0,"",0},
     {"Aftertreatment Diesel Exhaust Fluid Tank Low Level Indicator",3,RES_BITFIELD,false,0,"",0},
@@ -17473,10 +17473,10 @@
     8,
     0,
     {
-    {"Relative Level Front Axle Left",16,0.1,false,"mm","",-3200},
-    {"Relative Level Front Axle Right",16,0.1,false,"mm","",-3200},
-    {"Relative Level Rear Axle Left",16,0.1,false,"mm","",-3200},
-    {"Relative Level Rear Axle Right",16,0.1,false,"mm","",-3200},
+    {"Relative Level Front Axle Left",16,0.1,true,"mm","",-32000},
+    {"Relative Level Front Axle Right",16,0.1,true,"mm","",-32000},
+    {"Relative Level Rear Axle Left",16,0.1,true,"mm","",-32000},
+    {"Relative Level Rear Axle Right",16,0.1,true,"mm","",-32000},
     {0}}},
     
     {"Air Suspension Control 1",
@@ -17523,8 +17523,8 @@
     {"Lane Departure Indication Enable Status",2,RES_BITFIELD,false,0,"",0},
     {"Driver Alertness Level",8,0.4,false,"%","",0},
     {"Driver Alertness Warning System State",3,RES_BITFIELD,false,0,"",0},
-    {"Left Wheel Lane Departure Distance",8,1,false,"cm","",-125},
-    {"Right Wheel Lane Departure Distance",8,1,false,"cm","",-125},
+    {"Left Wheel Lane Departure Distance",8,1,true,"cm","",-125},
+    {"Right Wheel Lane Departure Distance",8,1,true,"cm","",-125},
     {"Lane Departure Warning System State",4,RES_BITFIELD,false,0,"",0},
     {"Forward Lane Imager Status",4,RES_BITFIELD,false,0,"",0},
     {0}}},
@@ -17553,7 +17553,7 @@
     8,
     0,
     {
-    {"Hydraulic Temperature",8,1,false,"°C","",-40},
+    {"Hydraulic Temperature",8,1,true,"°C","",-40},
     {"Hydraulic Oil Filter Restriction Switch",2,RES_BITFIELD,false,0,"",0},
     {"Winch Oil Pressure Switch",2,RES_BITFIELD,false,0,"",0},
     {"Hydraulic Oil Level",8,0.4,false,"%","",0},
@@ -17565,10 +17565,10 @@
     8,
     0,
     {
-    {"Engine Intake Manifold 1 Temperature (High Resolution)",16,0.03125,false,"°C","",-273},
-    {"Engine Coolant Temperature (High Resolution)",16,0.03125,false,"°C","",-273},
-    {"Engine Intake Valve Actuation System Oil Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Charge Air Cooler 1 Outlet Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Intake Manifold 1 Temperature (High Resolution)",16,0.03125,true,"°C","",-8736},
+    {"Engine Coolant Temperature (High Resolution)",16,0.03125,true,"°C","",-8736},
+    {"Engine Intake Valve Actuation System Oil Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Charge Air Cooler 1 Outlet Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Engine Fuel/Lube Systems",
@@ -17630,8 +17630,8 @@
     8,
     0,
     {
-    {"Auxiliary Heater Output Coolant Temperature",8,1,false,"°C","",-40},
-    {"Auxiliary Heater Input Air Temperature",8,1,false,"°C","",-40},
+    {"Auxiliary Heater Output Coolant Temperature",8,1,true,"°C","",-40},
+    {"Auxiliary Heater Input Air Temperature",8,1,true,"°C","",-40},
     {"Auxiliary Heater Output Power Percent",8,0.4,false,"%","",0},
     {"Auxiliary Heater Mode",4,RES_BITFIELD,false,0,"",0},
     {"Auxiliary Heater Water Pump Status",2,RES_BITFIELD,false,0,"",0},
@@ -17664,7 +17664,7 @@
     {"Adaptive Cruise Control Set Speed",8,1,false,"km/h","",0},
     {"Adaptive Cruise Control Mode",3,RES_BITFIELD,false,0,"",0},
     {"Adaptive cruise control set distance mode",3,RES_BITFIELD,false,0,"",0},
-    {"Road curvature",16,0.0078125,false,"1/km","",-250},
+    {"Road curvature",16,0.0078125,true,"1/km","",-32000},
     {"ACC Target Detected",2,RES_BITFIELD,false,0,"",0},
     {"ACC System Shutoff Warning",2,RES_BITFIELD,false,0,"",0},
     {"ACC Distance Alert Signal",2,RES_BITFIELD,false,0,"",0},
@@ -17687,7 +17687,7 @@
     8,
     0,
     {
-    {"Laser Tracer Target Deviation",16,0.1,false,"mm","",-3200},
+    {"Laser Tracer Target Deviation",16,0.1,true,"mm","",-32000},
     {"Laser Tracer Vertical Distance",16,0.1,false,"mm","",0},
     {"Laser Tracer Horizontal Deviation",8,1,false,"%","",0},
     {"LED Display Data #2",8,RES_BITFIELD,false,0,"",0},
@@ -17700,7 +17700,7 @@
     8,
     0,
     {
-    {"Blade Duration and Direction",16,0.1,false,"s","",-3276.8},
+    {"Blade Duration and Direction",16,0.1,true,"s","",-32768},
     {"Blade Control Mode",8,RES_BITFIELD,false,0,"",0},
     {"Blade Control Mode - Left",4,RES_BITFIELD,false,0,"",0},
     {"Blade Control Mode - Right",4,RES_BITFIELD,false,0,"",0},
@@ -17713,7 +17713,7 @@
     8,
     0,
     {
-    {"Mast Position",16,0.1,false,"mm","",-3200},
+    {"Mast Position",16,0.1,true,"mm","",-32000},
     {0}}},
     
     {"Modify Leveling System Control Set Point",
@@ -17722,8 +17722,8 @@
     8,
     0,
     {
-    {"Modify Leveling System Set Point",16,0.1,false,"mm","",-3200},
-    {"Blade Height Set Point (High Resolution)",32,1e-7,false,"m","",-209.7152},
+    {"Modify Leveling System Set Point",16,0.1,true,"mm","",-32000},
+    {"Blade Height Set Point (High Resolution)",32,1e-7,true,"m","",-2097152000.0000002},
     {0}}},
     
     {"Laser Leveling System Vertical Deviation",
@@ -17732,7 +17732,7 @@
     8,
     0,
     {
-    {"Laser Strike Vertical Deviation",16,0.1,false,"mm","",-3200},
+    {"Laser Strike Vertical Deviation",16,0.1,true,"mm","",-32000},
     {"Laser Receiver Type",8,1,false,"count","",0},
     {"Laser Strike Data Latency",16,0.0000512,false,"s","",0},
     {"Absolute Laser Strike Position",16,0.1,false,"mm","",0},
@@ -17893,10 +17893,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 1 Ignition Timing",16,0.0078125,false,"deg","",-200},
-    {"Engine Cylinder 2 Ignition Timing",16,0.0078125,false,"deg","",-200},
-    {"Engine Cylinder 3 Ignition Timing",16,0.0078125,false,"deg","",-200},
-    {"Engine Cylinder 4 Ignition Timing",16,0.0078125,false,"deg","",-200},
+    {"Engine Cylinder 1 Ignition Timing",16,0.0078125,true,"deg","",-25600},
+    {"Engine Cylinder 2 Ignition Timing",16,0.0078125,true,"deg","",-25600},
+    {"Engine Cylinder 3 Ignition Timing",16,0.0078125,true,"deg","",-25600},
+    {"Engine Cylinder 4 Ignition Timing",16,0.0078125,true,"deg","",-25600},
     {0}}},
     
     {"Ignition Timing 2",
@@ -17905,10 +17905,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 5 Ignition Timing",16,0.0078125,false,"deg","",-200},
-    {"Engine Cylinder 6 Ignition Timing",16,0.0078125,false,"deg","",-200},
-    {"Engine Cylinder 7 Ignition Timing",16,0.0078125,false,"deg","",-200},
-    {"Engine Cylinder 8 Ignition Timing",16,0.0078125,false,"deg","",-200},
+    {"Engine Cylinder 5 Ignition Timing",16,0.0078125,true,"deg","",-25600},
+    {"Engine Cylinder 6 Ignition Timing",16,0.0078125,true,"deg","",-25600},
+    {"Engine Cylinder 7 Ignition Timing",16,0.0078125,true,"deg","",-25600},
+    {"Engine Cylinder 8 Ignition Timing",16,0.0078125,true,"deg","",-25600},
     {0}}},
     
     {"Ignition Timing 3",
@@ -17917,10 +17917,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 9 Ignition Timing",16,0.0078125,false,"deg","",-200},
-    {"Engine Cylinder 10 Ignition Timing",16,0.0078125,false,"deg","",-200},
-    {"Engine Cylinder 11 Ignition Timing",16,0.0078125,false,"deg","",-200},
-    {"Engine Cylinder 12 Ignition Timing",16,0.0078125,false,"deg","",-200},
+    {"Engine Cylinder 9 Ignition Timing",16,0.0078125,true,"deg","",-25600},
+    {"Engine Cylinder 10 Ignition Timing",16,0.0078125,true,"deg","",-25600},
+    {"Engine Cylinder 11 Ignition Timing",16,0.0078125,true,"deg","",-25600},
+    {"Engine Cylinder 12 Ignition Timing",16,0.0078125,true,"deg","",-25600},
     {0}}},
     
     {"Ignition Timing 4",
@@ -17929,10 +17929,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 13 Ignition Timing",16,0.0078125,false,"deg","",-200},
-    {"Engine Cylinder 14 Ignition Timing",16,0.0078125,false,"deg","",-200},
-    {"Engine Cylinder 15 Ignition Timing",16,0.0078125,false,"deg","",-200},
-    {"Engine Cylinder 16 Ignition Timing",16,0.0078125,false,"deg","",-200},
+    {"Engine Cylinder 13 Ignition Timing",16,0.0078125,true,"deg","",-25600},
+    {"Engine Cylinder 14 Ignition Timing",16,0.0078125,true,"deg","",-25600},
+    {"Engine Cylinder 15 Ignition Timing",16,0.0078125,true,"deg","",-25600},
+    {"Engine Cylinder 16 Ignition Timing",16,0.0078125,true,"deg","",-25600},
     {0}}},
     
     {"Ignition Timing 5",
@@ -17941,10 +17941,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 17 Ignition Timing",16,0.0078125,false,"deg","",-200},
-    {"Engine Cylinder 18 Ignition Timing",16,0.0078125,false,"deg","",-200},
-    {"Engine Cylinder 19 Ignition Timing",16,0.0078125,false,"deg","",-200},
-    {"Engine Cylinder 20 Ignition Timing",16,0.0078125,false,"deg","",-200},
+    {"Engine Cylinder 17 Ignition Timing",16,0.0078125,true,"deg","",-25600},
+    {"Engine Cylinder 18 Ignition Timing",16,0.0078125,true,"deg","",-25600},
+    {"Engine Cylinder 19 Ignition Timing",16,0.0078125,true,"deg","",-25600},
+    {"Engine Cylinder 20 Ignition Timing",16,0.0078125,true,"deg","",-25600},
     {0}}},
     
     {"Ignition Timing 6",
@@ -17953,10 +17953,10 @@
     8,
     0,
     {
-    {"Engine Desired Ignition Timing 1",16,0.0078125,false,"deg","",-200},
-    {"Engine Desired Ignition Timing 2",16,0.0078125,false,"deg","",-200},
-    {"Engine Desired Ignition Timing 3",16,0.0078125,false,"deg","",-200},
-    {"Engine Actual Ignition Timing",16,0.0078125,false,"deg","",-200},
+    {"Engine Desired Ignition Timing 1",16,0.0078125,true,"deg","",-25600},
+    {"Engine Desired Ignition Timing 2",16,0.0078125,true,"deg","",-25600},
+    {"Engine Desired Ignition Timing 3",16,0.0078125,true,"deg","",-25600},
+    {"Engine Actual Ignition Timing",16,0.0078125,true,"deg","",-25600},
     {0}}},
     
     {"Ignition Transformer Secondary Output 1",
@@ -17965,14 +17965,14 @@
     8,
     0,
     {
-    {"Engine Cylinder 1 Ignition Transformer Secondary Output",8,1,false,"%","",-125},
-    {"Engine Cylinder 2 Ignition Transformer Secondary Output",8,1,false,"%","",-125},
-    {"Engine Cylinder 3 Ignition Transformer Secondary Output",8,1,false,"%","",-125},
-    {"Engine Cylinder 4 Ignition Transformer Secondary Output",8,1,false,"%","",-125},
-    {"Engine Cylinder 5 Ignition Transformer Secondary Output",8,1,false,"%","",-125},
-    {"Engine Cylinder 6 Ignition Transformer Secondary Output",8,1,false,"%","",-125},
-    {"Engine Cylinder 7 Ignition Transformer Secondary Output",8,1,false,"%","",-125},
-    {"Engine Cylinder 8 Ignition Transformer Secondary Output",8,1,false,"%","",-125},
+    {"Engine Cylinder 1 Ignition Transformer Secondary Output",8,1,true,"%","",-125},
+    {"Engine Cylinder 2 Ignition Transformer Secondary Output",8,1,true,"%","",-125},
+    {"Engine Cylinder 3 Ignition Transformer Secondary Output",8,1,true,"%","",-125},
+    {"Engine Cylinder 4 Ignition Transformer Secondary Output",8,1,true,"%","",-125},
+    {"Engine Cylinder 5 Ignition Transformer Secondary Output",8,1,true,"%","",-125},
+    {"Engine Cylinder 6 Ignition Transformer Secondary Output",8,1,true,"%","",-125},
+    {"Engine Cylinder 7 Ignition Transformer Secondary Output",8,1,true,"%","",-125},
+    {"Engine Cylinder 8 Ignition Transformer Secondary Output",8,1,true,"%","",-125},
     {0}}},
     
     {"Ignition Transformer Secondary Output 2",
@@ -17981,14 +17981,14 @@
     8,
     0,
     {
-    {"Engine Cylinder 9 Ignition Transformer Secondary Output",8,1,false,"%","",-125},
-    {"Engine Cylinder 10 Ignition Transformer Secondary Output",8,1,false,"%","",-125},
-    {"Engine Cylinder 11 Ignition Transformer Secondary Output",8,1,false,"%","",-125},
-    {"Engine Cylinder 12 Ignition Transformer Secondary Output",8,1,false,"%","",-125},
-    {"Engine Cylinder 13 Ignition Transformer Secondary Output",8,1,false,"%","",-125},
-    {"Engine Cylinder 14 Ignition Transformer Secondary Output",8,1,false,"%","",-125},
-    {"Engine Cylinder 15 Ignition Transformer Secondary Output",8,1,false,"%","",-125},
-    {"Engine Cylinder 16 Ignition Transformer Secondary Output",8,1,false,"%","",-125},
+    {"Engine Cylinder 9 Ignition Transformer Secondary Output",8,1,true,"%","",-125},
+    {"Engine Cylinder 10 Ignition Transformer Secondary Output",8,1,true,"%","",-125},
+    {"Engine Cylinder 11 Ignition Transformer Secondary Output",8,1,true,"%","",-125},
+    {"Engine Cylinder 12 Ignition Transformer Secondary Output",8,1,true,"%","",-125},
+    {"Engine Cylinder 13 Ignition Transformer Secondary Output",8,1,true,"%","",-125},
+    {"Engine Cylinder 14 Ignition Transformer Secondary Output",8,1,true,"%","",-125},
+    {"Engine Cylinder 15 Ignition Transformer Secondary Output",8,1,true,"%","",-125},
+    {"Engine Cylinder 16 Ignition Transformer Secondary Output",8,1,true,"%","",-125},
     {0}}},
     
     {"Ignition Transformer Secondary Output 3",
@@ -17997,10 +17997,10 @@
     8,
     0,
     {
-    {"Engine Cylinder 17 Ignition Transformer Secondary Output",8,1,false,"%","",-125},
-    {"Engine Cylinder 18 Ignition Transformer Secondary Output",8,1,false,"%","",-125},
-    {"Engine Cylinder 19 Ignition Transformer Secondary Output",8,1,false,"%","",-125},
-    {"Engine Cylinder 20 Ignition Transformer Secondary Output",8,1,false,"%","",-125},
+    {"Engine Cylinder 17 Ignition Transformer Secondary Output",8,1,true,"%","",-125},
+    {"Engine Cylinder 18 Ignition Transformer Secondary Output",8,1,true,"%","",-125},
+    {"Engine Cylinder 19 Ignition Transformer Secondary Output",8,1,true,"%","",-125},
+    {"Engine Cylinder 20 Ignition Transformer Secondary Output",8,1,true,"%","",-125},
     {0}}},
     
     {"Gaseous Fuel Pressure 1",
@@ -18021,8 +18021,8 @@
     8,
     0,
     {
-    {"Auxiliary Temperature 1",8,1,false,"°C","",-40},
-    {"Auxiliary Temperature 2",8,1,false,"°C","",-40},
+    {"Auxiliary Temperature 1",8,1,true,"°C","",-40},
+    {"Auxiliary Temperature 2",8,1,true,"°C","",-40},
     {"Auxiliary Pressure #1",8,16,false,"kPa","",0},
     {"Auxiliary Pressure #2",8,16,false,"kPa","",0},
     {"Auxiliary Level",16,0.1,false,"mm","",0},
@@ -18048,7 +18048,7 @@
     0,
     {
     {"Service Component Identification",8,1,false,"ID","",0},
-    {"Time Since Last Service",16,1,false,"h","",-32127},
+    {"Time Since Last Service",16,1,true,"h","",-32127},
     {0}}},
     
     {"Supply Pressure 2",
@@ -18072,7 +18072,7 @@
     {"Engine Peak Torque 2",16,1,false,"Nm","",0},
     {"Calibration Record Start Month",8,1,false,"months","",0},
     {"Calibration Record Start Day",8,0.25,false,"days","",0},
-    {"Calibration Record Start Year",8,1,false,"years","",1985},
+    {"Calibration Record Start Year",8,1,true,"years","",1985},
     {"Calibration Record Duration Time",32,0.05,false,"h","",0},
     {"Torque Limiting Feature Status",2,RES_BITFIELD,false,0,"",0},
     {"Engine Torque Limit Feature",3,RES_BITFIELD,false,0,"",0},
@@ -18105,7 +18105,7 @@
     0,
     {
     {"Engine Oil Filter Intake Pressure",8,4,false,"kPa","",0},
-    {"Engine Exhaust Pressure 1",16,0.0078125,false,"kPa","",-250},
+    {"Engine Exhaust Pressure 1",16,0.0078125,true,"kPa","",-32000},
     {"Engine Fuel Rack Position",8,0.4,false,"%","",0},
     {"Engine Fuel System 1 Gas Mass Flow Rate",16,0.05,false,"kg/h","",0},
     {"Instantaneous Estimated Brake Power",16,0.5,false,"kW","",0},
@@ -18129,7 +18129,7 @@
     0,
     {
     {"Engine Auxiliary Coolant Pressure",8,4,false,"kPa","",0},
-    {"Engine Auxiliary Coolant Temperature",8,1,false,"°C","",-40},
+    {"Engine Auxiliary Coolant Temperature",8,1,true,"°C","",-40},
     {"Sea Water Pump Outlet Pressure",8,2,false,"kPa","",0},
     {"Engine Coolant Pressure 1 (Extended Range)",8,4,false,"kPa","",0},
     {"Engine Coolant Pressure 2 (Extended Range)",8,4,false,"kPa","",0},
@@ -18169,10 +18169,10 @@
     8,
     0,
     {
-    {"Engine Turbocharger 1 Turbine Outlet Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Turbocharger 2 Turbine Outlet Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Turbocharger 3 Turbine Outlet Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Turbocharger 4 Turbine Outlet Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Turbocharger 1 Turbine Outlet Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Turbocharger 2 Turbine Outlet Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Turbocharger 3 Turbine Outlet Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Turbocharger 4 Turbine Outlet Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Turbocharger Information 4",
@@ -18181,10 +18181,10 @@
     8,
     0,
     {
-    {"Engine Turbocharger 1 Turbine Intake Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Turbocharger 2 Turbine Intake Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Turbocharger 3 Turbine Intake Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Turbocharger 4 Turbine Intake Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Turbocharger 1 Turbine Intake Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Turbocharger 2 Turbine Intake Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Turbocharger 3 Turbine Intake Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Turbocharger 4 Turbine Intake Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Turbocharger Information 3",
@@ -18193,10 +18193,10 @@
     8,
     0,
     {
-    {"Engine Turbocharger 1 Compressor Intake Pressure",16,0.0078125,false,"kPa","",-250},
-    {"Engine Turbocharger 2 Compressor Intake Pressure",16,0.0078125,false,"kPa","",-250},
-    {"Engine Turbocharger 3 Compressor Intake Pressure",16,0.0078125,false,"kPa","",-250},
-    {"Engine Turbocharger 4 Compressor Intake Pressure",16,0.0078125,false,"kPa","",-250},
+    {"Engine Turbocharger 1 Compressor Intake Pressure",16,0.0078125,true,"kPa","",-32000},
+    {"Engine Turbocharger 2 Compressor Intake Pressure",16,0.0078125,true,"kPa","",-32000},
+    {"Engine Turbocharger 3 Compressor Intake Pressure",16,0.0078125,true,"kPa","",-32000},
+    {"Engine Turbocharger 4 Compressor Intake Pressure",16,0.0078125,true,"kPa","",-32000},
     {0}}},
     
     {"Turbocharger Information 2",
@@ -18205,10 +18205,10 @@
     8,
     0,
     {
-    {"Engine Turbocharger 1 Compressor Intake Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Turbocharger 2 Compressor Intake Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Turbocharger 3 Compressor Intake Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Turbocharger 4 Compressor Intake Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Turbocharger 1 Compressor Intake Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Turbocharger 2 Compressor Intake Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Turbocharger 3 Compressor Intake Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Turbocharger 4 Compressor Intake Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Turbocharger Information 1",
@@ -18229,10 +18229,10 @@
     8,
     0,
     {
-    {"Engine Main Bearing 9 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Main Bearing 10 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Main Bearing 11 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Main Bearing 12 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Main Bearing 9 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Main Bearing 10 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Main Bearing 11 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Main Bearing 12 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Main Bearing Temperature 2",
@@ -18241,10 +18241,10 @@
     8,
     0,
     {
-    {"Engine Main Bearing 5 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Main Bearing 6 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Main Bearing 7 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Main Bearing 8 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Main Bearing 5 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Main Bearing 6 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Main Bearing 7 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Main Bearing 8 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Main Bearing Temperature 1",
@@ -18253,10 +18253,10 @@
     8,
     0,
     {
-    {"Engine Main Bearing 1 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Main Bearing 2 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Main Bearing 3 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Main Bearing 4 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Main Bearing 1 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Main Bearing 2 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Main Bearing 3 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Main Bearing 4 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Exhaust Port Temperature 5",
@@ -18265,10 +18265,10 @@
     8,
     0,
     {
-    {"Engine Exhaust Gas Port 17 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Exhaust Gas Port 18 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Exhaust Gas Port 19 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Exhaust Gas Port 20 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Exhaust Gas Port 17 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Exhaust Gas Port 18 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Exhaust Gas Port 19 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Exhaust Gas Port 20 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Exhaust Port Temperature 4",
@@ -18277,10 +18277,10 @@
     8,
     0,
     {
-    {"Engine Exhaust Gas Port 13 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Exhaust Gas Port 14 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Exhaust Gas Port 15 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Exhaust Gas Port 16 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Exhaust Gas Port 13 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Exhaust Gas Port 14 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Exhaust Gas Port 15 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Exhaust Gas Port 16 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Exhaust Port Temperature 3",
@@ -18289,10 +18289,10 @@
     8,
     0,
     {
-    {"Engine Exhaust Gas Port 9 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Exhaust Gas Port 10 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Exhaust Gas Port 11 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Exhaust Gas Port 12 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Exhaust Gas Port 9 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Exhaust Gas Port 10 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Exhaust Gas Port 11 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Exhaust Gas Port 12 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Exhaust Port Temperature 2",
@@ -18301,10 +18301,10 @@
     8,
     0,
     {
-    {"Engine Exhaust Gas Port 5 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Exhaust Gas Port 6 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Exhaust Gas Port 7 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Exhaust Gas Port 8 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Exhaust Gas Port 5 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Exhaust Gas Port 6 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Exhaust Gas Port 7 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Exhaust Gas Port 8 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Exhaust Port Temperature 1",
@@ -18313,10 +18313,10 @@
     8,
     0,
     {
-    {"Engine Exhaust Gas Port 1 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Exhaust Gas Port 2 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Exhaust Gas Port 3 Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Exhaust Gas Port 4 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Exhaust Gas Port 1 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Exhaust Gas Port 2 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Exhaust Gas Port 3 Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Exhaust Gas Port 4 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Engine Temperature 2",
@@ -18325,10 +18325,10 @@
     8,
     0,
     {
-    {"Engine Oil Temperature 2",16,0.03125,false,"°C","",-273},
-    {"Engine ECU Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Exhaust Gas Recirculation 1 Differential Pressure",16,0.0078125,false,"kPa","",-250},
-    {"Engine Exhaust Gas Recirculation 1 Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Oil Temperature 2",16,0.03125,true,"°C","",-8736},
+    {"Engine ECU Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Exhaust Gas Recirculation 1 Differential Pressure",16,0.0078125,true,"kPa","",-32000},
+    {"Engine Exhaust Gas Recirculation 1 Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Intake Manifold Information 2",
@@ -18337,13 +18337,13 @@
     8,
     0,
     {
-    {"Engine Intake Manifold 2 Temperature",8,1,false,"°C","",-40},
-    {"Engine Intake Manifold 3 Temperature",8,1,false,"°C","",-40},
-    {"Engine Intake Manifold 4 Temperature",8,1,false,"°C","",-40},
-    {"Engine Intake Manifold 5 Temperature",8,1,false,"°C","",-40},
-    {"Engine Intake Manifold 6 Temperature",8,1,false,"°C","",-40},
-    {"Desired Engine Intake Manifold Temperature",8,1,false,"°C","",-40},
-    {"Desired Engine Intake Manifold Temperature High Limit",8,1,false,"°C","",-40},
+    {"Engine Intake Manifold 2 Temperature",8,1,true,"°C","",-40},
+    {"Engine Intake Manifold 3 Temperature",8,1,true,"°C","",-40},
+    {"Engine Intake Manifold 4 Temperature",8,1,true,"°C","",-40},
+    {"Engine Intake Manifold 5 Temperature",8,1,true,"°C","",-40},
+    {"Engine Intake Manifold 6 Temperature",8,1,true,"°C","",-40},
+    {"Desired Engine Intake Manifold Temperature",8,1,true,"°C","",-40},
+    {"Desired Engine Intake Manifold Temperature High Limit",8,1,true,"°C","",-40},
     {0}}},
     
     {"Intake Manifold Information 1",
@@ -18364,14 +18364,14 @@
     8,
     0,
     {
-    {"Engine Alternator Bearing 1 Temperature",8,1,false,"°C","",-40},
-    {"Engine Alternator Bearing 2 Temperature",8,1,false,"°C","",-40},
-    {"Engine Alternator Winding 1 Temperature",8,1,false,"°C","",-40},
-    {"Engine Alternator Winding 2 Temperature",8,1,false,"°C","",-40},
-    {"Engine Alternator Winding 3 Temperature",8,1,false,"°C","",-40},
-    {"Engine Alternator Winding 4 Temperature",8,1,false,"°C","",-40},
-    {"Engine Alternator Winding 5 Temperature",8,1,false,"°C","",-40},
-    {"Engine Alternator Winding 6 Temperature",8,1,false,"°C","",-40},
+    {"Engine Alternator Bearing 1 Temperature",8,1,true,"°C","",-40},
+    {"Engine Alternator Bearing 2 Temperature",8,1,true,"°C","",-40},
+    {"Engine Alternator Winding 1 Temperature",8,1,true,"°C","",-40},
+    {"Engine Alternator Winding 2 Temperature",8,1,true,"°C","",-40},
+    {"Engine Alternator Winding 3 Temperature",8,1,true,"°C","",-40},
+    {"Engine Alternator Winding 4 Temperature",8,1,true,"°C","",-40},
+    {"Engine Alternator Winding 5 Temperature",8,1,true,"°C","",-40},
+    {"Engine Alternator Winding 6 Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"Articulation Control",
@@ -18380,8 +18380,8 @@
     8,
     0,
     {
-    {"Articulation Angle",8,1,false,"deg","",-125},
-    {"Articulation Angular Velocity",16,0.0078125,false,"deg/s","",-250},
+    {"Articulation Angle",8,1,true,"deg","",-125},
+    {"Articulation Angular Velocity",16,0.0078125,true,"deg/s","",-32000},
     {0}}},
     
     {"Exhaust Oxygen 1",
@@ -18393,7 +18393,7 @@
     {"Engine Desired Rated Exhaust Oxygen",16,0.0025,false,"%","",0},
     {"Engine Desired Exhaust Oxygen",16,0.0025,false,"%","",0},
     {"Engine Actual Exhaust 1 Oxygen",16,0.0025,false,"%","",0},
-    {"Engine Exhaust O2 Sensor Fueling Correction",8,1,false,"%","",-125},
+    {"Engine Exhaust O2 Sensor Fueling Correction",8,1,true,"%","",-125},
     {"Engine Exhaust O2 Sensor Closed Loop Operation",2,RES_BITFIELD,false,0,"",0},
     {0}}},
     
@@ -18406,8 +18406,8 @@
     {"Gaseous Fuel Correction Factor",8,1,false,"%","",0},
     {"Engine Intake Manifold Desired Absolute Pressure",16,0.1,false,"kPa","",0},
     {"Engine Turbocharger Wastegate Valve Position",8,0.4,false,"%","",0},
-    {"Engine Fuel System Gas Mass Flow Rate Sensor Fueling Correction",8,1,false,"%","",-125},
-    {"Gaseous Fuel Injection Pulse Correction Factor",16,0.0078125,false,"%","",-251},
+    {"Engine Fuel System Gas Mass Flow Rate Sensor Fueling Correction",8,1,true,"%","",-125},
+    {"Gaseous Fuel Injection Pulse Correction Factor",16,0.0078125,true,"%","",-32128},
     {0}}},
     
     {"Electronic Transmission Controller 6",
@@ -18416,9 +18416,9 @@
     8,
     0,
     {
-    {"Recommended Gear",8,1,false,"gear value","",-125},
-    {"Highest Possible Gear",8,1,false,"gear value","",-125},
-    {"Lowest Possible Gear",8,1,false,"gear value","",-125},
+    {"Recommended Gear",8,1,true,"gear value","",-125},
+    {"Highest Possible Gear",8,1,true,"gear value","",-125},
+    {"Lowest Possible Gear",8,1,true,"gear value","",-125},
     {"Clutch Life Remaining",8,0.4,false,"%","",0},
     {0}}},
     
@@ -18669,12 +18669,12 @@
     0,
     {
     {"Front Axle Speed",16,0.00390625,false,"km/h","",0},
-    {"Relative Speed; Front Axle, Left Wheel",8,0.0625,false,"km/h","",-7.8125},
-    {"Relative Speed; Front Axle, Right Wheel",8,0.0625,false,"km/h","",-7.8125},
-    {"Relative Speed; Rear Axle #1, Left Wheel",8,0.0625,false,"km/h","",-7.8125},
-    {"Relative Speed; Rear Axle #1, Right Wheel",8,0.0625,false,"km/h","",-7.8125},
-    {"Relative Speed; Rear Axle #2, Left Wheel",8,0.0625,false,"km/h","",-7.8125},
-    {"Relative Speed; Rear Axle #2, Right Wheel",8,0.0625,false,"km/h","",-7.8125},
+    {"Relative Speed; Front Axle, Left Wheel",8,0.0625,true,"km/h","",-125},
+    {"Relative Speed; Front Axle, Right Wheel",8,0.0625,true,"km/h","",-125},
+    {"Relative Speed; Rear Axle #1, Left Wheel",8,0.0625,true,"km/h","",-125},
+    {"Relative Speed; Rear Axle #1, Right Wheel",8,0.0625,true,"km/h","",-125},
+    {"Relative Speed; Rear Axle #2, Left Wheel",8,0.0625,true,"km/h","",-125},
+    {"Relative Speed; Rear Axle #2, Right Wheel",8,0.0625,true,"km/h","",-125},
     {0}}},
     
     {"Service Information",
@@ -18684,11 +18684,11 @@
     0,
     {
     {"Service Component Identification",8,1,false,"ID","",0},
-    {"Service Distance",16,5,false,"km","",-160635},
+    {"Service Distance",16,5,true,"km","",-32127},
     {"Service Component Identification",8,1,false,"ID","",0},
-    {"Service Delay/Calendar Time Based",8,1,false,"weeks","",-125},
+    {"Service Delay/Calendar Time Based",8,1,true,"weeks","",-125},
     {"Service Component Identification",8,1,false,"ID","",0},
-    {"Service Delay/Operational Time Based",16,1,false,"h","",-32127},
+    {"Service Delay/Operational Time Based",16,1,true,"h","",-32127},
     {0}}},
     
     {"High Resolution Vehicle Distance",
@@ -18708,7 +18708,7 @@
     0,
     {
     {"Transmission Output Retarder",2,RES_BITFIELD,false,0,"",0},
-    {"Cruise Control Retarder Active Speed Offset",16,0.00390625,false,"km/h","",-125},
+    {"Cruise Control Retarder Active Speed Offset",16,0.00390625,true,"km/h","",-32000},
     {0}}},
     
     {"Electronic Transmission Controller 5",
@@ -18879,10 +18879,10 @@
     8,
     0,
     {
-    {"Nominal Friction - Percent Torque",8,1,false,"%","",-125},
+    {"Nominal Friction - Percent Torque",8,1,true,"%","",-125},
     {"Engine's Desired Operating Speed",16,0.125,false,"rpm","",0},
     {"Engine's Desired Operating Speed Asymmetry Adjustment",8,1,false,"Ratio","",0},
-    {"Estimated Engine Parasitic Losses - Percent Torque",8,1,false,"%","",-125},
+    {"Estimated Engine Parasitic Losses - Percent Torque",8,1,true,"%","",-125},
     {"Aftertreatment 1 Exhaust Gas Mass Flow Rate",16,0.2,false,"kg/h","",0},
     {"Aftertreatment 1 Intake Dew Point",2,RES_BITFIELD,false,0,"",0},
     {"Aftertreatment 1 Exhaust Dew Point",2,RES_BITFIELD,false,0,"",0},
@@ -18910,16 +18910,16 @@
     {"Retarder Location",4,RES_BITFIELD,false,0,"",0},
     {"Retarder Control Method",8,1,false,"step","",0},
     {"Retarder Speed At Idle, Point 1",16,0.125,false,"rpm","",0},
-    {"Retarder Percent Torque At Idle, Point 1",8,1,false,"%","",-125},
+    {"Retarder Percent Torque At Idle, Point 1",8,1,true,"%","",-125},
     {"Maximum Retarder Speed, Point 2",16,0.125,false,"rpm","",0},
-    {"Retarder Percent Torque At Maximum Speed, Point 2",8,1,false,"%","",-125},
+    {"Retarder Percent Torque At Maximum Speed, Point 2",8,1,true,"%","",-125},
     {"Retarder Speed At Point 3",16,0.125,false,"rpm","",0},
-    {"Retarder Percent Torque At Point 3",8,1,false,"%","",-125},
+    {"Retarder Percent Torque At Point 3",8,1,true,"%","",-125},
     {"Retarder Speed At Point 4",16,0.125,false,"rpm","",0},
-    {"Retarder Percent Torque At Point 4",8,1,false,"%","",-125},
+    {"Retarder Percent Torque At Point 4",8,1,true,"%","",-125},
     {"Retarder Speed At Peak Torque, Point 5",16,0.125,false,"rpm","",0},
     {"Retarder Reference Torque",16,1,false,"Nm","",0},
-    {"Retarder Percent Torque At Peak Torque, Point 5",8,1,false,"%","",-125},
+    {"Retarder Percent Torque At Peak Torque, Point 5",8,1,true,"%","",-125},
     {0}}},
     
     {"Transmission Configuration",
@@ -18940,15 +18940,15 @@
     0,
     {
     {"Engine Speed At Idle, Point 1",16,0.125,false,"rpm","",0},
-    {"Engine Percent Torque At Idle, Point 1",8,1,false,"%","",-125},
+    {"Engine Percent Torque At Idle, Point 1",8,1,true,"%","",-125},
     {"Engine Speed At Point 2",16,0.125,false,"rpm","",0},
-    {"Engine Percent Torque At Point 2",8,1,false,"%","",-125},
+    {"Engine Percent Torque At Point 2",8,1,true,"%","",-125},
     {"Engine Speed At Point 3",16,0.125,false,"rpm","",0},
-    {"Engine Percent Torque At Point 3",8,1,false,"%","",-125},
+    {"Engine Percent Torque At Point 3",8,1,true,"%","",-125},
     {"Engine Speed At Point 4",16,0.125,false,"rpm","",0},
-    {"Engine Percent Torque At Point 4",8,1,false,"%","",-125},
+    {"Engine Percent Torque At Point 4",8,1,true,"%","",-125},
     {"Engine Speed At Point 5",16,0.125,false,"rpm","",0},
-    {"Engine Percent Torque At Point 5",8,1,false,"%","",-125},
+    {"Engine Percent Torque At Point 5",8,1,true,"%","",-125},
     {"Engine Speed At High Idle, Point 6",16,0.125,false,"rpm","",0},
     {"Engine Gain (Kp) Of The Endspeed Governor",16,0.00078125,false,"%/rpm","",0},
     {"Engine Reference Torque",16,1,false,"Nm","",0},
@@ -18956,8 +18956,8 @@
     {"Engine Maximum Momentary Override Time Limit",8,0.1,false,"s","",0},
     {"Engine Requested Speed Control Range Lower Limit",8,10,false,"rpm","",0},
     {"Engine Requested Speed Control Range Upper Limit",8,10,false,"rpm","",0},
-    {"Engine Requested Torque Control Range Lower Limit",8,1,false,"%","",-125},
-    {"Engine Requested Torque Control Range Upper Limit",8,1,false,"%","",-125},
+    {"Engine Requested Torque Control Range Lower Limit",8,1,true,"%","",-125},
+    {"Engine Requested Torque Control Range Upper Limit",8,1,true,"%","",-125},
     {"Engine Requested Speed Control Range Upper Limit (Extended Range)",16,0.125,false,"rpm","",0},
     {"Engine Moment of Inertia",16,0.004,false,"kg•m²","",0},
     {"Engine Default Torque Limit",16,1,false,"Nm","",0},
@@ -18966,7 +18966,7 @@
     {"Support TSC1 Control Purpose Group 2",8,RES_BITFIELD,false,0,"",0},
     {"Support TSC1 Control Purpose Group 3",8,RES_BITFIELD,false,0,"",0},
     {"Support TSC1 Control Purpose Group 4",8,RES_BITFIELD,false,0,"",0},
-    {"Engine Default Idle Torque Limit",8,1,false,"%","",-125},
+    {"Engine Default Idle Torque Limit",8,1,true,"%","",-125},
     {0}}},
     
     {"Shutdown",
@@ -19020,9 +19020,9 @@
     {"Hours",8,1,false,"h","",0},
     {"Month",8,1,false,"months","",0},
     {"Day",8,0.25,false,"days","",0},
-    {"Year",8,1,false,"years","",1985},
-    {"Local minute offset",8,1,false,"min","",-125},
-    {"Local hour offset",8,1,false,"h","",-125},
+    {"Year",8,1,true,"years","",1985},
+    {"Local minute offset",8,1,true,"min","",-125},
+    {"Local hour offset",8,1,true,"h","",-125},
     {0}}},
     
     {"Vehicle Hours",
@@ -19043,8 +19043,8 @@
     {
     {"Compass Bearing",16,0.0078125,false,"deg","",0},
     {"Navigation-Based Vehicle Speed",16,0.00390625,false,"km/h","",0},
-    {"Pitch",16,0.0078125,false,"deg","",-200},
-    {"Altitude",16,0.125,false,"m","",-2500},
+    {"Pitch",16,0.0078125,true,"deg","",-25600},
+    {"Altitude",16,0.125,true,"m","",-20000},
     {0}}},
     
     {"Fuel Consumption (Liquid) 1",
@@ -19114,11 +19114,11 @@
     8,
     0,
     {
-    {"Engine Coolant Temperature",8,1,false,"°C","",-40},
-    {"Engine Fuel 1 Temperature 1",8,1,false,"°C","",-40},
-    {"Engine Oil Temperature 1",16,0.03125,false,"°C","",-273},
-    {"Engine Turbocharger 1 Oil Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Intercooler Temperature",8,1,false,"°C","",-40},
+    {"Engine Coolant Temperature",8,1,true,"°C","",-40},
+    {"Engine Fuel 1 Temperature 1",8,1,true,"°C","",-40},
+    {"Engine Oil Temperature 1",16,0.03125,true,"°C","",-8736},
+    {"Engine Turbocharger 1 Oil Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Intercooler Temperature",8,1,true,"°C","",-40},
     {"Engine Charge Air Cooler Thermostat Opening",8,0.4,false,"%","",0},
     {0}}},
     
@@ -19132,7 +19132,7 @@
     {"Engine Extended Crankcase Blow-by Pressure",8,0.05,false,"kPa","",0},
     {"Engine Oil Level",8,0.4,false,"%","",0},
     {"Engine Oil Pressure 1",8,4,false,"kPa","",0},
-    {"Engine Crankcase Pressure 1",16,0.0078125,false,"kPa","",-250},
+    {"Engine Crankcase Pressure 1",16,0.0078125,true,"kPa","",-32000},
     {"Engine Coolant Pressure 1",8,2,false,"kPa","",0},
     {"Engine Coolant Level 1",8,0.4,false,"%","",0},
     {0}}},
@@ -19143,7 +19143,7 @@
     8,
     0,
     {
-    {"Power Takeoff Oil Temperature",8,1,false,"°C","",-40},
+    {"Power Takeoff Oil Temperature",8,1,true,"°C","",-40},
     {"Power Takeoff Speed",16,0.125,false,"rpm","",0},
     {"Power Takeoff Set Speed",16,0.125,false,"rpm","",0},
     {"Engine PTO Governor Enable Switch",2,RES_BITFIELD,false,0,"",0},
@@ -19206,8 +19206,8 @@
     8,
     0,
     {
-    {"Latitude",32,1e-7,false,"deg","",-210},
-    {"Longitude",32,1e-7,false,"deg","",-210},
+    {"Latitude",32,1e-7,true,"deg","",-2100000000},
+    {"Longitude",32,1e-7,true,"deg","",-2100000000},
     {0}}},
     
     {"Tire Condition Message 1",
@@ -19218,7 +19218,7 @@
     {
     {"Tire Location",8,RES_BITFIELD,false,0,"",0},
     {"Tire Pressure",8,4,false,"kPa","",0},
-    {"Tire Temperature",16,0.03125,false,"°C","",-273},
+    {"Tire Temperature",16,0.03125,true,"°C","",-8736},
     {"Tire Sensor Enable Status",2,RES_BITFIELD,false,0,"",0},
     {"Tire Status",2,RES_BITFIELD,false,0,"",0},
     {"Tire Sensor Electrical Fault",2,RES_BITFIELD,false,0,"",0},
@@ -19234,10 +19234,10 @@
     0,
     {
     {"Barometric Pressure",8,0.5,false,"kPa","",0},
-    {"Cab Interior Temperature",16,0.03125,false,"°C","",-273},
-    {"Ambient Air Temperature",16,0.03125,false,"°C","",-273},
-    {"Engine Intake 1 Air Temperature",8,1,false,"°C","",-40},
-    {"Road Surface Temperature",16,0.03125,false,"°C","",-273},
+    {"Cab Interior Temperature",16,0.03125,true,"°C","",-8736},
+    {"Ambient Air Temperature",16,0.03125,true,"°C","",-8736},
+    {"Engine Intake 1 Air Temperature",8,1,true,"°C","",-40},
+    {"Road Surface Temperature",16,0.03125,true,"°C","",-8736},
     {0}}},
     
     {"Intake/Exhaust Conditions 1",
@@ -19248,10 +19248,10 @@
     {
     {"Aftertreatment 1 Diesel Particulate Filter Intake Pressure (use SPN 3609)",8,0.5,false,"kPa","",0},
     {"Engine Intake Manifold #1 Pressure",8,2,false,"kPa","",0},
-    {"Engine Intake Manifold 1 Temperature",8,1,false,"°C","",-40},
+    {"Engine Intake Manifold 1 Temperature",8,1,true,"°C","",-40},
     {"Engine Intake Air Pressure",8,2,false,"kPa","",0},
     {"Engine Air Filter 1 Differential Pressure",8,0.05,false,"kPa","",0},
-    {"Engine Exhaust Temperature",16,0.03125,false,"°C","",-273},
+    {"Engine Exhaust Temperature",16,0.03125,true,"°C","",-8736},
     {"Engine Coolant Filter Differential Pressure",8,0.5,false,"kPa","",0},
     {0}}},
     
@@ -19261,7 +19261,7 @@
     8,
     0,
     {
-    {"SLI Battery 1 Net Current",8,1,false,"A","",-125},
+    {"SLI Battery 1 Net Current",8,1,true,"A","",-125},
     {"Alternator Current",8,1,false,"A","",0},
     {"Charging System Potential (Voltage)",16,0.05,false,"V","",0},
     {"Battery Potential / Power Input 1",16,0.05,false,"V","",0},
@@ -19278,8 +19278,8 @@
     {"Transmission Oil Level 1",8,0.4,false,"%","",0},
     {"Transmission Filter Differential Pressure",8,2,false,"kPa","",0},
     {"Transmission 1 Oil Pressure",8,16,false,"kPa","",0},
-    {"Transmission Oil Temperature 1",16,0.03125,false,"°C","",-273},
-    {"Transmission Oil Level 1 High / Low",8,0.5,false,"l","",-62.5},
+    {"Transmission Oil Temperature 1",16,0.03125,true,"°C","",-8736},
+    {"Transmission Oil Level 1 High / Low",8,0.5,true,"l","",-125},
     {"Transmission Oil Level 1 Countdown Timer",4,RES_BITFIELD,false,0,"",0},
     {"Transmission Oil Level 1 Measurement Status",4,RES_BITFIELD,false,0,"",0},
     {0}}},
@@ -19290,10 +19290,10 @@
     8,
     0,
     {
-    {"Steering Axle Temperature",8,1,false,"°C","",-40},
+    {"Steering Axle Temperature",8,1,true,"°C","",-40},
     {"Drive Axle Location",8,RES_BITFIELD,false,0,"",0},
     {"Drive Axle Lift Air Pressure",8,4,false,"kPa","",0},
-    {"Drive Axle Temperature",8,1,false,"°C","",-40},
+    {"Drive Axle Temperature",8,1,true,"°C","",-40},
     {"Drive Axle Lube Pressure",8,4,false,"kPa","",0},
     {"Steering Axle Lube Pressure",8,4,false,"kPa","",0},
     {0}}},
@@ -19319,9 +19319,9 @@
     0,
     {
     {"Hydraulic Retarder Pressure",8,16,false,"kPa","",0},
-    {"Hydraulic Retarder Oil Temperature",8,1,false,"°C","",-40},
+    {"Hydraulic Retarder Oil Temperature",8,1,true,"°C","",-40},
     {"Driveline Retarder Overheat Indicator",2,RES_BITFIELD,false,0,"",0},
-    {"Retarder Coolant Outlet Temperature",8,1,false,"°C","",-40},
+    {"Retarder Coolant Outlet Temperature",8,1,true,"°C","",-40},
     {0}}},
     
     {"Dash Display 1",
@@ -19334,7 +19334,7 @@
     {"Fuel Level 1",8,0.4,false,"%","",0},
     {"Engine Fuel Filter Differential Pressure",8,2,false,"kPa","",0},
     {"Engine Oil Filter Differential Pressure",8,0.5,false,"kPa","",0},
-    {"Cargo Ambient Temperature",16,0.03125,false,"°C","",-273},
+    {"Cargo Ambient Temperature",16,0.03125,true,"°C","",-8736},
     {"Fuel Level 2",8,0.4,false,"%","",0},
     {"Engine Oil Filter Differential Pressure (Extended Range)",8,5,false,"kPa","",0},
     {0}}},
@@ -19348,7 +19348,7 @@
     {"Engine Blower Bypass Valve Position",8,0.4,false,"%","",0},
     {"Engine Gaseous Fuel Supply Pressure 1",16,0.5,false,"kPa","",0},
     {"Engine Gaseous Fuel Vent Pressure",16,0.5,false,"kPa","",0},
-    {"LNG Vaporizer Coolant Outlet Temperature",8,1,false,"°C","",-40},
+    {"LNG Vaporizer Coolant Outlet Temperature",8,1,true,"°C","",-40},
     {"Engine Gaseous Fuel Pressure Regulator Intake Pressure",16,1,false,"kPa","",0},
     {0}}},
     
